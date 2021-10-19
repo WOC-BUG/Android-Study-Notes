@@ -19,7 +19,7 @@ nav:
 # Theme
 theme:
     name: 'material'
-    custom_dir: docs/custom_theme
+    custom_dir: docs/overrides
     language: 'zh'
     palette:
       primary: 'white'
