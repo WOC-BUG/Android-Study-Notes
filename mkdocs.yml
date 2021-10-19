@@ -9,7 +9,7 @@ repo_url: https://github.com/WOC-BUG/Android-Study-Notes
 # Table of Contents
 nav:
     - 简介:
-      - 首页：index.md
+      - 首页: index.md
     - kotlin:
       - kotlin学习笔记: kotlin学习笔记.md
     - Android:
