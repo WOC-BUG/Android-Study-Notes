@@ -17,7 +17,7 @@ nav:
       - BLE低功耗蓝牙通信: BLE低功耗蓝牙通信.md
 
 # Theme
-theme: 
+theme:
     name: 'material'
     custom_dir: docs/overrides
     language: 'zh'
