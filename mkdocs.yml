@@ -17,20 +17,7 @@ nav:
       - BLE低功耗蓝牙通信: BLE低功耗蓝牙通信.md
 
 # Theme
-theme:
-    name: 'material'
-    custom_dir: docs/overrides
-    language: 'zh'
-    palette:
-      primary: 'white'
-      accent: 'red'
-    logo:
-      icon: 'school'
-    feature:
-      tabs: true
-    font:
-      text: 'Fira Sans'
-      code: 'Fira Mono'
+theme: readthedocs
 
 plugins:
     - search
