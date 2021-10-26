@@ -1,5 +1,7 @@
 ## Android基础
 
+[Android学习博客](https://codeteenager.github.io/android/android42.html)
+
 ### Activity携带数据跳转
 
 从`A`跳转到`B`
