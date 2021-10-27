@@ -2,7 +2,7 @@
 
 [Android学习博客](https://codeteenager.github.io/android/android42.html)
 
-### Activity携带数据跳转
+### 1. Activity携带数据跳转
 
 从`A`跳转到`B`
 
@@ -41,7 +41,7 @@ finish()
 
 
 
-### 观察者模式
+### 2. 观察者模式
 
 **使用LiveData/MutableLiveData和Observer进行数据观测：**
 
@@ -75,3 +75,10 @@ finish()
 
    这样，当`data`发生改变时就会触发`myObserver`进行一些操作。
 
+
+
+### 3. `navigation`
+
+参考博客：`https://blog.csdn.net/mq2553299/article/details/80445952`
+
+官方教程：`https://developer.android.com/guide/navigation`

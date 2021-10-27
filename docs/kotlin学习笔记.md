@@ -1,6 +1,4 @@
-[TOC]
-
-## Kotlin
+## Kotlin 基础
 
 ### 1. 条件表达式
 
@@ -16,7 +14,19 @@ println(answerString)
 
 
 
-### 2.匿名函数
+### 2. lambda表达式语法
+
+ `<变量> = { <传入参数> -> <返回值> }`
+
+```kotlin
+val sum: (Int, Int) -> Int = { x: Int, y: Int -> x + y }
+// 简化后如下
+val sum = { x: Int, y: Int -> x + y }
+```
+
+
+
+### 3.匿名函数
 
 ```kotlin
 // 声明
@@ -30,7 +40,7 @@ val len: Int = Func("Android")
 
 
 
-### 3. 高阶函数
+### 4. 高阶函数
 
 ```kotlin
 // 函数作为参数传入
@@ -49,7 +59,7 @@ Func1("kotlin"){ input ->
 
 
 
-### 4. 伴生对象
+### 5. 伴生对象
 
 相当于`static`关键字
 
@@ -65,7 +75,7 @@ class LoginFragment: Fragment(){
 
 
 
-### 5. 属性委托
+### 6. 属性委托
 
 ```kotlin
 // viewModels 可检索当前 Fragment 的 ViewModel
@@ -74,7 +84,7 @@ private val viewModel: LoginViewModel by viewModels()
 
 
 
-### 6. `!`、`!!`和`?`
+### 7. `!`、`!!`和`?`
 
 **`String!` 可以表示 `String` 或 `String?`**
 
@@ -87,7 +97,7 @@ val accountName = account.name!!.trim()
 
 
 
-### 7. lateinit
+### 8. lateinit
 
 通过 `lateinit` 关键字，可以避免在构建对象时初始化属性
 
@@ -123,7 +133,7 @@ class LoginFragment : Fragment() {
 
 
 
-### 8. 数据双向绑定——DataBinding和ViewBinding
+### 9. 数据双向绑定——DataBinding和ViewBinding
 
 `ViewBinding`比`DataBinding`性能要更好，这里介绍`ViewBinding`的用法：
 
@@ -219,12 +229,12 @@ class FirstFragment : Fragment() {
 
 
 
-### 9. Obsever
+### 10. Obsever
 
 一个被观察者`(夜)`和多个观察者`(十大家族、帕格、吉黑德、昆等)`的依赖关系，当被观察者发生变化时，通知所有观察者发生改变
 
 
 
-#### 10. Fragment的生命周期
+### 11. Fragment的生命周期
 
 ![](./img/fragment_lifecycle.png)
