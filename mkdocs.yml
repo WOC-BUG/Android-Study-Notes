@@ -18,6 +18,8 @@ nav:
     - Android:
       - Android基础: Android基础.md
       - BLE低功耗蓝牙通信: BLE低功耗蓝牙通信.md
+    - Flutter:
+      - Flutter: Flutter.md
     - 实践:
       - 工作问题记录: 工作问题记录.md
 
