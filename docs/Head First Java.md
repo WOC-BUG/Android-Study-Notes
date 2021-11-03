@@ -6,17 +6,18 @@
 
 * `Java`中的条件测试必须是`Boolean`值，不像`C++`中可以是整形。
 
-* ```java
-  public class BasicThree {
-  	public static void main(String[] args) {
-  		System.out.println(5+6+""+5+6);
-  		System.out.println('A'+5+"hello");
-  	}
-  }
-  // 输出：
-  // 1156
-  // 70hello
-  ```
+* 输出字符串：
+```java
+public class BasicThree {
+    public static void main(String[] args) {
+        System.out.println(5+6+""+5+6);
+        System.out.println('A'+5+"hello");
+    }
+}
+// 输出：
+// 1156
+// 70hello
+```
 
   1. 前面是单个字符(byte)的情况下，后面跟数字为加法运算符；
   2. 在遇到首个个字符之前，所有数遇`+`即`+`（单个字符`(byte)`的情况除外）；当遇到任意字符后，加号就变成了字符/字符串的拼接。
