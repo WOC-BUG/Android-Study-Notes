@@ -20,7 +20,7 @@ nav:
       - BLE低功耗蓝牙通信: BLE低功耗蓝牙通信.md
     - Flutter:
       - Flutter调研报告: Flutter.md
-      - Dart语言基础：Dart.md
+      - Dart语言基础: Dart.md
     - 实践:
       - 工作问题记录: 工作问题记录.md
 
