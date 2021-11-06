@@ -171,8 +171,8 @@ sb.write('foo')
 
 ### 5. 类
 
-* 所有的类都继承于 `Object``
-* ``p?.y = 4;`表示 p 可能为空
+* 所有的类都继承于 `Object`
+* `p?.y = 4;`表示 p 可能为空
 * 构造函数的`new`可省略
 * 没有`public`、`private`、`protected`等关键字，变量前加上`_`表示是私有的：`var _param = 2;`
 
