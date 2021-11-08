@@ -100,6 +100,19 @@ list.forEach((item) {
 list.forEach( (item) => print('${list.indexOf(item)}: $item') );
 ```
 
+**自执行方法：**
+
+```dart
+(()=>{
+    print("我是自执行方法");
+})();
+
+// 传参
+((int n)=>{
+    print("传入参数："+n);
+})(12);
+```
+
 
 
 ### 4. 运算符
@@ -258,5 +271,47 @@ enum Color { red, green, blue }
 // 获取所有枚举值列表（ list ）
 List<Color> colors = Color.values;
 assert(colors[2] == Color.blue);
+```
+
+
+
+**mixins**
+
+![mixins](img/mixins.png)
+
+实现类似多继承功能：
+
+```dart
+class A{
+    void printA(){
+        print("A");
+    }
+}
+
+class B{
+    void printB(){
+        print("B");
+    }
+}
+
+class C with A,B{
+    
+}
+
+void main(){
+    var c = new C();
+    c.printA();
+    c.printB();
+}
+```
+
+
+
+**泛型：**
+
+```dart
+T getData<T>(T data){
+    return data;
+}
 ```
 
