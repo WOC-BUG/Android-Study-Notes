@@ -168,7 +168,7 @@ for(int i=0;i<10;i++) {
 ### 6. 认识Java的API
 
 #### `ArrayList`
-相比数组，大小是动态变化的。但是其中不能放入`primitive`的数据。
+相比数组，大小是动态变化的。但是`Java5.0`以前其中不能放入`primitive`的数据。
 
 使用`import`导包并不会使程序变大或变慢，只是帮忙省下类前过长的包名。
 
@@ -313,3 +313,171 @@ if(a instanceof Bird){
 
 ### 9. 构造器与垃圾收集器
 
+
+
+### 10. 数字与静态
+
+**<font color="red">静态类不能被创建出实例，静态变量是共享的</font>**
+
+静态变量在类被加载时初始化，类一般在实例被创建/静态方法或变量被使用时加载。
+
+![static](img/static.png)
+
+（会有默认值：`0、0.0、false、null`）
+
+
+
+**静态final常数**
+
+初始化后不再改动（必须被初始化，没有默认值）
+
+如：`public static final double PI=3.141592653589793`
+
+
+
+**静态初始化程序(static initializer)**
+
+是在类加载时执行的代码，很适合放`final`变量的初始化：
+
+```java
+class Foo{
+    final static int x;	// 直接在这里赋值也可
+    static {
+        x = 42;
+    }
+}
+```
+
+![initialize](img/initialize.png)
+
+静态变量在"初始化"阶段初始化，也就是类加载器将类加载到`JVM`中的时候。
+
+
+
+**非静态final变量：**初始化后值不能变动
+
+**final方法：**不能被覆盖
+
+**final的类：**不能被继承
+
+(注意，如果已经标记了类是final的，再单独标记final变量/方法会很多余)
+
+
+
+**autoboxing**
+
+J`ava5.0`之后`primitive`能自动转换成对象
+
+```java
+ArrayList<Integer> list = new ArrayList<Integer>();	//<>内一定是类的类型
+list.add(1);	// 直接加
+int num = list.get(0);	//直接赋值给primitive类型
+```
+
+同理，在形参、返回值、boolean表达式、数值运算、赋值等中也会用到`autoboxing`
+
+```java
+// 形参
+void fun(Integer i){}
+fun(3);
+
+// 返回值
+int getNum(){
+    Integer i = new Integer(3);
+    return i;
+}
+
+// boolean表达式
+if(4>1){
+    //...
+}
+
+// 数值运算
+Integer i = new Integer(3);
+int j=i+2;
+
+// 赋值
+Double d = 2.2;
+int x = new Integer(5);
+```
+
+
+
+**数字格式化**
+
+1. 带逗号输出数字：`String.format("%,d",1000000); //1,000,000`
+
+2. 日期的格式化：
+
+   ```java
+   // 完整日期时间
+   String.format("%tc",new Date());	//Sun Nov 28 14:52:41 MST 2004
+   
+   // 只有时间
+   String.format("%tr",new Date());	//14:52:41 PM
+   
+   // 周、月、日
+   Date today = new Date();
+   String.format("%tA, %tB %td",today,today,today);	//Sunday, November 28
+   String.format("%tA, %<tB %<td",today);	// 同上
+   
+   // 其他日期操作可以参考Calendar
+   Calendar cal = Calendar.getInstance();	//Calendar是抽象类无法被实例化，而getInstance()返回的是其具体子类的实例
+   ```
+
+3. 其他语法和`C`语言一致：
+
+   ![](img/format.png)
+
+**易错点：**
+
+1. 构造函数不能是静态的：因为构造函数需要取用成员变量，而静态函数不能使用非静态变量；
+2. 静态方法不能用`this.`获取；
+
+
+
+### 11. 异常处理
+
+**异常**
+
+1. `NumberFormatException`如：`Integer.parseInt("two")`
+2. `NullPointerException`：调用/赋值给 `null` 的变量
+3. `MidiUnavailableException`：该方法有风险，必须声明调用它有风险
+
+异常是一种Exception类型的对象
+
+
+
+**处理**
+
+```java
+// 捕获异常
+try{
+    Sequencer seq = MidiSystem.getSequencer();	// 有风险的程序
+}catch(MidiUnavailableException ex){
+    System.out.println("Bummer");
+}
+
+// 抛出异常
+public void takeRisk throws BadException{
+    if(...){
+        throw new BadException();	// 创建异常对象并抛出
+    }
+}
+public void crossFingers(){
+    try{
+        anObject.takeRisk();
+    } catch (BadException ex){
+        System.out.println("BadException!");
+        ex.printStackTrace();	// 列出有用信息
+    }
+}
+
+
+// try catch 是用来处理真正的异常，而不是你程序的逻辑错误
+// 该块要做的是恢复的常识，或者列出错误信息
+```
+
+
+
+// P325

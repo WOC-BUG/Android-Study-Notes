@@ -2,7 +2,19 @@
 
 [Flutter Api Docs](https://flutter.cn/docs/development/ui/widgets)
 
-### 1. 显示随机生成的单词
+### 1. 快捷键
+
+**r：**热加载
+
+**p：**显示网格
+
+**o：**切换`android`和`ios`的预览模式
+
+**q：**推出调试预览模式
+
+
+
+### 2. 显示随机生成的单词
 
 ```dart
 import 'package:flutter/material.dart';
@@ -53,7 +65,7 @@ class _RandomWordsState extends State<RandomWords> {
 
    
 
-### 2. 列表
+### 3. 列表
 
 ```dart
 import 'package:flutter/material.dart';
@@ -119,7 +131,7 @@ class _RandomWordsState extends State<RandomWords> {
 
 
 
-### 3. 点击按钮跳转页面
+### 4. 点击按钮跳转页面
 
 ```dart
 class _RandomWordsState extends State<RandomWords> { 
