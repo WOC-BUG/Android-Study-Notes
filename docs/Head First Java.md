@@ -451,14 +451,7 @@ int x = new Integer(5);
 **处理**
 
 ```java
-// 捕获异常
-try{
-    Sequencer seq = MidiSystem.getSequencer();	// 有风险的程序
-}catch(MidiUnavailableException ex){
-    System.out.println("Bummer");
-}
-
-// 抛出异常
+// 捕获、抛出异常
 public void takeRisk throws BadException{
     if(...){
         throw new BadException();	// 创建异常对象并抛出
@@ -466,18 +459,57 @@ public void takeRisk throws BadException{
 }
 public void crossFingers(){
     try{
-        anObject.takeRisk();
-    } catch (BadException ex){
+        takeRisk();	// 有风险的程序
+    } catch (BadException ex){	// try catch 是用来处理真正的异常，而不是你程序的逻辑错误
         System.out.println("BadException!");
         ex.printStackTrace();	// 列出有用信息
+    } finally{
+        // 这里放不管有没有异常都要执行的程序
     }
 }
 
+// 若try只带有finally，要声明异常
+public void crossFingers() throws BadException{
+    try{
+        takeRisk();
+    } finally{
+        //....
+    }
+}
+```
 
-// try catch 是用来处理真正的异常，而不是你程序的逻辑错误
-// 该块要做的是恢复的常识，或者列出错误信息
+异常也是对象，因此是多态的。
+
+
+
+**duck**
+
+不处理异常，踢皮球给自己的调用方
+
+```java
+// duck
+public void takeRisk throws BadException{
+    if(...){
+        throw new BadException();	// 创建异常对象并抛出
+    }
+}
+public void crossFingers() throws BadException{	// 踢皮球
+    takeRisk();	// 有风险的程序
+}
+public static void main(String[] args) throws BadException{	// 继续踢
+    crossFingers();	// 有风险
+}
+
+// Java虚拟机会死掉
 ```
 
 
 
-// P325
+**<font color="red">编译时期的异常，必须要处理或者duck掉。运行时异常不用处理，因为一般为代码逻辑错误。</font>**
+
+
+
+
+
+### 12. 图形用户接口
+
