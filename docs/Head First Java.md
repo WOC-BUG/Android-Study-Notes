@@ -513,3 +513,25 @@ public static void main(String[] args) throws BadException{	// 继续踢
 
 ### 12. 图形用户接口
 
+```java
+JFrame jFrame = new JFrame();
+JButton jButton = new JButton();
+
+jFrame.getContentPane().add([BorderLayout.CENTER],button);	//注意，不是直接在jFrame上加按钮。一共5个位置可放：NORTH、WEST、EAST、SOUTH、CENTER，默认是CENTER
+
+jFrame.setSize(500,500);
+jFrame.setVisible(true);
+```
+
+绘图的程序应当放在`Jpanel`的`paintComponent()`里面
+
+
+
+``public void paintCompent(Graphics g)``，其实是使用了多态传入了`Graphics2D`的对象，而`Graphics2D`能做的事比`Graphics`多很多。因此，可以强制转换成子类类型后能做更多事：渐变颜色、绘制 3D 矩形、旋转等等。
+
+
+
+如果，需要用同样的接口实现不同的功能，内部类是唯一解。比如在 GUI 中，有好几个按钮需要监听同一个接口完成不同的事情，就可以定义多个内部类继承这个接口。
+
+
+
