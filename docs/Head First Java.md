@@ -535,3 +535,24 @@ jFrame.setVisible(true);
 
 
 
+### 13. Swing
+
+框架的 `BorderLayout` 布局管理器需要知道 `panel `的大小，而 `panel` 的布局管理器又必须知道其子空间的大小才能确定最终的宽高和位置。
+
+
+
+**垂直排列布局：`BoxLayout` **
+
+```java
+panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));	// 管理panel组件，使用Y_AXIS轴
+
+// 布局管理器会忽略用户给组件设置的大小，布局管理器通过调用组件的getPreferedSize()方法计算实际所需大小，与对组件调用的setSize()无关。
+```
+
+
+
+`frame` 默认使用 `BoxLayout`，`panel` 默认使用 `FlowLayout`
+
+
+
+// p429
