@@ -268,7 +268,7 @@ if(a instanceof Bird){
 
 ### 8. 接口与抽象
 
-**<font color="red">抽象类不能被创建出实例</font>**
+**<font color="red">抽象类可以被实例化，只是只能通过多态来实例化</font>**
 
 注意：`Animal[] animals = new Animal[5];` （Animal是抽象类）是可以的，因为它是保存Animal的数组对象而不是Animal对象。
 

@@ -11,4 +11,5 @@
 * Android基础
   * Android第一行代码
 * Flutter基础
+* Design Patterns
 * 工作学习记录

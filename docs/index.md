@@ -16,4 +16,8 @@
 * `Flutter`调研报告
 * `Dart`基础
 
+#### `Design Patterns`
+
+* 大话设计模式
+
 #### 工作学习记录
