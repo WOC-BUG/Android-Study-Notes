@@ -1,9 +1,9 @@
 ## `Android` 开发学习笔记
 
-#### `Java`基础
+#### `Java`
 
+* `Java`基础
 * `Head First Java`
-* `Thinking In Java`
 
 #### `kotlin`基础
 
