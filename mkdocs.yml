@@ -21,6 +21,7 @@ nav:
     - Flutter:
       - Flutter调研报告: Flutter.md
       - Dart语言基础: Dart.md
+      - Flutter简单实例: Flutter实例.md
     - Design Pattern:
       - 大话设计模式: 大话设计模式.md
     - 实践:
