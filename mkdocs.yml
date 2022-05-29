@@ -70,7 +70,6 @@ markdown_extensions:
     - toc:
         permalink: true
     - pymdownx.arithmatex
-        generic: true
     - pymdownx.caret
     - pymdownx.critic
     - pymdownx.details
