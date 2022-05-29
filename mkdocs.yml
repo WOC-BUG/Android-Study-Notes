@@ -11,8 +11,8 @@ nav:
     - 简介:
       - 首页: index.md
     - Java:
-      - Java基础: Java基础.md
       - Head First Java: Head First Java.md
+      - Java基础: Java基础.md
     - kotlin:
       - kotlin学习笔记: kotlin学习笔记.md
     - Android:
@@ -21,7 +21,6 @@ nav:
     - Flutter:
       - Flutter调研报告: Flutter.md
       - Dart语言基础: Dart.md
-      - Flutter简单实例: Flutter实例.md
     - Design Pattern:
       - 大话设计模式: 大话设计模式.md
     - 实践:
@@ -29,7 +28,7 @@ nav:
 
 # Theme
 theme:
-    name: 'material'
+    name: 'mkdocs'
     custom_dir: docs/overrides
     language: 'zh'
     palette:
@@ -73,6 +72,8 @@ markdown_extensions:
     - pymdownx.caret
     - pymdownx.critic
     - pymdownx.details
+    - pymdownx.emoji:
+        emoji_generator: !!python/name:pymdownx.emoji.to_svg
     - pymdownx.inlinehilite
     - pymdownx.keys
     - pymdownx.magiclink
