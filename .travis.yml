@@ -7,6 +7,8 @@ python:
 install:
   - pip install mkdocs
   - pip install mkdocs-material
+  - pip install mkdocs-minify-plugin
+  - pip install mkdocs-redirects
   - echo -e "machine github.com\n  login ${GITHUB_TOKEN}" > ~/.netrc
 
 script:
@@ -14,6 +16,5 @@ script:
 
 branches:
   only:
-    - master
     - gh-pages
     - /.*/
