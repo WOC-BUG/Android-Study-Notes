@@ -7,6 +7,7 @@ python:
 install:
   - pip install mkdocs==1.2.3
   - pip install mkdocs-material==4.6.3
+  - pip install jinja2==3.0.3
   - pip install mkdocs-minify-plugin
   - pip install mkdocs-redirects
   - echo -e "machine github.com\n  login ${GITHUB_TOKEN}" > ~/.netrc
