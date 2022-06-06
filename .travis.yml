@@ -2,17 +2,18 @@ dist: focal
 language: python
 
 python:
-  - "3.10.1"
+  - "3.8"
 
 install:
-  - pip install mkdocs
-  - pip install mkdocs-material
+  - pip install mkdocs==1.2.3
+  - pip install mkdocs-material==4.6.3
   - pip install mkdocs-minify-plugin
   - pip install mkdocs-redirects
   - echo -e "machine github.com\n  login ${GITHUB_TOKEN}" > ~/.netrc
 
 script:
   - mkdocs gh-deploy --force --clean
+  - mkdocs build
 
 branches:
   only:
