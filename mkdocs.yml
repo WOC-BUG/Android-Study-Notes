@@ -28,7 +28,7 @@ nav:
 
 # Theme
 theme:
-    name: 'Cinder'
+    name: 'material'
     custom_dir: docs/overrides
     language: 'zh'
     palette:

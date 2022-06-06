@@ -8,6 +8,8 @@ install:
   - pip install mkdocs==1.2.3
   - pip install mkdocs-material==4.6.3
   - pip install jinja2==3.0.3
+  - pip install mkdocs-git-authors-plugin mkdocs-blogging-plugin
+  - pip install mkdocs-git-revision-date-localized-plugin
   - pip install mkdocs-minify-plugin
   - pip install mkdocs-redirects
   - echo -e "machine github.com\n  login ${GITHUB_TOKEN}" > ~/.netrc
