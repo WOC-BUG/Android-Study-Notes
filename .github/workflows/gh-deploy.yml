@@ -9,8 +9,8 @@ jobs:
         steps:
           - name: Check out Git repostory
             uses: actions/checkout@v2
-          - name: Deploy to Github Pages
-            uses: WOC-BUG/mkdocs-deploy-gh-pages@master
+          - name: Deploy MkDocs
+            uses: mhausenblas/mkdocs-deploy-gh-pages@1.24
             env:
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                 REQUIREMENTS: requirements.txt
