@@ -7,7 +7,7 @@
 1. 一个源文件中最多只能有一个`public`类，且该类名称必须和文件一致。
 2. 一个源文件中可以有多个非`public`的类，这些`java`类中均可以写`main`方法，用`javac`编译后会生成多个`class`文件，可以分别运行。
 
-![](D:/Notes/Java-Study-Notes/Notes/img/multi_java_class.png)
+![](img/multi_java_class.png)
 
 
 
@@ -35,17 +35,21 @@
 
 `file -> setting -> editor -> keymap`可查看/修改
 
-| 快捷键           | 功能                     |
-| ---------------- | ------------------------ |
-| Ctrl+Alt+L       | 格式化                   |
-| Ctrl+Y           | 删除当前行               |
-| Alt+Enter        | 导入依赖包               |
-| Ctrl+D           | 复制当前行               |
-| Ctrl+F           | 查找                     |
-| Ctrl+R           | 替换                     |
-| Alt+Insert       | 插入构造器等             |
-| Ctrl+H           | 查看类结构               |
-| Ctrl+B或鼠标左键 | 定位类/方法/变量的定义处 |
+| 快捷键           | 功能                         |
+| ---------------- | ---------------------------- |
+| Ctrl+Alt+L       | 格式化                       |
+| Ctrl+Y           | 删除当前行                   |
+| Alt+Enter        | 导入依赖包                   |
+| Ctrl+D           | 复制当前行                   |
+| Ctrl+F           | 查找                         |
+| Ctrl+R           | 替换                         |
+| Alt+Insert       | 插入构造器等                 |
+| Ctrl+H           | 查看类结构                   |
+| Ctrl+B或鼠标左键 | 定位类/方法/变量的定义处     |
+| F7               | 跳入（进入方法）             |
+| F8               | 跳过（执行语句，不进入方法） |
+| shift+F8         | 跳出（跳出方法）             |
+| F9               | 执行到下一个断点             |
 
 
 
@@ -112,7 +116,7 @@
 
 
 * `\r`和`\r\n`效果一致，都是换行
-  ![](D:/Notes/Java-Study-Notes/Notes/img/transfer_character.png)
+  ![](img/transfer_character.png)
 
 
 
@@ -150,11 +154,11 @@
 
   例：
 
-  <img src="D:/Notes/Java-Study-Notes/Notes/img/javadoc.png" style="zoom:80%;" />
+  <img src="img/javadoc.png" style="zoom:80%;" />
 
   
 
-![](D:/Notes/Java-Study-Notes/Notes/img/JavaAPI文档.png)
+![](img/JavaAPI文档.png)
 
 ### （三）文档注释常用标签
 
@@ -265,13 +269,13 @@ class Person{
 * +号前后都是数值类型，做运算
 * +号前后有字符类型，做拼接
 
-![](D:/Notes/Java-Study-Notes/Notes/img/+.png)
+![](img/+.png)
 
 #### 字符
 
-![](D:/Notes/Java-Study-Notes/Notes/img/字符底层存储.png)
+![](img/字符底层存储.png)
 
-![](D:/Notes/Java-Study-Notes/Notes/img/编码.png)
+![](img/编码.png)
 
 
 
@@ -349,11 +353,11 @@ class Person{
 
 #### 习题1
 
-![](D:/Notes/Java-Study-Notes/Notes/img/基本数据类型练习题.png)
+![](img/基本数据类型练习题.png)
 
 #### 习题2
 
-![](D:/Notes/Java-Study-Notes/Notes/img/字符相加.png)
+![](img/字符相加.png)
 
 字符相加得到的是其字符码值相加的和
 
@@ -363,11 +367,11 @@ class Person{
 
 #### 基本数据类型转String
 
-![](D:/Notes/Java-Study-Notes/Notes/img/基本数据类型转String.png)
+![](img/基本数据类型转String.png)
 
 #### String转基本数据类型
 
-![](D:/Notes/Java-Study-Notes/Notes/img/String转基本数据类型.png)
+![](img/String转基本数据类型.png)
 
 
 
@@ -532,7 +536,7 @@ if(y = false){	// 假
 
 ### （五）运算符优先级
 
-![](D:/Notes/Java-Study-Notes/Notes/img/运算符优先级.png)
+![](img/运算符优先级.png)
 
 
 
@@ -590,7 +594,7 @@ if(y = false){	// 假
 
 **Q：**为什么`int`类型的数值在`>>32`时结果不为`0`？
 
-**A：**![](D:/Notes/Java-Study-Notes/Notes/img/shift_operator.png)
+**A：**![](img/shift_operator.png)
 
 即，左移、右移操作最多只能移31位，超过之后的值的结果取决于不同的编译器
 
@@ -634,7 +638,7 @@ i=2,j=1
 
 
 
-![](D:/Notes/Java-Study-Notes/Notes/img/label.PNG)
+![](img/label.PNG)
 
 
 
@@ -687,7 +691,7 @@ arr2[0] = 10;
 
 * 引用数据类型保存的是堆内的地址，即拷贝的是地址
 
-![](D:/Notes/Java-Study-Notes/Notes/img/拷贝.png)
+![](img/拷贝.png)
 
 
 
@@ -724,7 +728,7 @@ for(int i=0;i<arr.length;i++){
 
 #### 二维数组的内存形式
 
-![](D:/Notes/Java-Study-Notes/Notes/img/二维数组.png)
+![](img/二维数组.png)
 
  
 
@@ -751,7 +755,7 @@ for(int i=0;i<arr.length;i++){
 
 例题：
 
-![](D:/Notes/Java-Study-Notes/Notes/img/string数组.png)
+![](img/string数组.png)
 
 
 
@@ -840,7 +844,7 @@ switch(middle){
 
 #### 对象在内存中的存在形式
 
-![](D:/Notes/Java-Study-Notes/Notes/img/对象在内存中的存在形式.png)
+![](img/对象在内存中的存在形式.png)
 
 * 基本数据类型直接保存在堆中的对象中
 * 常量、字符串类型保存在方法区的常量池中，而对象中保存的是指向常量池中数据的地址
@@ -883,7 +887,7 @@ switch(middle){
 
 #### 方法的调用机制
 
-![](D:/Notes/Java-Study-Notes/Notes/img/方法的调用机制.png)
+![](img/方法的调用机制.png)
 
 
 
@@ -897,7 +901,7 @@ switch(middle){
 
 ### （二）this
 
-![](D:/Notes/Java-Study-Notes/Notes/img/this.png)
+![](img/this.png)
 
 对象中隐藏着一个`this`，它的值是当前对象的地址。
 
@@ -1007,13 +1011,13 @@ public class Main{
 
 * `private`方法不能被覆盖，因此在向上转型时无法调用
 
-  ![](D:/Notes/Java-Study-Notes/Notes/img/upcasting.png)
+  ![](img/upcasting.png)
 
 * 创建子类对象时，不管使用哪个子类构造器，都会默认调用父类的无参构造器。如果没有，则必须在子类构造器中使用`super`指定，否则编译不通过。
 
 #### 继承内存情况
 
-![](D:/Notes/Java-Study-Notes/Notes/img/继承.png)
+![](img/继承.png)
 
 类信息保存在方法区，对象中会保存有其父类的属性
 
@@ -1021,7 +1025,7 @@ public class Main{
 
 #### 对象访问属性/方法顺序
 
-![](D:/Notes/Java-Study-Notes/Notes/img/访问属性顺序.png)
+![](img/访问属性顺序.png)
 
 直接访问属性和在属性前加`this`访问的效果、查找顺序都是一致的
 
@@ -1085,7 +1089,7 @@ public class ExtendExercise {
 
 `super`和`this`都只能放在构造器的第一行，因此他们不能共存。
 
-![](D:/Notes/Java-Study-Notes/Notes/img/super&this.png)
+![](img/super&this.png)
 
 
 
@@ -1101,13 +1105,13 @@ public class ExtendExercise {
 
 **override与overload区别**
 
-![](D:/Notes/Java-Study-Notes/Notes/img/override&ooverload.png)
+![](img/override&ooverload.png)
 
 
 
 **代码复用**
 
-![](D:/Notes/Java-Study-Notes/Notes/img/override&ooverload.png)
+![](img/override&ooverload.png)
 
 
 
@@ -1353,4 +1357,25 @@ public boolean equals(Object obj){
     }
 }
 ```
+
+
+
+### （二）toString()
+
+* 默认返回【全类名@对象哈希值的十六进制】
+
+  ![](img/toString.png)
+
+* 直接输出对象时，`toString`方法会被默认调用
+
+
+
+### （三）finalize()
+
+* 对象被回收时系统自动调用
+* 注意，垃圾回收的时间由系统自己决定，即使手动调用`System.gc()`也不一定会执行
+
+
+
+
 
