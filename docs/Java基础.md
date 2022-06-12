@@ -991,6 +991,21 @@ public class Main{
 
 
 
+### （六）向下转型
+
+接上例：
+
+```java
+A a = new B();
+B b = (B)a;	// 向下转型为强制转换
+
+// 错误
+// A a = new A();
+// B b = (B)a;
+```
+
+**只有父类引用的子类对象才能向下转型，直接父类对象不能向下转型。**
+
 
 
 ---
@@ -1338,8 +1353,12 @@ class Index {
 
 ### （一）equals()
 
-* `==`用于判断基本类型的值是否相等，和引用类型的地址
-* `equals()`用于判断引用类型是否相等，`Object`的`equals()`默认用`==`判断地址是否相等，可以通过重写该方法判断内容是否相等
+`equals`和`==`区别：
+
+  | 概念 | 基本数据类型 | 引用类型
+---|---|---|---
+`==` | 比较运算符 | 可以使用 | 可以使用，比较的是地址是否相等 
+`equals()` | `Object`方法 | 不可使用 | 可以使用，默认用`==`实现，若要比较内容相等需要进行重写 
 
 
 
@@ -1349,7 +1368,7 @@ class Index {
 public boolean equals(Object obj){
     if(this == obj)
         return true;
-    if(obj instanceof [类型]){
+    if(obj instanceof [类型]){	// obj是否为[类型]或者其子类
     	// ... 具体属性比较
     }
     else{
@@ -1379,4 +1398,58 @@ public boolean equals(Object obj){
 
 ### （四）例题
 
+#### 例1：
+
 ![](img/super&this2.png)
+
+
+
+#### 例2：
+
+`Student`继承`Person`
+
+```java
+// 父类
+public class Person {
+    public void run(){
+        System.out.println("Person run()");
+    }
+
+    public void eat(){
+        System.out.println("Person eat()");
+    }
+}
+
+// 子类
+public class Student extends Person{
+    @Override
+    public void run() {
+        System.out.println("Student run()");
+    }
+
+    public void study(){
+        System.out.println("Student study()");
+    }
+}
+
+// main()所在入口
+public class Index {
+    public static void main(String[] args) {
+        
+        // p不能访问study()，因为只有运行时才能动态绑定，编译时只能看到Person类型
+        Person p = new Student();
+        p.run();    // Student
+        p.eat();    // Person
+
+        System.out.println("====================");
+
+        Student s = (Student) p;
+        s.run();    // Student
+        s.study();  // Student
+        s.eat();    // Person
+
+    }
+}
+```
+
+**由父类`Person`引用指向子类`Student`对象，在编译时无法确认其子类类型，因此只能访问到父类`Person`拥有的方法`run()`和`eat()`；而运行后存在动态绑定机制，因此执行了子类的`run()`方法。**
