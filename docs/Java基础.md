@@ -965,6 +965,8 @@ switch(middle){
 
 ### （五）向上转型
 
+向上转型：父类引用指向子类对象
+
 ```java
 class A{
     public void test(){
@@ -1114,7 +1116,7 @@ public class ExtendExercise {
 
 * 子类的方法签名必须和父类一致
 * 子类的返回值必须为父类返回值或其子类
-* 子类方法的访问权限不得小于父类访问权限
+* **子类方法不缩小父类方法的访问权限**
 
 
 
@@ -1136,11 +1138,23 @@ public class ExtendExercise {
 
 方法或对象具有多种形态。
 
+![](img/多态.png)
+
 
 
 #### 静态多态
 
-* 重载(Overload)
+* 重载(Overload)：方法签名不一样（方法签名 = 方法名 + 参数列表）
+
+```java
+public class Animal {
+    public void eat() { }
+    
+    public void eat(String name) { }
+}
+```
+
+
 
 #### 动态多态
 
@@ -1253,10 +1267,9 @@ if(animal instanceof Cat){
 
 [视频教程](https://www.bilibili.com/video/BV1fh411y7R8?p=315&spm_id_from=pageDriver)
 
-* 子类的属性无法被父类引用直接访问到，因为属性是编译时就确定好的
-* 但是，可以使用`get`方法获取属性，从而实现访问子类属性
+![](img/动态绑定机制.png)
 
-
+* 子类的属性无法被父类引用直接访问到，因为属性是编译时就确定好的。但是，可以使用`get`方法获取属性，从而实现访问子类属性的需要。
 
 **例一：**
 
@@ -1453,3 +1466,54 @@ public class Index {
 ```
 
 **由父类`Person`引用指向子类`Student`对象，在编译时无法确认其子类类型，因此只能访问到父类`Person`拥有的方法`run()`和`eat()`；而运行后存在动态绑定机制，因此执行了子类的`run()`方法。**
+
+
+
+#### 例3：
+
+继承中构造方法的执行顺序
+
+``` java
+// A类
+public class A {
+    public A() {	// 6
+        System.out.println("A类");	// 7
+    }
+}
+
+// B类
+public class B extends A {
+    public B() {
+        System.out.println("B类");
+    }
+
+    public B(String name) {	// 5
+        System.out.println(name + ",B类有参构造");	// 8
+    }
+}
+
+// C类
+public class C extends B{
+    public C() {	// 1
+        this("hello");	// 2
+        System.out.println("C类");	// 10
+    }
+
+    public C(String name) {	// 3
+        super("haha");	// 4
+        System.out.println("C类有参构造");	// 9
+    }
+}
+
+
+/*
+main方法中执行 C c = new C() ,输出为：
+
+A类
+haha,B类有参构造
+C类有参构造
+C类
+
+*/
+```
+
