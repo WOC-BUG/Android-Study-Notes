@@ -11,8 +11,9 @@ nav:
     - 简介:
       - 首页: index.md
     - Java:
-      - Head First Java: Head First Java.md
       - Java基础: Java基础.md
+      - Java进阶: Java进阶.md
+      - Head First Java: Head First Java.md
     - kotlin:
       - kotlin学习笔记: kotlin学习笔记.md
     - Android:
