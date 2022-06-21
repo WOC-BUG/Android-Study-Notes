@@ -538,5 +538,283 @@ System.out.println(summer.compareTo(autumn));	// 输出-1，是两个的序号�
 
 
 
-## 六、注解
+## 六、注解（Annotation）
 
+又称为元数据(`Metadata`)
+
+### （一）@Override
+
+用于重写父类方法
+
+```java
+@Target(ElementType.METHOD)	// 限制注解使用在哪些元素上
+@Retention(RetentionPolicy.SOURCE)	// 限制注解只保留在源文件，其他选项有:CLASS、RUNTIME
+public @interface Override {	// @interface表示是注解，不是接口
+}
+```
+
+`Target`和`Retention`是修饰注解的注解，称为元注解。
+
+
+
+### （二）@Deprecated
+
+* 表示某个元素（类、方法等）已过时，不推荐使用
+* 可以用于版本升级时的过渡
+
+```java
+@Documented	// 表示该注解应当被javadoc工具记录
+@Retention(RetentionPolicy.RUNTIME)
+@Target(value={CONSTRUCTOR, FIELD, LOCAL_VARIABLE, METHOD, PACKAGE, MODULE, PARAMETER, TYPE})
+public @interface Deprecated {
+    /**
+     * Returns the version in which the annotated element became deprecated.
+     * The version string is in the same format and namespace as the value of
+     * the {@code @since} javadoc tag. The default value is the empty
+     * string.
+     *
+     * @return the version string
+     * @since 9
+     */
+    String since() default "";
+
+    /**
+     * Indicates whether the annotated element is subject to removal in a
+     * future version. The default value is {@code false}.
+     *
+     * @return whether the element is subject to removal
+     * @since 9
+     */
+    boolean forRemoval() default false;
+}
+```
+
+
+
+### （三） @SuppressWarning
+
+抑制（不显示）编译器警告
+
+常用警告类型：
+
+1. `unchecked`未检查的警告
+2. `rawtypes`没有指定泛型的警告
+3. `unused`没有使用某个变量的警告
+4. `all`所有警告
+
+点击左侧黄色提醒，即可快速添加`SupressWarning`
+
+```java
+@Target({TYPE, FIELD, METHOD, PARAMETER, CONSTRUCTOR, LOCAL_VARIABLE, MODULE})
+@Retention(RetentionPolicy.SOURCE)
+public @interface SuppressWarnings {
+    /**
+     * The set of warnings that are to be suppressed by the compiler in the
+     * annotated element.  Duplicate names are permitted.  The second and
+     * successive occurrences of a name are ignored.  The presence of
+     * unrecognized warning names is <i>not</i> an error: Compilers must
+     * ignore any warning names they do not recognize.  They are, however,
+     * free to emit a warning if an annotation contains an unrecognized
+     * warning name.
+     *
+     * <p> The string {@code "unchecked"} is used to suppress
+     * unchecked warnings. Compiler vendors should document the
+     * additional warning names they support in conjunction with this
+     * annotation type. They are encouraged to cooperate to ensure
+     * that the same names work across multiple compilers.
+     * @return the set of warnings to be suppressed
+     */
+    String[] value();
+}
+```
+
+
+
+### （四）元注解
+
+#### 1. Retention
+
+用于指定注解可以保留的时长
+
+参数：
+
+1)` RetentionPolicy.SOURCE`：注解只保留在源文件中
+
+2) `RetentionPolicy.CLASS`：注解保留到编译后，记录在`class`文件中
+
+3) `RetentionPolicy.RUNTIME`：注解保留到运行时，程序可以通过反射获取该注解
+
+#### 2. Target
+
+指定能够修饰的程序元素：类、方法、局部变量、属性、构造器、参数、包、模块等
+
+#### 3. Documented
+
+指定当前注解能被`javadoc`提取成文档
+
+#### 4. Inherited
+
+被修饰的注解将具有继承性，若某个类的注解被`Inherited`修饰，则它的子类自动具有该注解
+
+
+
+## <font color='red'>七、异常</font>
+
+### （一） try-catch
+
+```java
+try {
+	// 可能出错的代码块
+} catch(NullPointerException e) { // 异常发生时会直接进入catch块，不执行异常后面的代码；若没有异常则不会进入
+    System.out.println(e.getMessage());
+} catch(ArithmeticException e) {
+    System.out.println(e.getMessage());
+}catch(Exception e) {	// 子类异常要写在父类异常前面
+	e.printStackTrace();
+    System.out.println(e.getMessage());
+} finally {
+    // 不管有没有发生异常，必定执行的代码
+}
+```
+
+
+
+`catch`也可以不写：
+
+```java
+try{
+    int n1 = 10;
+    int n2 = 0;
+    System.out.println(n1 / n2);
+} finally {
+    System.out.println("finally");
+}
+System.out.println("程序继续执行");
+
+/*
+输出：
+finally
+*/
+```
+
+虽然`finally`执行了，但是没有捕获异常，不会输出后面的内容。
+
+
+
+### （二） 异常分类
+
+$$ 异常\left\{ \begin{aligned} Error \\ Exception \end{aligned} \right. $$
+
+#### 1. Error
+
+`Java`虚拟机无法解决的严重错误，会导致程序崩溃：`JVM`系统内部错误、资源耗尽等。
+
+$$ Error\left\{ \begin{aligned} StackOverFlow \\ OutOfMemory \end{aligned} \right. $$
+
+#### 2. Exception
+
+其他编程错误，或偶然的外在因素导致的一般性问题：空指针访问、读取不存在的文件、网络中断等。
+
+$$ Exception \left\{ \begin{aligned} 1) 运行时异常 \\ 2) 编译时异常 \end{aligned} \right. $$
+
+
+
+$$ 1) 运行时异常\left\{ \begin{aligned} NullPointerException （空指针异常） \\ ClassCastException （类型转换异常） \\ NumberFormatException （数字格式异常） \\ ArrayIndexOutOfBoundsException （数组越界异常） \\ ArithmeticException（算术运算异常） \end{aligned} \right. $$
+
+
+
+$$ 2) 编译时异常 \left\{ \begin{aligned} FileNotFoundException （找不到文件异常） \\ ClassNotFoundException （找不到类异常） \\ IOException （文件异常） \\ SQLException （数据库异常） \\ EOFException （操作文件到文件末尾） \\ IllegalArgumentException （参数异常） \end{aligned} \right. $$
+
+
+
+### （三）异常体系图
+
+![](img/Throwable.png)
+
+
+
+## （四）throws
+
+将错误抛出给调用自己的方法，若程序员没有显示地处理异常，默认使用`throws`
+
+![](img/throws.png)
+
+
+
+
+
+### （六） 异常例题
+
+例一：
+
+```java
+try {
+    String[] arr = new String[3];	// 1
+    if (arr[1].equals("hello")) {	// 2
+        System.out.println(arr[1]);
+    } else {
+        arr[3] = "world";
+    }
+    return 1;
+} catch (ArrayIndexOutOfBoundsException e){
+    return 2;
+} catch (NullPointerException e){	// 3
+    return 3;	// 4
+} finally {	// 5
+    return 4;	// 6
+}
+
+// 返回4
+```
+
+
+
+例二：
+
+```java
+int i = 1;
+try {
+    i++;
+    String[] arr = new String[3];
+    if (arr[1].equals("hello")) {
+        System.out.println(arr[1]);
+    } else {
+        arr[3] = "world";
+    }
+    return i;
+} catch (ArrayIndexOutOfBoundsException e) {
+    return i;
+} catch (NullPointerException e) {
+    return ++i;     // 临时保存i的值：int tmp = i;
+} finally {
+    ++i;
+    System.out.println("i = " + i); // i = 4
+}
+
+// 输出i = 4，返回3
+```
+
+
+
+习题：
+
+让用户输入一个整数，如果输入的不是整数，就一直重新输入。要求用异常实现。
+
+```java
+public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    int num = 0;
+    while (true) {
+        try {
+            String str = scanner.next();
+            num = Integer.parseInt(str);
+            break;
+        } catch (NumberFormatException e) {
+            System.out.println("你输入的不是整数");
+        }
+    }
+    System.out.println("你输入的是：" + num);
+}
+```
+
+如果输入正确，则直接`break`，否则会被`catch`，继续进入循环。
