@@ -1,8 +1,6 @@
-## Android学习笔记
-
 [Android学习博客](https://codeteenager.github.io/android/android42.html)
 
-### 1. Activity携带数据跳转
+## 1. Activity携带数据跳转
 
 从`A`跳转到`B`
 
@@ -41,7 +39,7 @@ finish()
 
 
 
-### 2. 观察者模式
+## 2. 观察者模式
 
 **使用LiveData/MutableLiveData和Observer进行数据观测：**
 
@@ -77,7 +75,7 @@ finish()
 
 
 
-### 3. `navigation`
+## 3. `navigation`
 
 参考博客：`https://blog.csdn.net/mq2553299/article/details/80445952`
 
@@ -85,29 +83,76 @@ finish()
 
 
 
-### 4. 安卓四大组件
+## 4. 安卓四大组件
 
-#### 1. Activity
+### 1. Activity
 
 一个Activity是一个单独的窗口/屏幕
 
-#### 2. Service
+### 2. Service
 
 `startService()`可以由其他组件调用，该组件的生命周期结束后，`Service`依旧可以保持启动状态不受影响。用`stopService()`关闭。
 
 `BindService()`，`Service`与调用者的生命周期绑定在一起，即“不求同时生，必须同时死”。用`unBindService()`关闭。
 
-#### 3、content provider
+### 3、content provider
 
 * 需要在多个应用程序间共享数据时，才需要content provider。它将一个应用程序的指定数据集提供给其他应用程序。
 * Content Provider用于保存和获取数据，并使其对所有应用程序可见。这是不同应用程序间共享数据的唯一方式，因为android没有提供所有应用共同访问的公共存储区。
 
-#### 4. broadcast receiver
+### 4. broadcast receiver
 
 * 在AndroidManifest文件中进行配置的广播接收者（静态注册），会随系统的启动而一直处于活跃状态，只要接收到感兴趣的广播就会触发（即使程序未运行）。
 * 当发生电话呼入/数据网络可用等事件时，可通过广播接收器进行接收并做出响应。它没有用户界面。可以启动一个`activity`或`service`来响应它们收到的信息，或者用`NotificationManager`来通知用户。
 
-#### 5. android中的任务（activity栈）
+### 5. android中的任务（activity栈）
 
 * 栈顶是当前运行的`Activity`，新的在栈顶入栈，返回时出栈。
 * 栈中的`Activity`永远不会重排，只会压入或弹出。
+
+
+
+## 5. XML
+
+`Button`长宽不得低于`48dp`，否则在高分辨率的设备中会很小。
+
+（`48dp`约为`9mm`）
+
+![](img/XML_dp.png)
+
+
+
+## 6. 字号
+
+使用标准字号可以避免大小不统一：
+
+![](img/standard_text_size.png)
+
+```xml
+<TextView
+          ...
+          android:TextApperance="?android:textAppertanceLarge"
+          />
+```
+
+
+
+## 7. 图片适配屏幕
+
+`scaleType`属性：`center`与`centerCrop`
+
+当图片大小大于屏幕时，`center`不会改变图片大小，直接居中显示；`centerCrop`会按比例缩小到屏幕尺寸，并居中显示。
+
+当图片大小小于屏幕时，若`ImageView`的大小没有固定，两个参数均无效；当把`ImageView`的大小固定为超过屏幕尺寸时，`center`将居中显示，`centerCrop`将按比例放大图片，自适应到`ImageView`的大小居中显示。
+
+![](img/center1.png)
+
+![](img/centerCrop1.png)
+
+
+
+固定`ImageView`的大小后：
+
+![](img/center2.png)
+
+![](img/centerCrop2.png)
