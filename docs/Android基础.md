@@ -1,6 +1,63 @@
 [Android学习博客](https://codeteenager.github.io/android/android42.html)
 
-## 1. Activity携带数据跳转
+
+
+## 五、XML
+
+`Button`长宽不得低于`48dp`，否则在高分辨率的设备中会很小。
+
+（`48dp`约为`9mm`）
+
+![](img/XML_dp.png)
+
+
+
+## 六、规则
+
+### （一）使用统一标准字号
+
+![](img/standard_text_size.png)
+
+```xml
+<TextView
+          ...
+          android:TextApperance="?android:textAppertanceLarge"
+          />
+```
+
+
+
+### （二）控件间距
+
+`margin`和`padding`的大小建议以`8dp`为单位，以它的倍数来设置。
+
+
+
+## 七、图片适配屏幕
+
+`scaleType`属性：`center`与`centerCrop`
+
+当图片大小大于屏幕时，`center`不会改变图片大小，直接居中显示；`centerCrop`会按比例缩小到屏幕尺寸，并居中显示。
+
+当图片大小小于屏幕时，若`ImageView`的大小没有固定，两个参数均无效；当把`ImageView`的大小固定为超过屏幕尺寸时，`center`将居中显示，`centerCrop`将按比例放大图片，自适应到`ImageView`的大小居中显示。
+
+![](img/center1.png)
+
+![](img/centerCrop1.png)
+
+
+
+固定`ImageView`的大小后：
+
+![](img/center2.png)
+
+![](img/centerCrop2.png)
+
+
+
+
+
+## 一、Activity携带数据跳转
 
 从`A`跳转到`B`
 
@@ -39,7 +96,7 @@ finish()
 
 
 
-## 2. 观察者模式
+## 二、观察者模式
 
 **使用LiveData/MutableLiveData和Observer进行数据观测：**
 
@@ -75,7 +132,7 @@ finish()
 
 
 
-## 3. `navigation`
+## 三、`navigation`
 
 参考博客：`https://blog.csdn.net/mq2553299/article/details/80445952`
 
@@ -83,7 +140,7 @@ finish()
 
 
 
-## 4. 安卓四大组件
+## 四、安卓四大组件
 
 ### 1. Activity
 
@@ -110,49 +167,3 @@ finish()
 * 栈顶是当前运行的`Activity`，新的在栈顶入栈，返回时出栈。
 * 栈中的`Activity`永远不会重排，只会压入或弹出。
 
-
-
-## 5. XML
-
-`Button`长宽不得低于`48dp`，否则在高分辨率的设备中会很小。
-
-（`48dp`约为`9mm`）
-
-![](img/XML_dp.png)
-
-
-
-## 6. 字号
-
-使用标准字号可以避免大小不统一：
-
-![](img/standard_text_size.png)
-
-```xml
-<TextView
-          ...
-          android:TextApperance="?android:textAppertanceLarge"
-          />
-```
-
-
-
-## 7. 图片适配屏幕
-
-`scaleType`属性：`center`与`centerCrop`
-
-当图片大小大于屏幕时，`center`不会改变图片大小，直接居中显示；`centerCrop`会按比例缩小到屏幕尺寸，并居中显示。
-
-当图片大小小于屏幕时，若`ImageView`的大小没有固定，两个参数均无效；当把`ImageView`的大小固定为超过屏幕尺寸时，`center`将居中显示，`centerCrop`将按比例放大图片，自适应到`ImageView`的大小居中显示。
-
-![](img/center1.png)
-
-![](img/centerCrop1.png)
-
-
-
-固定`ImageView`的大小后：
-
-![](img/center2.png)
-
-![](img/centerCrop2.png)
