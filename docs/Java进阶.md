@@ -1011,3 +1011,148 @@ System.out.println(n5 == n6);	// false
 ![](img/valueof.png)
 
 $[-128,127]$范围内的数，返回的是`cache`数组中的值，因此地址一样；范围外的数是直接`new`的`Integer`对象。
+
+
+
+**例3：**
+
+``` java
+Integer n1 = 127;
+int n2 = 127;
+System.out.println(n1 == n2);	// true
+
+int n3 = 127;
+Integer n4 = 127;
+System.out.println(n3 == n4);	// true
+```
+
+主要有基本数据类型，判断的就是值是否相等。
+
+
+
+### <font color='red'>（二）String类</font>
+
+#### 1. 特点
+
+![](img/string.png)
+
+* 实现了`Serializabele`接口可以串行化，可用于网络传输；
+* 实现了`Comparable`接口可以相互比较；
+* `String name = "Kun";`中的`"Kun"`是常量，保存在常量池中，再由`name`指向；
+* `String`类中有一个属性用于存放字符串：`private final char value[]`，`value[]`是一个`final`类型，说明它的地址不可以修改。
+
+
+
+#### 2. String的内存布局
+
+* **String str = "Hello"**
+
+  `str`直接指向常量池中的地址。
+
+![](img/JVM内存_String.png)
+
+
+
+* **String str = new String("Hello")**
+
+  堆中开辟空间，`str`指向堆，对象内的`value`属性指向常量池中的地址。
+
+![](img/JVM内存_String2.png)
+
+
+
+#### 3. 例题
+
+**例1：**
+
+```java
+String a = "abc";
+String b = "abc";
+System.out.println(a.equals(b));	// true
+System.out.println(a == b);	// true
+```
+
+
+
+**例2：**
+
+```java
+String a = "hello";
+String b = new String("hello");
+
+System.out.println(a.equals(b));	// true
+System.out.println(a == b);	// false
+System.out.println(a == b.intern());	// true
+System.out.println(b == b.intern());	// false
+```
+
+`intern()`方法：返回常量池中该字符串的地址；若没有，就将其添加到池中，再返回地址。以上面的图为例，`str`的地址是`ox33`，该方法返回的是`0x99`。
+
+
+
+**例3：**
+
+```java
+String a = "hello";
+String b = "hi";
+// 产生了2个对象
+// （这里把引用指向的空间算成一个对象）
+
+String c = "Hello" + "World";
+// 产生了1个对象
+// 编译器会优化为"HelloWord"
+
+String d = "Hello";
+String e = "World";
+String f = d + e;
+// 产生了4个对象
+// 1. d 和 e 各占一个对象
+// 2. 创建了一个StringBuilder对象builder
+// 3. 该对象通过两次执行append()方法，连接字符串HelloWorld
+// 4. f = builder.toString();创建了一个String对象
+```
+
+
+
+**例4：**
+
+```java
+public class Index {
+    String str = new String("hello");
+    char[] ch = new char[]{'j', 'a', 'v', 'a'};		// 只有这种写法才能直接输出char[]
+
+    public static void main(String[] args) {
+        Index index = new Index();
+        index.change(index.str, index.ch);
+
+        System.out.print(index.str + " ");
+        System.out.println(index.ch);
+    }
+
+    public void change(String str, char[] ch) {
+        str = "java";
+        ch[0] = 'h';
+    }
+}
+// 输出：hello hava
+```
+
+
+
+**例4过程分析如下：**
+
+1. 没有执行`change()`方法前，`main`方法中的`index`引用指向堆中的对象。
+2. 对象中有`str`和`ch`两个引用，`str`指向堆中的`String`对象，`ch`指向堆中的`char[]`对象。
+3. `String`对象指向常量池中的`hello`常量，而`char[]`对象中直接保存了字符值。
+
+![](img/String例题1.png)
+
+4. 执行了`change`方法后，栈中新增栈帧，传入的`str`和`ch`引用被拷贝到方法中成为局部变量。
+5. 局部变量`str`直接指向常量池中的`java`常量，局部变量`ch`修改了堆中的字符。
+
+![](img/String例题2.png)
+
+6. 回到`main`方法后，堆中的`str`依旧指向`hello`，`ch`所指向的字符数组内容已经被改变。
+
+（注意，`final char[]`表示引用保存的地址不可修改，而不是内容）
+
