@@ -219,7 +219,7 @@ class Outer{	// 外部类
 
 
 
-### （一） 局部内部类
+### （一）局部内部类
 
 ``` java
 class OuterOther{
@@ -266,7 +266,7 @@ class Outer{
 
 
 
-### （二） 匿名内部类
+### （二）匿名内部类
 
 ``` java
 class Outer {
@@ -339,7 +339,7 @@ class Father{
 
 
 
-### （三） 成员内部类
+### （三）成员内部类
 
 ```java
 class Outer{
@@ -387,7 +387,7 @@ class Outer{
 
 
 
-### （四） 静态内部类
+### （四）静态内部类
 
 
 
@@ -591,7 +591,7 @@ public @interface Deprecated {
 
 
 
-### （三） @SuppressWarning
+### （三）@SuppressWarning
 
 抑制（不显示）编译器警告
 
@@ -660,7 +660,7 @@ public @interface SuppressWarnings {
 
 ## <font color='red'>七、异常</font>
 
-### （一） try-catch
+### （一）try-catch
 
 ```java
 try {
@@ -701,7 +701,7 @@ finally
 
 
 
-### （二） 异常分类
+### （二）异常分类
 
 $$ 异常\left\{ \begin{aligned} Error \\ Exception \end{aligned} \right. $$
 
@@ -715,7 +715,7 @@ $$ Error\left\{ \begin{aligned} StackOverFlow \\ OutOfMemory \end{aligned} \righ
 
 其他编程错误，或偶然的外在因素导致的一般性问题：空指针访问、读取不存在的文件、网络中断等。
 
-$$ Exception \left\{ \begin{aligned} 1) 运行时异常 \\ 2) 编译时异常 \end{aligned} \right. $$
+$$ Exception \left\{ \begin{aligned} 1) 运行时异常（默认throws抛给父类，直到JVM） \\ 2) 编译时异常（必须用try-catch或throws处理） \end{aligned} \right. $$
 
 
 
@@ -733,17 +733,55 @@ $$ 2) 编译时异常 \left\{ \begin{aligned} FileNotFoundException （找不到
 
 
 
-## （四）throws
+### （四）throws
 
-将错误抛出给调用自己的方法，若程序员没有显示地处理异常，默认使用`throws`
+* 将错误抛出给调用自己的方法，直到抛给`JVM`（若程序员没有显示地处理异常，默认使用`throws`）
+* `throws`可以抛出一系列异常
+* `throws`抛出的异常可以是发生异常的父类
 
 ![](img/throws.png)
 
+1. 子类重写父类方法时，抛出的异常必须是**父类异常**或**父类异常的子类**；
+2. `try-catch`和`throws`二选一，有了`try-catch`可以不必写`throws`;
+3. 注意，子类抛出的编译时异常，父类一定要处理或继续抛出，而运行异常不用，因为有默认处理机制。
+
+区别|定义|位置|后面跟的东西
+---|---|---|---
+throws|异常处理的方式|方法签名后|异常类型
+throw|生成异常对象|方法体中|异常对象
 
 
 
 
-### （六） 异常例题
+### （五）自定义异常
+
+```java
+public class Index {
+    public static void main(String[] args) {
+        int age = 150;
+        if(!(age>=0 && age <= 120)){
+            throw new AgeException("年龄需要在0到120岁之间！");
+        }
+        System.out.println("年龄正确！");
+    }
+}
+
+class AgeException extends RuntimeException {
+    AgeException(String message){
+        super(message);
+    }
+}
+```
+
+抛出效果：
+
+![](img/age_exception.png)
+
+注意，自定义异常一般都继承`RuntimeException`，如果继承编译时异常还要手动抛出，比较麻烦。
+
+
+
+### （六）异常例题
 
 例一：
 
@@ -796,6 +834,38 @@ try {
 
 
 
+例三：
+
+```java
+public static void main(String[] args) {
+    try {
+        func();
+        System.out.println("A");
+    }catch (Exception e){
+        System.out.println("C");
+    }
+    System.out.println("D");
+}
+
+public static void func(){
+    try {
+        throw new RuntimeException();
+    } finally {
+        System.out.println("B");
+    }
+}
+
+/* 输出：
+B
+C
+D
+*/
+```
+
+
+
+
+
 习题：
 
 让用户输入一个整数，如果输入的不是整数，就一直重新输入。要求用异常实现。
@@ -818,3 +888,126 @@ public static void main(String[] args) {
 ```
 
 如果输入正确，则直接`break`，否则会被`catch`，继续进入循环。
+
+
+
+
+
+
+
+
+
+## 八、常用类
+
+### （一）包装类
+
+| 基本数据类型 | 包装类    |
+| ------------ | --------- |
+| boolean      | Boolean   |
+| char         | Character |
+| byte         | Byte      |
+| short        | Short     |
+| int          | Integer   |
+| long         | Long      |
+| float        | Float     |
+| double       | Double    |
+
+
+
+**Boolean和Character类结构图：**
+
+![](img/Boolean.png)
+
+**其余包装类结构图如下：**
+
+![](img/wrapper.png)
+
+
+
+#### 1. 装箱与拆箱
+
+```java
+int n = 100;
+
+// 手动装箱
+Integer integer = new Integer(n);
+Integer integer2 = Integer.valueOf(n);
+
+// 手动拆箱
+int n2 = integer.intValue();
+
+
+// jdk5以后
+// 自动装箱
+Integer integer3 = n;	// 底层使用了Integer.valueOf(n);
+
+// 自动拆箱
+int n3 = integer;	// 底层使用了integer.intValue()
+```
+
+
+
+#### 2. 包装类与String相互转换
+
+**包装类转String：**
+
+1. `String str = n + "";`
+2. `String str = n.toSting();`
+3. `String str = String.valueOf(n);`
+
+**String转包装类：**
+
+1. `Integer n = Integer.parseInt(str);`
+
+2. `Integer n = new Integer(str);`
+
+   
+
+#### 3. 例题
+
+**例1：**
+
+```java
+// 1
+Object obj = true?new Integer(1):new Double(2.0);
+System.out.println(obj);
+// 输出 1.0
+// 因为三元运算符是一个整体，要把类型转换为范围大的
+
+// 2
+Object obj;
+if(true){
+    obj = new Integer(1);
+} else {
+    obj = new Double(2.0);
+}
+System.out.println(obj);
+// 输出 1
+```
+
+
+
+**例2：**
+
+```java
+// 1
+Integer n1 = new Integer(1);
+Integer n2 = new Integer(1);
+System.out.println(n1 == n2);	// false
+
+// 2
+Integer n3 = 1;
+Integer n4 = 1;
+System.out.println(n3 == n4);	// true
+
+// 3
+Integer n5 = 128;
+Integer n6 = 128;
+System.out.println(n5 == n6);	// false
+```
+
+查看源码可知，自动装箱调用了`valueOf()`方法：
+
+![](img/valueof.png)
+
+$[-128,127]$范围内的数，返回的是`cache`数组中的值，因此地址一样；范围外的数是直接`new`的`Integer`对象。
