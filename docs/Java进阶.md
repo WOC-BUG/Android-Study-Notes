@@ -1043,7 +1043,12 @@ System.out.println(n3 == n4);	// true
 
 
 
-#### 2. String的内存布局
+#### 2. 字符串连接的效率问题
+
+1. `String str = "Hello"+"World";`时，会直接从常量池中获取并连接；
+2. `String str = str1 + str2;`时，在`JDK8`中，会创建`StringBuilder`对象并使用append进行连接，连接结束后再通过`toStrnig()`方法返回String，因此效率极低；而`JDK9`中，直接通过`makeConcatWithConstants`方法连接字符串，对其进行了一定优化。
+
+#### 3. String的内存布局
 
 * **String str = "Hello"**
 
@@ -1061,7 +1066,7 @@ System.out.println(n3 == n4);	// true
 
 
 
-#### 3. 例题
+#### 4. 例题
 
 **例1：**
 
@@ -1155,4 +1160,82 @@ public class Index {
 6. 回到`main`方法后，堆中的`str`依旧指向`hello`，`ch`所指向的字符数组内容已经被改变。
 
 （注意，`final char[]`表示引用保存的地址不可修改，而不是内容）
+
+
+
+### （三）StringBuffer类
+
+* 父类中有一个字符数组变量`char[] value`，保存在堆中而不是常量池中；
+* `StringBuffer`类是`final`的，不能被继承；
+* 可以快速修改内容，不必每次更新地址，只有空间不够时才需要更新地址，效率高。
+
+![](img/JVM内存_StringBuffer.png)
+
+
+
+**构造器的使用方法：**
+
+```java
+StringBuffer sb1 = new StringBuffer(); 	// 默认开辟一个长度为16的char数组
+
+StringBuffer sb2 = new StringBuffer(100); 	// 开辟一个长度为[100]+16的char数组
+
+StringBuffer sb3 = new StringBuffer("hello"); 	// 开辟一个长度为[hello].length的char数组
+```
+
+
+
+**`String`和`StringBuffer`相互转换：**
+
+1. `String` 转 `StringBuffer`：
+
+```java
+String str = "hello";
+
+// 方法1
+StringBuffer sb = new StringBuffer(str); 	// 对str本身没有影响
+// 方法2
+StringBuffer sb2 = new StringBuffer();
+sb2 = sb2.append(str);
+```
+
+2. `StringBuffer` 转 `String`：
+
+```java
+StringBuffer sb = new StringBuffer("Hello World");
+
+// 方法1
+String str = sb.toString();
+// 方法2
+String str2 = new String(sb);
+```
+
+
+
+**常用方法：**
+
+```java
+StringBuffer sb = new StringBuffer("Hello World");
+// 增
+sb.append("!!!");	// Hello World!!!
+// 插
+sb.insert(2,"hi");	// Hehillo World!!!
+// 删
+sb.delete(2,5);	// Helo World!!!
+// 改 
+sb.replace(4,6,"hahaha");	// Helohahaharld!!!
+// 查
+sb.indexOf("ha");	// 4
+```
+
+
+
+**例题：**
+
+```java
+StringBuffer sb = new StringBuffer();
+sb.append(null);	// 这里要看源码！源码中把null转换成了{'n','u','l','l'}存储
+
+StringBuffer sb2 = new StringBuffer(null);	// 底层调用了super(str.length() + 16)，因此会抛出空指针异常
+```
 
