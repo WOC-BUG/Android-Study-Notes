@@ -1039,7 +1039,8 @@ System.out.println(n3 == n4);	// true
 * 实现了`Serializabele`接口可以串行化，可用于网络传输；
 * 实现了`Comparable`接口可以相互比较；
 * `String name = "Kun";`中的`"Kun"`是常量，保存在常量池中，再由`name`指向；
-* `String`类中有一个属性用于存放字符串：`private final char value[]`，`value[]`是一个`final`类型，说明它的地址不可以修改。
+* `String`类中有一个属性用于存放字符串：`private final char value[]`，`value[]`是一个`final`类型，说明它的地址不可以修改；
+* 对字符串做大量修改时，尽量不要使用`String`。
 
 
 
@@ -1165,11 +1166,21 @@ public class Index {
 
 ### （三）StringBuffer类
 
+#### 1. 特点
+
 * 父类中有一个字符数组变量`char[] value`，保存在堆中而不是常量池中；
 * `StringBuffer`类是`final`的，不能被继承；
 * 可以快速修改内容，不必每次更新地址，只有空间不够时才需要更新地址，效率高。
 
+
+
+#### 2. `StringBuffer`的内存布局
+
 ![](img/JVM内存_StringBuffer.png)
+
+
+
+#### 3. `StringBuffer`常用方法
 
 
 
@@ -1212,7 +1223,7 @@ String str2 = new String(sb);
 
 
 
-**常用方法：**
+**增删改查插：**
 
 ```java
 StringBuffer sb = new StringBuffer("Hello World");
@@ -1230,12 +1241,289 @@ sb.indexOf("ha");	// 4
 
 
 
-**例题：**
+####  4. 例题
 
 ```java
 StringBuffer sb = new StringBuffer();
 sb.append(null);	// 这里要看源码！源码中把null转换成了{'n','u','l','l'}存储
 
 StringBuffer sb2 = new StringBuffer(null);	// 底层调用了super(str.length() + 16)，因此会抛出空指针异常
+```
+
+
+
+### （四）StringBuilder类
+
+* 与`StringBuffer`类似，是可变字符序列；
+* `StringBuilder`是`final`的，不能被继承；
+* 可用的方法和`StringBuffer`一样，但是它适用于单线程，没有`synchronized`同步，因此是线程不安全的。
+
+
+
+### （五）日期类
+
+#### 1. `Date`与`SimpleDateFormat`
+
+```java
+SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy年MM月dd日 hh:mm:ss E");
+```
+
+1. 将`Date`转为固定格式的`String`
+
+   ```java
+   Date date = new Date();
+   String dateStr = simpleDateFormat.format(date);
+   ```
+
+2. 将格式化`String`转换回`Date`
+
+   ```java
+   String str = "1996年01月01日 10:20:35 星期五";
+   Date date = simpleDateFormat.parse(str);
+   ```
+
+
+
+#### 2. Calendar
+
+1. `Calendar`是抽象类
+
+2. 可以通过`getInstance()`获得实例
+
+   ```java
+   Calendar c = new Calendar.getInstance();
+   
+   // 注意，由于要和对象关联起来，因此通过get的方式获取
+   System.out.println(c.get(Calendar.YEAR));
+   System.out.println(c.get(Calendar.MonTh)+1);	// 月份默认从0开始，所以要+1
+   System.out.println(c.get(Calendar.DAY_OF_MONTH));
+   System.out.println(c.get(Calendar.HOUR));	// 默认是12进制
+   System.out.println(c.get(Calendar.HOUR_OF_DAY));	// 24进制的小时
+   System.out.println(c.get(Calendar.MINUTE));
+   System.out.println(c.get(Calendar.SECOND));
+   
+   // 便于自由组合
+   System.out.println(c.get(Calendar.YEAR) + "-" + 
+                      (c.get(Calendar.MonTh)+1) + "-" + 
+                      c.get(Calendar.DAY_OF_MONTH) + " " + 
+                      c.get(Calendar.HOUR_OF_DAY) + ":" + 
+                      c.get(Calendar.MINUTE) + ":" + 
+                      c.get(Calendar.SECOND));
+   ```
+
+   
+
+   **Date和Calendar存在的问题：**
+
+   1. 日期、时间相关的类应当是不可变的；
+   2. `Date`年份从1990年开始，月份从0开始不合理；
+   3. 格式化只对`Date`可用，`Calendar`无法使用；
+   4. 线程不安全。
+
+   
+
+#### 3. JDK8新增第三代日期
+
+```java
+// 构造
+LocalDateTime now = LocalDateTime.now();	// 可以获取年月日时分秒
+LocalDate now2 = LocalDate.now();	// 可以获取年月日
+LocalTime now3 = LocalTime.now();	// 可以获取时分秒
+
+// 方法
+System.out.println(now);
+System.out.println(now.getYear());	// 2022
+System.out.println(now.getMonth());	// JUNE
+System.out.println(now.getMonthValue());	// 6
+System.out.println(now.getDayOfMonth());	// 25
+System.out.println(now.getHour());	// 17
+System.out.println(now.getMinute());	// 6
+System.out.println(now.getSecond());	// 46
+
+
+// 格式化
+DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy年MM月dd日 HH:mm:dd");
+String dateStr = formatter.format(now);
+
+// 时间戳
+Instant nowX = Instant.now();
+Date date = Date.from(nowX);	// Instant转Date
+Instant nowY = date.toInstant();	// Date转Instant
+```
+
+
+
+
+
+### （六）例题
+
+#### 1. 例一
+
+定义一个`Book`类，包含书名、价格两个属性，使用接口对其进行排序。
+
+**接口：**
+
+```java
+public interface SortBook {
+    double sortBook(Book a, Book b);
+}
+```
+
+
+
+**Book类：**
+
+``` java
+public class Book {
+    private String bookName;
+    private double price;
+
+    public Book(String bookName, double price) {
+        this.bookName = bookName;
+        this.price = price;
+    }
+
+    public static void sortBooks(Book[] books, SortBook sb) {
+        for (int i = 0; i < books.length - 1; i++) {
+            for (int j = 0; j < books.length - i - 1; j++) {
+                if (sb.sortBook(books[j], books[j + 1]) > 0) {
+                    Book tmp = books[j];
+                    books[j] = books[j + 1];
+                    books[j + 1] = tmp;
+                }
+            }
+        }
+    }
+
+    public static void printBooks(Book[] books) {
+        for (Book book : books) {
+            System.out.println(book.getBookName() + " , " + book.getPrice());
+        }
+        System.out.println("======================");
+    }
+
+    public String getBookName() {
+        return bookName;
+    }
+    
+    public double getPrice() {
+        return price;
+    }
+}
+```
+
+
+
+**Main方法：**
+
+```java
+public class Index {
+    public static void main(String[] args) {
+        Book[] books = new Book[5];
+        books[0] = new Book("母猪的产后护理", 20.6);
+        books[1] = new Book("星火英语", 32.6);
+        books[2] = new Book("Android开发从入门到精通", 70.5);
+        books[3] = new Book("计算机网络", 56.1);
+        books[4] = new Book("深网", 34.2);
+
+        sortBooks(books, new SortBook() {
+            @Override
+            public double sortBook(Book a, Book b) {
+                return a.getPrice() - b.getPrice();
+            }
+        });
+        printBooks(books);
+
+        sortBooks(books, new SortBook() {
+            @Override
+            public double sortBook(Book a, Book b) {
+                return b.getPrice() - a.getPrice();
+            }
+        });
+        printBooks(books);
+
+        sortBooks(books, new SortBook() {
+            @Override
+            public double sortBook(Book a, Book b) {
+                return a.getBookName().length() - b.getBookName().length();
+            }
+        });
+        printBooks(books);
+    }
+}
+/*
+输出：
+
+母猪的产后护理 , 20.6
+星火英语 , 32.6
+深网 , 34.2
+计算机网络 , 56.1
+Android开发从入门到精通 , 70.5
+======================
+Android开发从入门到精通 , 70.5
+计算机网络 , 56.1
+深网 , 34.2
+星火英语 , 32.6
+母猪的产后护理 , 20.6
+======================
+深网 , 34.2
+星火英语 , 32.6
+计算机网络 , 56.1
+母猪的产后护理 , 20.6
+Android开发从入门到精通 , 70.5
+======================
+*/
+```
+
+
+
+#### 2. 例二
+
+对输入三个字以上的名字转换格式，如`Han Shun Ping`转换为`Ping,Han .S`。
+
+```java
+public class Index {
+    public static void main(String[] args) {
+        method("Han Shun Ping");
+    }
+
+    public static void method(String str) {
+        String[] splitStr = str.split(" ");
+        if (splitStr.length != 3) {
+            throw new RuntimeException("字符串格式不正确！");
+        }
+        String ans = String.format("%s,%s .%c", splitStr[2], splitStr[0], splitStr[1].charAt(0));
+        System.out.println(ans);
+    }
+}
+```
+
+
+
+
+
+**编程技巧：**
+
+1. 在进行异常处理时，【写出正确情况后直接取反】比起想一系列【不正确的情况】要更加完善和方便。
+
+2. 此外，抛出异常也是适用的方法。
+
+```java
+public class Index{
+    public static void main(String[] args) {
+        try{
+            method();
+            System.out.println("成功！");
+        } catch(Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    public static void method() {
+        if(!(条件)) {
+            throw new RuntimeException("错误信息");
+        }
+    }
+}
 ```
 
