@@ -1527,3 +1527,109 @@ public class Index{
 }
 ```
 
+
+
+
+
+
+
+## 九、集合
+
+![](img/collection.png)
+
+![](img/map.png)
+
+
+
+
+
+### （一）Collection
+
+![](img/collectionMethod.png)
+
+
+
+### （二）Iterator
+
+用于遍历集合
+
+![](img/Iterator.png)
+
+```java
+Collection<String> arr = new ArrayList<>();
+arr.add("张三");
+arr.add("李四");
+arr.add("Khun");
+
+Iterator<String> iterator = arr.iterator();
+while (iterator.hasNext()){
+    Object obj = iterator.next();
+    System.out.println(obj);
+}
+
+// 循环结束后，iterator指向最后的元素
+// 需要重置迭代器，才可再次使用
+iterator = col.iterator();
+```
+
+
+
+
+
+### （三）List
+
+* 有序、可重复；
+* 有索引，使用`list.get()`；
+
+
+
+**常用方法：**
+
+```java
+// 增
+list.add("hello");
+list.add(1,"world");
+list.addAll(list2);
+list.addAll(1,list2);
+
+// 删
+list.remove(0);
+
+// 改
+list.set(1,"hi");
+
+// 查
+list.indexOf("hello");	// 首次出现的位置
+list.lastIndexOf("hello");	// 最后出现的位置
+List list3 = list.subList(0,2);	// 返回[0,2)的元素
+```
+
+
+
+### （四）ArrayList
+
+* 底层由数组实现，`ArrayList`中维护了一个`transient Object[]`数组`elementData`（`transient`表示属性不会被系列化）；
+* 可以加入null；
+* 线程不安全，执行效率高;
+* 使用无参构造器创建`ArrayList`对象时，默认大小为$0$，首次扩容时大小扩为$10$，此后扩容时，增大为原来的$1.5$倍；
+* 如果使用指定大小的构造器创建`ArrayList`对象，初始容量为指定大小，之后扩容时，扩大为原来的$1.5$倍。
+
+**扩容关键源码：**
+
+![](img/ArrayList扩容.png)
+
+
+
+### （五）Vector
+
+* 底层也是由一个对象数组实现：`protected Objected[] elementData`；
+* `Vector`是线程同步的，方法都带有`synchronized`；
+* 扩容机制和`ArrayList`不同：使用无参构造器创建`Vector`对象时，默认大小为`10`；使用有参构造器创建`Vector`时，大小为指定大小，需要扩容时增大到原来的$2$倍；
+
+
+
+### （六）LinkedList
+
+* 底层实现了双向链表，增删效率较高，改查效率较低；
+* 添加元素可以重复，包括`null`；
+* 线程不安全

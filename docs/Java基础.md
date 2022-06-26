@@ -35,22 +35,23 @@
 
 `file -> setting -> editor -> keymap`可查看/修改
 
-| 快捷键                 | 功能                                                   |
-| ---------------------- | ------------------------------------------------------ |
-| Ctrl+Alt+L             | 格式化                                                 |
-| Ctrl+Y                 | 删除当前行                                             |
-| Alt+Enter              | 导入依赖包                                             |
-| Ctrl+D                 | 复制当前行                                             |
-| Ctrl+F                 | 查找                                                   |
-| Ctrl+R                 | 替换                                                   |
-| Alt+Insert             | 插入构造器等                                           |
-| Ctrl+H                 | 查看类结构                                             |
-| Ctrl+B或鼠标左键       | 定位类/方法/变量的定义处                               |
-| F7                     | 跳入（进入方法）                                       |
-| F8                     | 跳过（执行语句，不进入方法）                           |
-| shift+F8               | 跳出（跳出方法）                                       |
-| F9                     | 执行到下一个断点                                       |
-| 选中代码段，Ctrl+Alt+T | 添加`if-else`、`try-catch`、`while`等`Surround With`块 |
+| 快捷键                     | 功能                                                       |
+| -------------------------- | ---------------------------------------------------------- |
+| **Ctrl+Alt+L**             | **格式化**                                                 |
+| Ctrl+Y                     | 删除当前行                                                 |
+| Alt+Enter                  | 导入依赖包                                                 |
+| **Ctrl+D**                 | **复制当前行**                                             |
+| **Ctrl+F**                 | **查找**                                                   |
+| **Ctrl+R**                 | **替换**                                                   |
+| **Alt+Insert**             | **插入构造器等**                                           |
+| **Ctrl+H**                 | **查看类结构**                                             |
+| Ctrl+B或鼠标左键           | 定位类/方法/变量的定义处                                   |
+| F7                         | 跳入（进入方法）                                           |
+| F8                         | 跳过（执行语句，不进入方法）                               |
+| shift+F8                   | 跳出（跳出方法）                                           |
+| F9                         | 执行到下一个断点                                           |
+| **选中代码段，Ctrl+Alt+T** | **添加`if-else`、`try-catch`、`while`等`Surround With`块** |
+| **Ctrl+J**                 | **显示所有快捷键**                                         |
 
 
 
@@ -58,44 +59,45 @@
 
 `file -> setting -> editor -> Live templates`可查看/修改
 
-| 类、变量         | 含义                                    |
-| ---------------- | --------------------------------------- |
-| main             | public static void main(String[] args)  |
-| geti             | public static <ClassName> getInstance() |
-| psf[i/s]         | public static final [int/String]        |
-| prsf             | private static final                    |
-| lst              | args[args.length - 1]                   |
-| new Object().var | 自动创建变量名                          |
+| 类、变量             | 含义                                       |
+| -------------------- | ------------------------------------------ |
+| **main**             | **public static void main(String[] args)** |
+| geti                 | public static <ClassName> getInstance()    |
+| psf[i/s]             | public static final [int/String]           |
+| prsf                 | private static final                       |
+| lst                  | args[args.length - 1]                      |
+| **new Object().var** | **自动创建变量名**                         |
 
 
-| 输出  | 含义                                  |
-| ----- | ------------------------------------- |
-| sout  | System.out.println();                 |
-| soutv | System.out.println("args = " + args); |
-| souf  | System.out.printf("");                |
-| serr  | System.err.println();                 |
+| 输出     | 含义                                  |
+| -------- | ------------------------------------- |
+| **sout** | **System.out.println();**             |
+| soutv    | System.out.println("args = " + args); |
+| souf     | System.out.printf("");                |
+| serr     | System.err.println();                 |
 
-| 循环  | 含义                                                         |
-| ----- | ------------------------------------------------------------ |
-| fori  | for(int i=0;i<;i++)                                          |
-| iter  | for (String arg : args)                                      |
-| itar  | for (int i = 0; i < args.length; i++)                        |
-| ritar | for (int i = args.length - 1; i >= 0; i--) {                 |
-| itli  | for (int i = 0; i < list.size(); i++)                        |
-| itco  | for (Iterator iterator = collection.iterator(); iterator.hasNext(); ) |
+| 循环      | 含义                                                         |
+| --------- | ------------------------------------------------------------ |
+| **fori**  | **for(int i=0;i<;i++)**                                      |
+| **大写i** | **增强版for循环：for(Object obj: )**                         |
+| iter      | for (String arg : args)                                      |
+| itar      | for (int i = 0; i < args.length; i++)                        |
+| ritar     | for (int i = args.length - 1; i >= 0; i--) {                 |
+| itli      | for (int i = 0; i < list.size(); i++)                        |
+| itco      | for (Iterator iterator = collection.iterator(); iterator.hasNext(); ) |
 
-| 其他  | 含义                    |
-| ----- | ----------------------- |
-| ifn   | if (args == null)       |
-| inn   | if (args != null)       |
-| mn    | = Math.min(, );         |
-| mx    | = Math.max(, );         |
-| toar  | .toArray(new Object[0]) |
-| thr   | throw new               |
-| tryc  | try...catch             |
-| trycf | try...catch...finally   |
-| RL    | .readLock().lock();     |
-| WL    | .writeLock.lock();      |
+| 其他     | 含义                    |
+| -------- | ----------------------- |
+| ifn      | if (args == null)       |
+| inn      | if (args != null)       |
+| mn       | = Math.min(, );         |
+| mx       | = Math.max(, );         |
+| toar     | .toArray(new Object[0]) |
+| thr      | throw new               |
+| **tryc** | **try...catch**         |
+| trycf    | try...catch...finally   |
+| RL       | .readLock().lock();     |
+| WL       | .writeLock.lock();      |
 
 
 
