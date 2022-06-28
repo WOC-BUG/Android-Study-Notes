@@ -52,6 +52,7 @@
 | F9                         | 执行到下一个断点                                           |
 | **选中代码段，Ctrl+Alt+T** | **添加`if-else`、`try-catch`、`while`等`Surround With`块** |
 | **Ctrl+J**                 | **显示所有快捷键**                                         |
+| Ctrl+G                     | 光标快速跳跃到指定行                                       |
 
 
 

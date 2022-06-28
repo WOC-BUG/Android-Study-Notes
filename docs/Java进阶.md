@@ -1632,4 +1632,245 @@ List list3 = list.subList(0,2);	// 返回[0,2)的元素
 
 * 底层实现了双向链表，增删效率较高，改查效率较低；
 * 添加元素可以重复，包括`null`；
-* 线程不安全
+* 线程不安全。
+
+
+
+### （七）Set
+
+* 添加和取出顺序不一致，无索引（即不能用普通`for`循环遍历）；
+* 元素不可重复（包括`null`）。
+
+
+
+### （八）HashSet
+
+* 底层是`HashMap`；
+* 初始容量为$16$，临界值为$16*0.75=12$，到达临界值就以$2$倍扩容。
+
+
+
+#### 1. 构造器
+
+![](img/HashSet_Constructor.png)
+
+
+
+#### 2. 常用方法
+
+```java
+// 增
+st.add();	// 添加成功返回true，否则返回false
+
+// add的元素不可重复
+st.add("A"); // T
+st.add("A"); // F
+
+st.add(new Dog("tom"));	// T
+st.add(new Dog("tom"));	// T
+
+st.add(new String("tom"));	// T
+st.add(new String("tom"));	// F，和add的源码有关
+```
+
+
+
+#### 3. add()方法
+
+```java
+    /**
+     * Adds the specified element to this set if it is not already present.
+     * More formally, adds the specified element {@code e} to this set if
+     * this set contains no element {@code e2} such that
+     * {@code Objects.equals(e, e2)}.
+     * If this set already contains the element, the call leaves the set
+     * unchanged and returns {@code false}.
+     *
+     * @param e element to be added to this set
+     * @return {@code true} if this set did not already contain the specified
+     * element
+     */
+    public boolean add(E e) {
+        // put()返回为空表示插入成功，否则返回不为空表示已经有该值，插入失败
+        // map是键值对的形式存储的，而set是单值存储，不需要value,因此用一个静态常量PRESENT占位
+        return map.put(e, PRESENT)==null;
+    }
+```
+
+`put`中的内容详见`HashMap`添加元素原理。
+
+
+
+#### 4. 例题
+
+创建包含`name`和`age`属性的类，要求`name`和`age`都相同的对象插入`HashSet`时认为是相同元素。
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        HashSet<Person> set = new HashSet<>();
+
+        set.add(new Person("张三",23));
+        set.add(new Person("张三",23));
+
+        System.out.println("set size = "+set.size());	// 输出 set size = 1
+    }
+}
+
+class Person {
+    private String name;
+    private int age;
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // 下方代码可以由 idea 中的 alt + insert 自动生成
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return age == person.age && Objects.equals(name, person.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, age);    // name和age共同决定哈希值
+    }
+}
+```
+
+
+
+### （九）TreeSet
+
+
+
+### （十）Map
+
+
+
+### （十一）HashMap
+
+* 底层是**数组+链表+红黑树**实现的；
+
+#### 1. 添加元素
+
+
+
+**实现过程：**
+
+1. `put()`
+
+   ![](img/HashSet_add_put.png)
+
+2. `hash()`
+
+   ![](img/HashSet_add_put_hash.png)
+
+   （对`Key`进行的`hash`并不是直接返回的`hashCode`）
+
+   
+
+3. 核心代码在`putVal()`中
+
+```java
+/**
+* Implements Map.put and related methods.
+*
+* @param hash hash for key
+* @param key the key
+* @param value the value to put
+* @param onlyIfAbsent if true, don't change existing value
+* @param evict if false, the table is in creation mode.
+* @return previous value, or null if none
+*/
+final V putVal(int hash, K key, V value, boolean onlyIfAbsent, boolean evict) {
+    Node<K,V>[] tab; Node<K,V> p; int n, i;
+    if ((tab = table) == null || (n = tab.length) == 0)	// table是HashMap中的一个Node[]属性
+        n = (tab = resize()).length;	// 初始化容量为16，临界值为12（因子为0.75）
+    if ((p = tab[i = (n - 1) & hash]) == null)	// (n - 1) & hash 能使下标值不超过数组长度
+        tab[i] = newNode(hash, key, value, null);	// 创建一个新的节点放放入数组中
+    else {
+        Node<K,V> e; K k;
+        
+        // p 在前面一个 if 中指向了当前发生冲突的数组项
+        // 如果他们的hash值和key值（对象or基本数据值）都一样，就执行 e = p;
+        // 因此，对象需要相同的hash值且重写equals()方法才可进入该句, String 就是这样实现的
+        if (p.hash == hash && ((k = p.key) == key || (key != null && key.equals(k))))
+            e = p;
+        else if (p instanceof TreeNode)	// 判断是不是红黑树
+            e = ((TreeNode<K,V>)p).putTreeVal(this, tab, hash, key, value);	// 插入红黑树
+        else {	// 是链表
+            for (int binCount = 0; ; ++binCount) {
+                if ((e = p.next) == null) {	// 如果后面节点为空，就新建 Node 并插入到最后
+                    p.next = newNode(hash, key, value, null);
+                    if (binCount >= TREEIFY_THRESHOLD - 1) // 是否已经达到8个节点
+                        // 链表转红黑树
+                        // treeifyBin()中还要求表长>=64才能转
+                        // 否则，就给表扩容(oldSize << 1)，并对原来的数据重新hash更改在表中的位置
+                        treeifyBin(tab, hash);	
+                    break;
+                }
+                
+                // 和前面的比较逻辑一样，如果出现了相同的节点，就直接跳出
+                if (e.hash == hash &&
+                    ((k = e.key) == key || (key != null && key.equals(k))))
+                    break;
+                p = e;
+            }
+        }
+        if (e != null) { // 如果已经存在一样的节点e
+            V oldValue = e.value;
+            if (!onlyIfAbsent || oldValue == null)
+                e.value = value;
+            afterNodeAccess(e);
+            return oldValue;	// 返回冲突节点的值
+        }
+    }
+    ++modCount;
+    
+    // 超过临界值就扩容
+    // 并且只要加入一个Node就会size++，不管Node加在链尾还是表项中，超过门限都会扩容
+    if (++size > threshold)	
+        resize();
+    afterNodeInsertion(evict);	// 该方法在HashMap中为空，是为了让它的子类去实现它
+    return null;
+}
+```
+
+
+
+**实现原理总结：**
+
+<div>
+    <img src="img/HashMap_add.png" align="left">
+    <img src="img/HashMap_add2.png" align="right">
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### （十二）TreeMap
+
+
+
+### （十三）Table
