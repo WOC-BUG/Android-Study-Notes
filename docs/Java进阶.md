@@ -1697,11 +1697,17 @@ st.add(new String("tom"));	// F，和add的源码有关
     }
 ```
 
-`put`中的内容详见`HashMap`添加元素原理。
+**`put`中的内容详见`HashMap`添加元素原理。**
 
 
 
-#### 4. 例题
+#### 4. 总结
+
+![](img/HashMap_add.png)
+
+![](img/HashMap_add2.png)
+
+#### 5. 例题
 
 创建包含`name`和`age`属性的类，要求`name`和`age`都相同的对象插入`HashSet`时认为是相同元素。
 
@@ -1744,23 +1750,158 @@ class Person {
 
 
 
-### （九）TreeSet
+### （九）LinkedHashSet
+
+* 底层是`LinkedHashMap`，由数组+双向链表实现（虽然源码中它继承的是`HashSet`，但是构造器、成员方法等中调用的都是`LinkedHashMap`的构造器、成员方法等）；
+* 比起`HashSet`，每个节点多维护了前驱和后继两个指针，从而实现有序；
+* 元素不可重复；
+
+![](img/linkedHashMap.png)
 
 
 
-### （十）Map
+### （十）TreeSet
 
 
 
-### （十一）HashMap
+### （十一）Map
+
+* `Map`和`Collection`并列，并没有继承关系，区别是`Map`中保存的是键值对；
+* `Map`的`key`和`value`封装在`Node`结点；
+* `key`不能重复，`value`可以重复，`key`值相同的元素会直接替换；
+* `key`和`value`均可以为空；
+* 无序，指的是插入和取出的顺序不一致（每次取出的顺序是一致的）。
+
+
+
+#### 1. 常用方法
+
+```java
+map.put("key","value");
+map.remove(key);
+map.get(key);
+map.size();
+map.containsKey(key);
+map.clear();
+```
+
+
+
+#### 2. 遍历方法
+
+(1) 遍历所有`key`，在取出对应`value`
+
+```java
+HashMap<String, String> map = new HashMap<>();
+map.put("昆", "灯台御史");
+map.put("夜", "波道使");
+map.put("雷克", "长枪将");
+map.put("安德罗西", "狩猎者");
+
+// 方法 1
+Set<String> keySet = map.keySet();
+for (String key : keySet) {
+    System.out.println(key + " - " + map.get(key));
+}
+
+// 方法 2
+Iterator<String> iterator = keySet.iterator();
+while (iterator.hasNext()) {
+    String key = iterator.next();
+    System.out.println(key + " - " + map.get(key));
+}
+```
+
+
+
+(2)  遍历所有`value`
+
+```java
+// 方法 1
+Collection<String> values = map.values();
+for (String value : values) {
+    System.out.println(value);
+}
+
+// 方法 2
+Iterator<String> it = values.iterator();
+while (it.hasNext()) {
+    String value = it.next();
+    System.out.println(value);
+}
+```
+
+
+
+(3) 遍历`EntrySet`
+
+```java
+// 方法 1
+Set<Map.Entry<String, String>> entries = map.entrySet();
+for (Map.Entry<String, String> e : entries) {
+    System.out.println(e.getKey() + " - " + e.getValue());
+}
+
+// 方法 2
+Iterator<Map.Entry<String, String>> it3 = entries.iterator();
+while (it3.hasNext()) {
+    Map.Entry<String, String> entry = it3.next();
+    System.out.println(entry.getKey() + " - " + entry.getValue());
+}
+```
+
+
+
+
+
+### （十二）HashMap
 
 * 底层是**数组+链表+红黑树**实现的；
-
-#### 1. 添加元素
-
+* 没有实现`sychronized`，线程不安全。
 
 
-**实现过程：**
+
+#### 1. 源码分析
+
+**结点：**
+
+表中结点由`Node`保存（它实现了`Entry`接口），包含有键值对、hash值、链表的`next`指针。
+
+![](img/Node.png)
+
+节点保存在数组中。
+
+![](img/table.png)
+
+
+
+**遍历：**
+
+有一个`EntrySet`集合，保存了指向当前`Entry`节点的引用（`Entry`是引用类型，实际运行类型是`Node`），里面包含了指向`Entry`结点的迭代器，用于遍历。
+
+![](img/EntrySet.png)
+
+![](img/EntryIterator.png)
+
+
+
+此外，还有一个`KeySet`和`Values`容器，`KeySet`保存了指向`Entry().key`的引用，`Values`保存了指向`Entry().value`的引用。
+
+以`KeySet`为例，`Values`类似：
+
+![](img/KeySet.png)
+
+![](img/KeyIterator.png)
+
+
+
+**内部结构图：**
+
+![](img/HashMap内部结构图.png)
+
+
+
+**添加元素：**
 
 1. `put()`
 
@@ -1824,8 +1965,8 @@ final V putVal(int hash, K key, V value, boolean onlyIfAbsent, boolean evict) {
         }
         if (e != null) { // 如果已经存在一样的节点e
             V oldValue = e.value;
-            if (!onlyIfAbsent || oldValue == null)
-                e.value = value;
+            if (!onlyIfAbsent || oldValue == null)	// onlyIfAbsent传入为false
+                e.value = value;	// 替换值
             afterNodeAccess(e);
             return oldValue;	// 返回冲突节点的值
         }
@@ -1843,12 +1984,9 @@ final V putVal(int hash, K key, V value, boolean onlyIfAbsent, boolean evict) {
 
 
 
-**实现原理总结：**
+#### 2. 总结
 
-<div>
-    <img src="img/HashMap_add.png" align="left">
-    <img src="img/HashMap_add2.png" align="right">
-</div>
+![](img/HashMap_add.png)
 
 
 
@@ -1869,8 +2007,80 @@ final V putVal(int hash, K key, V value, boolean onlyIfAbsent, boolean evict) {
 
 
 
-### （十二）TreeMap
 
 
 
-### （十三）Table
+
+
+### （十三）LinkedHashMap
+
+#### 1. 源码分析
+
+**节点：**
+
+表中存放了`head`和`tail`指针来指向起始和终止节点；
+
+![](img/head&tail.png)
+
+表内结点由`Entry`保存，它继承自`HashMap`的`Node`，只是多了前驱和后继两个指针。
+
+![](img/Entry.png)
+
+
+
+**添加元素：**
+
+走的是父类的`add()`，因此最终调用的还是`HashMap`的`putVal()`方法。
+
+
+
+### （十四）TreeMap
+
+
+
+### （十五）Hashtable
+
+* 存放键值对，都不能为`null`；
+* 继承`Dictionary`，实现`Map`接口；
+* 使用方法与`HashMap`基本一致；
+* 有`synchronized`关键字，线程安全；
+* `key`值相同的元素会直接替换；
+* 默认初始化`table`大小为$11$，门限值为$0.75$；
+* 到达门限值时，以原来的大小$2$倍$+1$的方式扩容。
+
+
+
+#### 1. 扩容机制源码
+
+![](img/Hashtable_put.png)
+
+![](img/Hashtable_addEntry.png)
+
+![](img/Hashtable_rehash.png)
+
+
+
+### （十六）Properties
+
+* 继承自`Hashtable`，并实现了`map`接口；
+* 键值对的方式保存数据，无序，不能有空值，与`Hashtable`类似；
+* 若有相同的`key`值，直接替换；
+* 可以用于从`xxx.properties`配置文件中加载数据到`Properties`类对象中。
+
+**常用方法：**
+
+```java
+// 增
+properties.put(key,value);
+
+// 删
+properties.remove(key);
+
+// 改
+properties.put(相同key,value);
+
+// 查
+properties.get(key);
+properties.getProperty(key);
+```
+
