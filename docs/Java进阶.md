@@ -1762,6 +1762,44 @@ class Person {
 
 ### （十）TreeSet
 
+* 底层是`TreeMap`;
+* 设定了比较器后可以指定排序规则，否则是无序的；
+* 不可重复；
+
+
+
+**注意，能否添加进`TreeSet`取决于你设定的比较器：**
+
+```java
+TreeSet<String> set = new TreeSet<>(new Comparator<String>() {
+    @Override
+    public int compare(String o1, String o2) {
+        return o1.length() - o2.length();	// 按长度排序
+    }
+});
+set.add("Kun");
+set.add("Night");
+set.add("Rachel");
+set.add("Bob");
+
+for (String s : set) {
+    System.out.println(s);
+}
+
+/*
+输出：
+Kun
+Night
+Rachel
+*/
+```
+
+源码如下图所示。无法插入`Bob`，是因为它的长度和`Kun`一样，比较器返回$0$时`key`值不会被修改，对于`TreeSet`来说相当于直接返回了，因为它的`value`只是一个占位用的空`Object`。
+
+![](img/TreeMap_put.png)
+
+它的`add()`方法底层实际调用的是`TreeMap`的`put()`方法。完整源码详见后文`TreeMap`的`put()`方法分析。
+
 
 
 ### （十一）Map
@@ -2035,6 +2073,81 @@ final V putVal(int hash, K key, V value, boolean onlyIfAbsent, boolean evict) {
 
 
 ### （十四）TreeMap
+
+**put()源码分析**
+
+```java
+/**
+* Associates the specified value with the specified key in this map.
+* If the map previously contained a mapping for the key, the old
+* value is replaced.
+*
+* @param key key with which the specified value is to be associated
+* @param value value to be associated with the specified key
+*
+* @return the previous value associated with {@code key}, or
+*         {@code null} if there was no mapping for {@code key}.
+*         (A {@code null} return can also indicate that the map
+*         previously associated {@code null} with {@code key}.)
+* @throws ClassCastException if the specified key cannot be compared
+*         with the keys currently in the map
+* @throws NullPointerException if the specified key is null
+*         and this map uses natural ordering, or its comparator
+*         does not permit null keys
+*/
+public V put(K key, V value) {
+    Entry<K,V> t = root;
+    if (t == null) {
+        compare(key, key); // type (and possibly null) check
+
+        root = new Entry<>(key, value, null);
+        size = 1;
+        modCount++;
+        return null;
+    }
+    int cmp;
+    Entry<K,V> parent;
+    // split comparator and comparable paths
+    Comparator<? super K> cpr = comparator;
+    if (cpr != null) {
+        do {
+            parent = t;
+            cmp = cpr.compare(key, t.key);	// 传入的比较器
+            if (cmp < 0)
+                t = t.left;
+            else if (cmp > 0)
+                t = t.right;
+            else
+                return t.setValue(value);	// 比较结果相等时不会改变key值
+        } while (t != null);
+    }
+    else {
+        if (key == null)
+            throw new NullPointerException();
+        @SuppressWarnings("unchecked")
+        Comparable<? super K> k = (Comparable<? super K>) key;
+        do {
+            parent = t;
+            cmp = k.compareTo(t.key);
+            if (cmp < 0)
+                t = t.left;
+            else if (cmp > 0)
+                t = t.right;
+            else
+                return t.setValue(value);
+        } while (t != null);
+    }
+    Entry<K,V> e = new Entry<>(key, value, parent);
+    if (cmp < 0)
+        parent.left = e;
+    else
+        parent.right = e;
+    fixAfterInsertion(e);
+    size++;
+    modCount++;
+    return null;
+}
+```
 
 
 
