@@ -1614,16 +1614,70 @@ List list3 = list.subList(0,2);	// 返回[0,2)的元素
 * 使用无参构造器创建`ArrayList`对象时，默认大小为$0$，首次扩容时大小扩为$10$，此后扩容时，增大为原来的$1.5$倍；
 * 如果使用指定大小的构造器创建`ArrayList`对象，初始容量为指定大小，之后扩容时，扩大为原来的$1.5$倍。
 
-**扩容关键源码：**
+
+
+#### 1. 扩容关键源码
 
 ![](img/ArrayList扩容.png)
+
+
+
+#### 2. 常用方法
+
+```java
+List list = new ArrayList();
+
+// 排序
+Collections.reverse(list);	// 反转顺序
+Collections.shuffle(list);	// 打乱元素随机排序
+Collections.sort(list);	// 按元素的自然顺序排序
+Collections.sort(list, new Comparator(){	// 自定义排序顺序
+	@Override
+    public int compare(Object o1, Object o2){
+        return ((String)o1).length - ((String)o2).length;
+    }
+});
+
+// 交换位置为0和1的元素
+Collections.swap(list,0,1);
+
+// 求最大/最小
+Collections.max(list); // 返回自然顺序排序的最大值
+Collections.max(list, new Comparator(){	// 自定义排序顺序中的最大值
+	@Override
+    public int compare(Object o1, Object o2){
+        return ((String)o1).length - ((String)o2).length;
+    }
+});
+Collections.max(list, new Comparator(){	// 返回自定义排序顺序中的最大值
+	@Override
+    public int compare(Object o1, Object o2){
+        return ((String)o1).length - ((String)o2).length;
+    }
+});
+Collections.max(list, new Comparator(){	// 返回自定义排序顺序中的最小值，或者把max改为min效果也一样
+	@Override
+    public int compare(Object o1, Object o2){
+        return ((String)o2).length - ((String)o1).length;
+    }
+});
+
+// 返回元素出现次数
+Collections.frequency(list,"Kun");
+
+// 赋值list2中的元素到list1 (要求list1.size() ≥ list2.size())
+Collections.copy(list1,list2);
+
+// 查找Night，并全部替换为Kun
+Collection.replaceAll(list, "Night", "Kun");
+```
 
 
 
 ### （五）Vector
 
 * 底层也是由一个对象数组实现：`protected Objected[] elementData`；
-* `Vector`是线程同步的，方法都带有`synchronized`；
+* `Vector`是线程安全的，方法都带有`synchronized`；
 * 扩容机制和`ArrayList`不同：使用无参构造器创建`Vector`对象时，默认大小为`10`；使用有参构造器创建`Vector`时，大小为指定大小，需要扩容时增大到原来的$2$倍；
 
 
@@ -1678,23 +1732,23 @@ st.add(new String("tom"));	// F，和add的源码有关
 #### 3. add()方法
 
 ```java
-    /**
-     * Adds the specified element to this set if it is not already present.
-     * More formally, adds the specified element {@code e} to this set if
-     * this set contains no element {@code e2} such that
-     * {@code Objects.equals(e, e2)}.
-     * If this set already contains the element, the call leaves the set
-     * unchanged and returns {@code false}.
-     *
-     * @param e element to be added to this set
-     * @return {@code true} if this set did not already contain the specified
-     * element
-     */
-    public boolean add(E e) {
-        // put()返回为空表示插入成功，否则返回不为空表示已经有该值，插入失败
-        // map是键值对的形式存储的，而set是单值存储，不需要value,因此用一个静态常量PRESENT占位
-        return map.put(e, PRESENT)==null;
-    }
+/**
+* Adds the specified element to this set if it is not already present.
+* More formally, adds the specified element {@code e} to this set if
+* this set contains no element {@code e2} such that
+* {@code Objects.equals(e, e2)}.
+* If this set already contains the element, the call leaves the set
+* unchanged and returns {@code false}.
+*
+* @param e element to be added to this set
+* @return {@code true} if this set did not already contain the specified
+* element
+*/
+public boolean add(E e) {
+    // put()返回为空表示插入成功，否则返回不为空表示已经有该值，插入失败
+    // map是键值对的形式存储的，而set是单值存储，不需要value,因此用一个静态常量PRESENT占位
+    return map.put(e, PRESENT)==null;
+}
 ```
 
 **`put`中的内容详见`HashMap`添加元素原理。**
@@ -1708,6 +1762,8 @@ st.add(new String("tom"));	// F，和add的源码有关
 ![](img/HashMap_add2.png)
 
 #### 5. 例题
+
+**例一：**
 
 创建包含`name`和`age`属性的类，要求`name`和`age`都相同的对象插入`HashSet`时认为是相同元素。
 
@@ -1750,6 +1806,45 @@ class Person {
 
 
 
+**例二：**
+
+已经重写了`People`的`name`和`id`属性的`hashCode()`和`equals()`方法，分析下面的过程。
+
+```java
+HashSet<People> people = new HashSet<>();
+People kun = new People("Kun", 1);
+People night = new People("Night", 2);
+
+people.add(kun);	// OK
+people.add(night);	// OK
+night.setName("Rachel");	// OK
+
+// 详见后文hashMap的remove源码分析
+// 新传入的night由于hash值变了，因此定位不到原来的位置，删除失败
+people.remove(night);
+System.out.println(people);	// [{'Rachel', 2}, {'Kun', 1}]
+
+People rachel = new People("Rachel", 2);
+people.add(rachel);	// OK，同样的定位方式，新的位置为空，直接插入
+System.out.println(people);	// [{'Rachel', 2}, {'Rachel', 2}, {'Kun', 1}]
+
+
+People night2 = new People("Night",2);
+
+// OK, hash定位到night的位置
+// 但是由于night的名字已经改成了Rachel，因此认为它和night2不一样，直接插入在链尾
+people.add(night2);
+System.out.println(people);	// [{'Rachel', 2}, {'Rachel', 2}, {'Night', 2}, {'Kun', 1}]
+```
+
+**内存结构：**
+
+![](img/HashSet例题内存结构.png)
+
+
+
+
+
 ### （九）LinkedHashSet
 
 * 底层是`LinkedHashMap`，由数组+双向链表实现（虽然源码中它继承的是`HashSet`，但是构造器、成员方法等中调用的都是`LinkedHashMap`的构造器、成员方法等）；
@@ -1765,6 +1860,7 @@ class Person {
 * 底层是`TreeMap`;
 * 设定了比较器后可以指定排序规则，否则是无序的；
 * 不可重复；
+* **构造时一定要写比较器，或者传入的对象本身已经实现了比较器**（如：`String`），因为插入元素时需要对大小进行比较。如果没有自定义比较器，底层就会自动使用对象的`Compatable`接口，如果该对象没有实现比较接口就会发生类型转换异常，详见`TreeMap`源码分析。
 
 
 
@@ -1798,7 +1894,7 @@ Rachel
 
 ![](img/TreeMap_put.png)
 
-它的`add()`方法底层实际调用的是`TreeMap`的`put()`方法。完整源码详见后文`TreeMap`的`put()`方法分析。
+其实它的`add()`方法底层调用的是`TreeMap`的`put()`方法。完整源码详见后文`TreeMap`的`put()`方法分析。
 
 
 
@@ -1899,7 +1995,7 @@ while (it3.hasNext()) {
 
 
 
-#### 1. 源码分析
+#### 1. 容器内元素的数据结构
 
 **结点：**
 
@@ -1913,7 +2009,7 @@ while (it3.hasNext()) {
 
 
 
-**遍历：**
+#### 2. 遍历`HashMap`
 
 有一个`EntrySet`集合，保存了指向当前`Entry`节点的引用（`Entry`是引用类型，实际运行类型是`Node`），里面包含了指向`Entry`结点的迭代器，用于遍历。
 
@@ -1933,13 +2029,13 @@ while (it3.hasNext()) {
 
 
 
-**内部结构图：**
+#### 3. `HashMap`内部结构图
 
 ![](img/HashMap内部结构图.png)
 
 
 
-**添加元素：**
+#### 4. 添加元素源码
 
 1. `put()`
 
@@ -2022,7 +2118,71 @@ final V putVal(int hash, K key, V value, boolean onlyIfAbsent, boolean evict) {
 
 
 
-#### 2. 总结
+#### 5. 删除元素源码
+
+```java
+/**
+* Implements Map.remove and related methods.
+*
+* @param hash hash for key
+* @param key the key
+* @param value the value to match if matchValue, else ignored
+* @param matchValue if true only remove if value is equal
+* @param movable if false do not move other nodes while removing
+* @return the node, or null if none
+*/
+final Node<K,V> removeNode(int hash, Object key, Object value,
+                           boolean matchValue, boolean movable) {
+    Node<K,V>[] tab; Node<K,V> p; int n, index;
+    
+    // 同样的，查询被删除元素时，要比较hash值和equals两个方面，全部相同才能删
+    // 所以，如果插入的元素值中途被修改了，有可能删除不成功
+    if ((tab = table) != null && (n = tab.length) > 0 &&
+        (p = tab[index = (n - 1) & hash]) != null) {	// 通过传入的hash值确定元素位置
+        Node<K,V> node = null, e; K k; V v;
+        if (p.hash == hash &&
+            ((k = p.key) == key || (key != null && key.equals(k))))
+            node = p;
+        else if ((e = p.next) != null) {
+            if (p instanceof TreeNode)
+                node = ((TreeNode<K,V>)p).getTreeNode(hash, key);
+            else {
+                do {	// 遍历链表
+                    if (e.hash == hash &&
+                        ((k = e.key) == key ||
+                         (key != null && key.equals(k)))) {
+                        node = e;	// node记录当前要删的节点
+                        break;	// break的时候p指向node的上一个节点
+                    }
+                    p = e;
+                } while ((e = e.next) != null);
+            }
+        }
+        
+        // matchValue传入为false
+        if (node != null && (!matchValue || (v = node.value) == value ||
+                             (value != null && value.equals(v)))) {
+            if (node instanceof TreeNode)	// 树上的节点
+                ((TreeNode<K,V>)node).removeTreeNode(this, tab, movable);
+            else if (node == p)	// 节点在表中，也就是链首
+                tab[index] = node.next;	// 被后一个节点覆盖
+            else	// 节点在链表上
+                p.next = node.next;		// p是node的前驱节点，p.next=node.next相当于删掉了node
+            ++modCount;
+            --size;
+            afterNodeRemoval(node);	// 该方法为空，为子类留下的后续操作
+            return node;
+        }
+    }
+    return null;
+}
+```
+
+
+
+
+
+#### 6. 总结
 
 ![](img/HashMap_add.png)
 
@@ -2074,7 +2234,9 @@ final V putVal(int hash, K key, V value, boolean onlyIfAbsent, boolean evict) {
 
 ### （十四）TreeMap
 
-**put()源码分析**
+* **构造时一定要写比较器，或者传入的对象本身已经实现了比较器**（如：`String`），因为插入元素时需要对大小进行比较。如果没有自定义比较器，底层就会自动使用对象的`Compatable`接口，如果该对象没有实现比较接口就会发生类型转换异常，详见下方源码分析。
+
+#### 1. put()源码分析
 
 ```java
 /**
@@ -2098,7 +2260,7 @@ final V putVal(int hash, K key, V value, boolean onlyIfAbsent, boolean evict) {
 public V put(K key, V value) {
     Entry<K,V> t = root;
     if (t == null) {
-        compare(key, key); // type (and possibly null) check
+        compare(key, key); // compare中有判空操作，如果为空会抛异常
 
         root = new Entry<>(key, value, null);
         size = 1;
@@ -2118,14 +2280,14 @@ public V put(K key, V value) {
             else if (cmp > 0)
                 t = t.right;
             else
-                return t.setValue(value);	// 比较结果相等时不会改变key值
+                return t.setValue(value);	// 比较结果相等时不会改变key值，直接替换value值
         } while (t != null);
     }
     else {
         if (key == null)
             throw new NullPointerException();
         @SuppressWarnings("unchecked")
-        Comparable<? super K> k = (Comparable<? super K>) key;
+        Comparable<? super K> k = (Comparable<? super K>) key;	// 用key自带的比较器，所以如果key没有实现比较器接口的话，强转就会失败，报类型转换异常
         do {
             parent = t;
             cmp = k.compareTo(t.key);
@@ -2148,6 +2310,37 @@ public V put(K key, V value) {
     return null;
 }
 ```
+
+
+
+#### 2. 例题
+
+```java
+TreeMap<String, String> map = new TreeMap<>(new Comparator<String>() {
+    @Override
+    public int compare(String o1, String o2) {
+        return o1.length() - o2.length();
+    }
+});
+
+map.put("Kun", "15");
+map.put("Night", "15");
+map.put("Rachel", "14");
+map.put("Bob", "20");
+
+Set<Map.Entry<String, String>> entries = map.entrySet();
+for (Map.Entry<String, String> entry : entries) {
+    System.out.println(entry.getKey() + " - " + entry.getValue());
+}
+
+/* 输出：
+Kun - 20
+Night - 15
+Rachel - 14
+*/
+```
+
+根据源码可知，传入的比较器判断`Bub`和`Kun`长度相同，因此将`Kun`的`value`改为了`20`，而后返回。
 
 
 
@@ -2197,3 +2390,22 @@ properties.get(key);
 properties.getProperty(key);
 ```
 
+
+
+
+
+## 十、泛型
+
+### （一）泛型优点
+
+1. 直接插入集合对元素类型没有约束，向下转型时不安全；
+2. 遍历时需要一个一个向下转型，效率低。
+
+
+
+### （二）使用细节
+
+1. 泛型不能是基本数据类型；
+2. 传入的实际类型可以是泛型的子类类型；
+3. 简写：`List<String> list = new ArrayList<>();`
+4. 如果创建对象/容器时不指定泛型类型，默认为`Object`类型。
