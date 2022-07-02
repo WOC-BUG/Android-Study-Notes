@@ -2408,4 +2408,39 @@ properties.getProperty(key);
 1. 泛型不能是基本数据类型；
 2. 传入的实际类型可以是泛型的子类类型；
 3. 简写：`List<String> list = new ArrayList<>();`
-4. 如果创建对象/容器时不指定泛型类型，默认为`Object`类型。
+4. 如果创建对象/容器时不指定泛型类型，默认为`Object`类型；
+5. 不能直接初始化，因为编译时无法确定类型；
+6. `static`和泛型不共存，因为静态属性/方法在类加载时确定，而泛型在编译时确定；
+7. 实现泛型时不指定类型，默认为`Object`类型，但是不建议这么写。
+
+
+
+### （三） 使用方法
+
+```java
+// 泛型类
+class Animal<T,R>{
+    public void run(R r){	// 不是泛型方法，是使用了泛型
+        // ...
+    }
+}
+Animal<String,Integer> animal = new Animal<>();
+
+// 泛型接口
+interface USB<E,R>{
+    E charge(R r);
+}
+class Computer inmplements USB<Integer, String>{    
+}
+
+// 泛型方法
+class Person{
+    public<T,E> void eat(T t,E e){
+	}
+}
+Person p = new Person();
+p.eat("张三",100);	// 编译器自动判断类型
+```
+
+
+
