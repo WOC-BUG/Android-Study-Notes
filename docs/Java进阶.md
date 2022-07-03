@@ -2411,7 +2411,8 @@ properties.getProperty(key);
 4. 如果创建对象/容器时不指定泛型类型，默认为`Object`类型；
 5. 不能直接初始化，因为编译时无法确定类型；
 6. `static`和泛型不共存，因为静态属性/方法在类加载时确定，而泛型在编译时确定；
-7. 实现泛型时不指定类型，默认为`Object`类型，但是不建议这么写。
+7. 实现泛型时不指定类型，默认为`Object`类型，但是不建议这么写；
+8. 泛型不能继承：`List<Object> list= new ArrayList<String>();` 错误写法。
 
 
 
@@ -2439,8 +2440,352 @@ class Person{
 	}
 }
 Person p = new Person();
-p.eat("张三",100);	// 编译器自动判断类型
+p.eat("三",100);	// 编译器自动判断类型
 ```
 
 
+
+**`?`符号**
+
+```java
+public void method(List<?>){	// 可以是任意类型
+    
+}
+
+public void method(List<? extend AA>){	// 只能是AA或AA的子类
+    
+}
+
+public void method(List<? super AA>){	// 只能是AA或AA的父类
+    
+}
+```
+
+
+
+
+
+## 十一、`Java`绘图
+
+### （一）基本语法
+
+**样例：**
+
+```java
+public class MyFrame extends JFrame {
+    private MyPanel mp;
+
+    public MyFrame() {
+        mp = new MyPanel();
+        this.add(mp);
+        this.setSize(400, 300);
+        this.setVisible(true);
+        
+        // 点关闭按钮时，程序同时退出(不加这行代码，关闭绘图窗口后程序还在运行)
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+
+    public static void main(String[] args) {
+        new MyFrame();
+    }
+}
+
+class MyPanel extends JPanel {
+    @Override
+    public void paint(Graphics g) {
+        super.paint(g);
+        g.drawOval(10, 10, 100, 100);	// (10,10)是其外接矩形左上角点的位置
+    }
+}
+```
+
+
+
+**paint()方法被调用的时机：**
+
+1. 首次创建时；
+2. 窗口大小变化时；
+3. 窗口最小化后又重新打开时；
+4. `repaint()`方法被调用时。
+
+
+
+**其他图形绘制：**
+
+```java
+// 绘制图片
+Image image = Toolkit.getDefaultToolkit().getImage(MyPanel.class.getResource("/kun.png"));	// MyPanel表示从该类所在的项目根部开始查找文件
+g.drawImage(image, 150, 150, 50, 50, this);
+
+// 绘制文字
+g.setColor(Color.red);
+g.setFont(new Font("隶书", Font.BOLD, 38));
+g.drawString("Hello World", 100, 100);  // 注意，(100,100)指的是字体左下角位置
+
+```
+
+
+
+
+
+### （二）键盘事件监听
+
+```java
+public class MoveBall extends JFrame {
+
+    public MoveBall() {
+        Ball ball = new Ball(10, 10);
+        this.add(ball);
+        this.setSize(400, 300);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.addKeyListener(ball);	// 别忘了添加监听器
+        this.setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        new MoveBall();
+    }
+}
+
+class Ball extends JPanel implements KeyListener {	// 实现按键监听接口
+    int x;
+    int y;
+
+    public Ball(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    @Override
+    public void paint(Graphics g) {
+        super.paint(g);
+        g.fillOval(x, y, 50, 50);
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) { }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        System.out.println(e.getKeyCode() + "键被按下...");
+        switch (e.getKeyCode()) {
+            case KeyEvent.VK_UP:
+                System.out.println("向上");
+                y--;
+                break;
+            case KeyEvent.VK_DOWN:
+                System.out.println("向下");
+                y++;
+                break;
+            case KeyEvent.VK_LEFT:
+                System.out.println("向左");
+                x--;
+                break;
+            case KeyEvent.VK_RIGHT:
+                System.out.println("向右");
+                x++;
+                break;
+        }
+        this.repaint();
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) { }
+}
+```
+
+
+
+
+
+## 十二、线程
+
+### （一）并发与并行
+
+**并发：**同一时间段内执行多个任务，它们不断切换进行（单核或多核`CPU`执行多任务）；
+
+**并行：**同一时刻执行多个任务（多核`CPU`执行多任务）。
+
+
+
+**获取当前电脑的`CPU`数量：**
+
+```java
+Runtime runtime = Runtime.getRuntime();
+int num = runtime.availableProcessors();	// CPU数量
+```
+
+
+
+**获取线程名：**
+
+```java
+Thread.currentThread().getName();
+```
+
+
+
+**工具：**
+
+`jconsole`工具，可视化线程执行情况。
+
+可以看到，主线程即使运行结束了，若还有其他线程在运行，程序并不会结束。
+
+
+
+### (二) `run()`方法
+
+为什么不能直接调用run()方法，而实使用start()启动？
+
+因为直接调用`run()`方法，相当于启动的是`main`方法的`run()`，而不是对应子线程的。
+
+
+
+**源码：**
+
+```java
+public synchronized void start() {
+    /**
+     * This method is not invoked for the main method thread or "system"
+     * group threads created/set up by the VM. Any new functionality added
+     * to this method in the future may have to also be added to the VM.
+     *
+     * A zero status value corresponds to state "NEW".
+     */
+    if (threadStatus != 0)
+        throw new IllegalThreadStateException();
+
+    /* Notify the group that this thread is about to be started
+     * so that it can be added to the group's list of threads
+     * and the group's unstarted count can be decremented. */
+    group.add(this);
+
+    boolean started = false;
+    try {
+        start0();	// 核心代码在start0()，它是一个本地native方法，由JVM调用
+        started = true;
+    } finally {
+        try {
+            if (!started) {
+                group.threadStartFailed(this);
+            }
+        } catch (Throwable ignore) {
+            /* do nothing. If start0 threw a Throwable then
+                  it will be passed up the call stack */
+        }
+    }
+}
+```
+
+**`start0()`是实现多线程的关键，底层是`C/C++`实现的，由`JVM`调用。**
+
+
+
+
+
+### （三）线程实现的方式
+
+#### 方式一、继承`Thread`
+
+```java
+class MyThread extends Thread {
+    @Override
+    public void run() {
+        // ...
+    }
+}
+```
+
+
+
+#### 方式二、实现`Runnable`接口
+
+```java
+public class Hi {
+    public static void main(String[] args) {
+        SayHi hi = new SayHi();
+        Thread thread = new Thread(hi); // 使用了代理模式
+        thread.start();
+    }
+}
+
+class SayHi implements Runnable {
+    private int num = 0;
+
+    @Override
+    public void run() {
+        while (true) {
+            System.out.println("咪唔~ " + num++ + Thread.currentThread().getName());
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            if (num == 80)
+                break;
+        }
+    }
+}
+```
+
+
+
+### （四） 以`Runnable`为例的代理模式
+
+核心就是：代理类既实现了接口，又通过构造器传入了接口，在其方法中实际调用的是别人的方法。
+
+```java
+public class Index {
+    public static void main(String[] args) {
+        MyCat myCat = new MyCat();
+        MyThread myThread = new MyThread(myCat);
+        myThread.start();
+    }
+}
+
+/**
+ * 子线程MyCat，实现了MyRunnable接口
+ */
+class MyCat implements MyRunnable {
+
+    @Override
+    public void run() {
+        System.out.println("meo—— meo——");
+    }
+}
+
+/**
+ * 接口
+ */
+interface MyRunnable {
+    void run();
+}
+
+/**
+ * 既实现了MyRunnable接口，又通过构造器传入了MyRunnable对象
+ * 虽然使用的是MyThread的start方法，但是实际调用的是MyRunnable的run()方法
+ * （注意，实际线程的start()源码不是这样写的，这里只是便于展示代理模式）
+ */
+class MyThread implements MyRunnable {
+    private MyRunnable runnable = null;
+
+    @Override
+    public void run() {
+        if (runnable != null)
+            runnable.run();
+    }
+
+    public MyThread(MyRunnable runnable) {
+        this.runnable = runnable;
+    }
+
+    public void start(){
+        start0();
+    }
+
+    public void start0(){
+        run();
+    }
+}
+```
 
