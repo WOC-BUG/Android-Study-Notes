@@ -2392,6 +2392,43 @@ properties.getProperty(key);
 
 
 
+### （十七）容器的边遍历边删除
+
+```java
+Vector<Integer> vec = new Vector<>();
+vec.add(1);
+vec.add(2);
+vec.add(3);
+vec.add(4);
+vec.add(5);
+vec.add(6);
+
+// 错误写法：
+for(Integer num: vec){
+    if(num > 2)
+    	vec.remove(num);	// 会报错ConcurrentModificationException异常
+}
+
+// 正确写法1：
+Iterator it = vec.iterator();
+while(it.hasNext()){
+    Integer num = it.next();
+    if(num > 2)
+    	it.remove();	// 使用迭代器的remove()方法
+}
+
+// 正确写法2：
+for(int i=0;i<vec.size();i++){
+    Integer num = vec.get(i);
+    if(num > 2){
+        vec.remove(num);	// 删除后，容器后面的元素会自动前移
+        i--;	// 因此指针需要往前一位
+    }
+}
+```
+
+
+
 
 
 ## 十、泛型
@@ -2633,7 +2670,7 @@ Thread.currentThread().getName();
 
 
 
-### (二) `run()`方法
+### （二）`run()`方法
 
 为什么不能直接调用run()方法，而实使用start()启动？
 
@@ -2730,6 +2767,18 @@ class SayHi implements Runnable {
 
 
 
+**区别：**
+
+两种方法在功能上完全一样，但是**实现`Runnable`接口的方式能够复用功能，让多个线程共享资源**，并且避免了单继承的限制。
+
+
+
+**问题：**
+
+多个线程共同执行操作某个资源时，就会出现线程的同步或互斥问题，解决方法详见第十三章`sychrnized`。
+
+
+
 ### （四） 以`Runnable`为例的代理模式
 
 核心就是：代理类既实现了接口，又通过构造器传入了接口，在其方法中实际调用的是别人的方法。
@@ -2788,4 +2837,490 @@ class MyThread implements MyRunnable {
     }
 }
 ```
+
+
+
+### （五）线程终止
+
+使用一个变量`flag`控制
+
+```java
+public class Index {
+    public static void main(String[] args) throws InterruptedException {
+        ThreadA threadA = new ThreadA();
+        threadA.start();
+
+        // 等待五秒关闭线程A
+        Thread.sleep(5000);
+        threadA.setFlag(false);
+    }
+}
+
+class ThreadA extends Thread {
+    private boolean flag = true;
+    private int num = 0;
+
+    @Override
+    public void run() {
+        super.run();
+
+        while (flag) {
+            num++;
+            System.out.println(Thread.currentThread().getName() + ", num = " + num);
+
+            try {
+                Thread.sleep(50);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
+    public void setFlag(boolean flag) {
+        this.flag = flag;
+    }
+}
+
+```
+
+
+
+### （六）线程常用方法
+
+```java
+Thread.currentThread().setName() 	// 设置线程名称
+Thread.currentThread().getName() 	// 设获取线程名称
+thread.start()	// 开始执行线程
+thread.interrupt()	// 中断线程，一般用于唤醒正在休眠的线程
+Thread.sleep()	// 使当前线程休眠
+
+// Thread有3个优先级常量，值分别为1、5、10
+thread.setPriority(Thread.MIN_PRIORITY) // 更改线程优先级为1
+thread.getPriority() // 获取线程优先级
+    
+Thread.yield()	// 线程的礼让，让其他线程先行，但是不一定成功
+threa.join()	// 线程的插队
+```
+
+
+
+**join()：**
+
+```java
+public class TheadJoin {
+    public static void main(String[] args) throws InterruptedException {
+        Thread1 thread1 = new Thread1();
+        thread1.start();
+
+        for (int i = 0; i < 20; i++) {
+            Thread.sleep(500);
+            System.out.println("主线程" + Thread.currentThread().getName() + "吃了" + i + "个包子");
+            if (i == 5) {
+                System.out.println("==============主线程让子线程先吃");
+                thread1.join();	// 主线程中断，直到子线程1运行完再继续
+                System.out.println("==============主线程接着吃");
+            }
+        }
+    }
+}
+
+class Thread1 extends Thread {
+    @Override
+    public void run() {
+        super.run();
+        for (int i = 0; i < 20; i++) {
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            System.out.println("线程" + Thread.currentThread().getName() + "吃了" + i + "个包子");
+        }
+    }
+}
+```
+
+
+
+### （七）用户线程与守护线程
+
+**用户线程：**又名工作线程，当任务执行完毕或被通知的时候结束线程。
+
+**守护线程：**为工作线程服务，所有用户线程结束后，守护线程随之结束。
+
+最典型的守护线程如：垃圾回收机制。
+
+
+
+**制作守护线程：**
+
+```java
+public class Index {
+    public static void main(String[] args) throws InterruptedException {
+        DaemonThread daemonThread = new DaemonThread();
+        daemonThread.setDaemon(true);	// 设置daemonThread为守护线程
+        daemonThread.start();
+
+        for (int i = 0; i < 5; i++) {
+            System.out.println("MainThread , i = " + (i + 1));
+            Thread.sleep(500);
+        }
+    }
+}
+
+/**
+* 守护线程
+*/
+class DaemonThread extends Thread {
+    @Override
+    public void run() {
+        super.run();
+        for (int i = 0; i < 10; i++) {
+            System.out.println(Thread.currentThread().getName() + ",i=" + (i + 1));
+
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+}
+```
+
+
+
+### （八）线程状态
+
+![](img/ThreadState.png)
+
+官方文档中分为六种状态，不过`Runnable`状态又可以划分为`Ready`和`Running`状态。
+
+**查看线程状态：**
+
+```java
+public class Index {
+    public static void main(String[] args) throws InterruptedException {
+        ThreadB threadB = new ThreadB();
+        System.out.println(threadB.getState());
+        threadB.start();
+        
+        while (threadB.getState() != Thread.State.TERMINATED) {
+            System.out.println(threadB.getState());
+            Thread.sleep(500);
+        }
+        System.out.println(threadB.getState());
+    }
+}
+
+class ThreadB extends Thread {
+    private int num = 0;
+
+    @Override
+    public void run() {
+        super.run();
+
+        for (int i = 0; i < 5; i++) {
+            num++;
+            System.out.println(Thread.currentThread().getName() + ", num = " + num);
+
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
+}
+
+/** 输出：
+NEW
+RUNNABLE
+Thread-0, num = 1
+TIMED_WAITING
+Thread-0, num = 2
+TIMED_WAITING
+Thread-0, num = 3
+TIMED_WAITING
+Thread-0, num = 4
+TIMED_WAITING
+Thread-0, num = 5
+TIMED_WAITING
+TERMINATED
+*/
+```
+
+
+
+## 十三、synchronized
+
+### （一）线程同步
+
+保证数据在同一时刻最多只有一个线程访问；
+
+即，当有一个线程在对内存进行操作时，其他线程不可以对内存进行操作，直到该线程执行完毕。
+
+
+
+### （二）用法
+
+1. 为对象加锁（非静态）
+
+   ```java
+   // 同步代码块
+   synchronized(对象){
+       // ...
+   }
+   
+   // 同步方法
+   public synchronized void method(String name){
+       // ...
+   }
+   ```
+
+2. 对类加锁（静态）
+
+   ```java
+   // 同步代码块
+   synchronized(类名.class) {
+       // ...
+   }
+   
+   // 同步方法
+   public synchronized static void method(){
+       // ....
+   }
+   ```
+
+   
+
+   * 优先选择同步代码块；
+
+   * **多个线程操作的必须是同一个锁对象**，反例：
+
+     ```java
+     class MyThread extends Thread {
+         public void method(){
+             synchronized(this) {	// 错误，该类会产生多个对象，this表示的不是同一个锁
+                 // ...
+             }
+         }
+     }
+     ```
+
+     
+
+### （三）锁分类
+
+#### 1. 互斥锁
+
+* 使用`synchronized`标记同一时刻只能有一个线程访问该对象；
+* 会导致程序执行效率降低；
+* 是非公平锁。
+
+
+
+### （四）死锁
+
+**产生条件：**
+
+1. 互斥：所竞争的资源必须互斥，不能共享；
+2. 请求与保持：保持当前已有资源，还能申请新的资源；
+3. 不剥夺：已获得的资源不能被抢占；
+4. 循环等待：至少两个进程形成循环等待。
+
+
+
+**模拟死锁：**
+
+```java
+public class DeadLock {
+    public static void main(String[] args) {
+        MyDeadLock myDeadLock1 = new MyDeadLock(true);
+        MyDeadLock myDeadLock2 = new MyDeadLock(false);
+
+        myDeadLock1.start();
+        myDeadLock2.start();
+    }
+}
+
+class MyDeadLock extends Thread {
+    // 注意，资源一定要是共享的
+    private static Object o1 = new Object();
+    private static Object o2 = new Object();
+    
+    private boolean flag = true;
+
+    public MyDeadLock(boolean flag) {
+        this.flag = flag;
+    }
+
+    @Override
+    public void run() {
+        super.run();
+        if (flag) {
+            synchronized (o1) {
+                System.out.println("=============== 1");
+                synchronized (o2) {
+                    System.out.println("=============== 2");
+                }
+            }
+        } else {
+            synchronized (o2) {
+                System.out.println("=============== 3");
+                synchronized (o1) {
+                    System.out.println("=============== 4");
+                }
+            }
+        }
+    }
+}
+
+/* 输出：
+=============== 1
+=============== 3
+*/
+```
+
+
+
+
+
+### （五）释放锁
+
+**释放锁的情况：**
+
+1. 正常执行完毕同步代码块；
+2. 执行过程中遇到`break`或`return`；
+3. 出现未处理的`Error`或`Exception`；
+4. 同步代码块中执行了`wait()`方法，或其他线程执行了`join()`。
+
+
+
+**不会释放锁的情况：**
+
+1. 调用`Thread.sleep()`或`Thread.yield()`；
+2. 
+
+
+
+### （六）实例
+
+#### 1. 例一
+
+使用互斥锁解决问题，三个卖票窗口一起卖100张票。
+
+```java
+public class Tickets {
+    public static void main(String[] args) {
+        TicketThread ticketThread = new TicketThread();	// 只创建了一个对象，锁可以加在它身上
+        Thread thread1 = new Thread(ticketThread);
+        Thread thread2 = new Thread(ticketThread);
+        Thread thread3 = new Thread(ticketThread);
+
+        thread1.start();
+        thread2.start();
+        thread3.start();
+    }
+}
+
+class TicketThread implements Runnable {
+    private static int num = 100;
+
+    public synchronized boolean sale() {	// 为卖票功能加锁
+        if (num <= 0) {
+            System.out.println("卖完了...");
+            return true;
+        }
+
+        try {
+            Thread.sleep(50);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println(Thread.currentThread().getName() + ",剩余票数：" + --num);
+        return false;
+    }
+
+    @Override
+    public void run() {
+        while (true) {
+            boolean flag = sale();
+            if (flag)
+                break;
+        }
+    }
+}
+```
+
+
+
+#### 2. 例二
+
+线程`A`打印$100$以内的随机整数，直到线程`B`接收到输入字符`Q`，结束打印。
+
+```java
+public class Index {
+    public static void main(String[] args) {
+        MyThreadB myThreadB = new MyThreadB();
+        myThreadB.start();
+    }
+}
+
+class MyThreadA extends Thread {
+    private boolean flag = true;
+
+    @Override
+    public void run() {
+        super.run();
+
+        while (flag) {
+            Random random = new Random();
+            int num = random.nextInt(100);
+            System.out.println(num);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        System.out.println("======================= A Quit!");
+    }
+
+    public void setFlag(boolean flag) {
+        this.flag = flag;
+    }
+}
+
+class MyThreadB extends Thread {
+    private MyThreadA myThreadA;
+    @Override
+    public void run() {
+        super.run();
+
+        myThreadA = new MyThreadA();
+        myThreadA.start();
+        getKey();
+    }
+
+    public void getKey() {
+        while (true) {
+            Scanner scanner = new Scanner(System.in);
+            String str = scanner.next();
+            char ch = str.toUpperCase().charAt(0);
+            if (ch == 'Q') {
+                myThreadA.setFlag(false);
+                System.out.println("======================= B Quit!");
+                break;
+            }
+        }
+
+    }
+}
+```
+
+
+
+## 十四、IO流
 
