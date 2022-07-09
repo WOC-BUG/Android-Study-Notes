@@ -3324,3 +3324,480 @@ class MyThreadB extends Thread {
 
 ## 十四、IO流
 
+### （一）文件
+
+#### 1. 文件流
+
+**输入流：**从数据源到程序
+
+**输出流：**从成序到输入源
+
+
+
+#### 2. 文件操作
+
+```java
+// 创建文件
+File file1 = new File("e:/背景/text.txt");	// 创建File对象
+file1.createNewFile();	// 通过对象创建文件
+
+File file2 = new File("e:/背景/", "text.txt");
+file2.createNewFile();
+
+File dir = new File("e:/背景/");
+File file3 = new File(dir, "text.text");
+file3.createNewFile();
+
+// 操作文件
+file.getName();	// 文件名
+file.getAbsolutePath();	// 文件绝对路径
+file.getParent();	// 文件父级目录
+file.length();	// 文件大小（字节）
+file.exists();	// 文件是否存在s
+file.isFile();	// 是否为文件
+file.delete(); // 删除文件/目录，返回是否删除成功（目录只能删最后一级）
+
+// 操作目录
+file.isDirectory();	// 是否为目录
+dir.mkdir();	// 创建单级目录
+dir.mkdirs();	// 创建多级目录
+```
+
+
+
+### （二）IO流分类
+
+（抽象基类）|字节流|字符流
+---|---|---
+输入流|InputStream|Reader
+输出流|OutputStream|Writer
+
+**字节流**适用于图片、视频、音频等二进制文件，能够进行无损传输；
+
+**字符流**适用于文本传输，效率高。
+
+（传输一个字符相当于多少字节，这取决于文件的编码方式）
+
+
+
+#### 1. InputStream与OutputStream
+
+* 抽象类，是所有字节输入输出流的超类
+
+* 常用子类：
+
+  * `FileInputStream`/`FileOutputSteam`：文件输入/输出流
+  * `BufferInputStream`/`BufferOutputSteam`：缓冲字节输入/输出流
+  * `ObjectInputStream`/`ObjectOutputSteam`：对象字节输入/输出流
+
+  ![](img/InputStream.png)
+
+
+
+##### （1）FileInputStream
+
+**单个字节读取：**
+
+```java
+String file = "e:/背景/text.txt";
+InputStream inputStream = null;
+try {
+    inputStream = new FileInputStream(file);
+    int read = 0;
+    
+    // 按字节读取，返回int类型的字节码，-1表示文件结束
+    while ((read = inputStream.read()) != -1) {	
+        System.out.print((char) read);	// 转成char显示
+    }
+} catch (Exception e) {
+    e.printStackTrace();
+} finally {
+    try {
+        inputStream.close();	// 关闭输入流，需要try-catc包裹
+    } catch (IOException e) {
+        throw new RuntimeException(e);
+    }
+}
+```
+
+
+
+**一次性读取多个字节：**
+
+```java
+String path = "e:/背景/text.txt";
+FileInputStream fileInputStream = null;
+try {
+    fileInputStream = new FileInputStream(path);
+    byte[] buf = new byte[8];
+    int len = 0;
+    
+    // 传入byte数组，返回读取到的长度，返回-1表示文件结束
+    while ((len = fileInputStream.read(buf)) != -1) {
+        // 使用byte数组转String，注意要传入长度，文件末的内容可能不足8个
+        System.out.print(new String(buf, 0, len));
+    }
+} catch (Exception e) {
+    e.printStackTrace();
+} finally {
+    try {
+        fileInputStream.close();	// 关闭文件输入流
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+```
+
+
+
+##### （2）FileOutputStream
+
+**单个字节写入：**
+
+```java
+String path = "e:/背景/output.txt";
+FileOutputStream fileOutputStream = null;
+
+try {
+    // 以覆盖的方式写入文件
+    fileOutputStream = new FileOutputStream(path);
+    String words = "Hello,FileOutputStream!";
+    for (int i = 0; i < words.length(); i++) {
+        fileOutputStream.write(words.charAt(i));
+    }
+
+} catch (Exception e) {
+    e.printStackTrace();
+} finally {
+    try {
+        fileOutputStream.close();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+```
+
+**多个字节写入：**
+
+```java
+String path = "e:/背景/output.txt";
+FileOutputStream fileOutputStream = null;
+
+try {
+    // true表示以追加的方式写入文件
+    fileOutputStream = new FileOutputStream(path, true);
+    String words = "Hello,FileOutputStream!\n";
+    fileOutputStream.write(words.getBytes());	// String转为字节码写入
+    fileOutputStream.write(words.getBytes(), 0, 5);	//写入前5个字节
+} catch (Exception e) {
+    e.printStackTrace();
+} finally {
+    try {
+        fileOutputStream.close();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+```
+
+
+
+##### （3）文件复制
+
+```java
+String srcPath = "e:/背景/text.txt";
+String decPath = "e:/背景/text2.txt";
+FileInputStream fileInputStream = null;
+FileOutputStream fileOutputStream = null;
+
+try {
+    fileInputStream = new FileInputStream(srcPath);
+    fileOutputStream = new FileOutputStream(decPath);
+
+    byte[] buf = new byte[1024];
+    int len = 0;
+    while ((len = fileInputStream.read(buf)) != -1) {
+        fileOutputStream.write(buf, 0, len);
+    }
+} catch (Exception e) {
+    e.printStackTrace();
+} finally {
+    try {
+        fileInputStream.close();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+    try {
+        fileOutputStream.close();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+```
+
+
+
+#### 2. Reader与Writer
+
+* 抽象类，是所有字符输入输出流的超类
+
+* 常用子类：
+
+  * `FileReader`/`FileWriter`：文件输入/输出流
+  * `BufferReader`/`BufferWriter`：缓冲字符输入/输出流
+  * `StringReader`/`StringWriter`：字符串输入/输出流
+
+##### （1）FileReader
+
+**单个字符读入：**
+
+```java
+String path = "e:/背景/text.txt";
+FileReader fileReader = null;
+
+try {
+    fileReader = new FileReader(path);
+    int read = 0;
+    while ((read = fileReader.read()) != -1) {
+        System.out.print((char) read);
+    }
+} catch (Exception e) {
+    e.printStackTrace();
+} finally {
+    try {
+        fileReader.close();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+```
+
+**多个字符读入：**
+
+```java
+String path = "e:/背景/text.txt";
+FileReader fileReader = null;
+
+try {
+    fileReader = new FileReader(path);
+    char[] ch = new char[8];	// 使用char数组接收
+    int len = 0;
+    while ((len = fileReader.read(ch)) != -1) {
+        // 文件末尾不一定长度为8，因此一定要按照读取的长度len输出为String
+        System.out.print(new String(ch, 0, len));
+    }
+} catch (Exception e) {
+    e.printStackTrace();
+} finally {
+    try {
+        fileReader.close();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+```
+
+
+
+##### （2）FileWriter
+
+**单个字节写入：**
+
+```java
+String path = "e:/背景/output.txt";
+FileWriter fileWriter = null;
+
+try {
+    fileWriter = new FileWriter(path, true);
+    String str = "\nHello,FileWriter";
+    for (int i = 0; i < str.length(); i++) {
+        fileWriter.write(str.charAt(i));
+    }
+} catch (IOException e) {
+    e.printStackTrace();
+} finally {
+    try {
+        fileWriter.close();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+```
+
+
+
+**多个字节写入：**
+
+```java
+String path = "e:/背景/output.txt";
+FileWriter fileWriter = null;
+
+try {
+    fileWriter = new FileWriter(path, true);
+    String str = "\nHello,FileWriter";
+    fileWriter.write(str);
+    fileWriter.write(str, 0, 6);
+} catch (IOException e) {
+    e.printStackTrace();
+} finally {
+    try {
+        fileWriter.close();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+```
+
+
+
+**Writer的write()底层是由OutputStream实现的：**
+
+![](img/FileWriter_write.png)
+
+
+
+##### （3）文件复制
+
+```java
+String srcPath = "e:/背景/text.txt";
+String decPath = "e:/背景/text2.txt";
+FileWriter fileWriter = null;
+FileReader fileReader = null;
+
+try {
+    fileReader = new FileReader(srcPath);
+    fileWriter = new FileWriter(decPath);
+
+    char[] ch = new char[1024];
+    int len = 0;
+    while ((len = fileReader.read(ch)) != -1) {
+        fileWriter.write(ch, 0, len);
+    }
+} catch (Exception e) {
+    e.printStackTrace();
+} finally {
+    try {
+        fileReader.close();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+    try {
+        fileWriter.close();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+```
+
+
+
+### （三）节点流和处理流
+
+**节点流：**从特定数据源读写数据，是底层流；
+
+**处理流（包装流）：**通过装饰器模式对节点流进行了包装，并对其功能进行了扩展；它可以消除不同节点流之间的差异，不会与数据源直接相连。
+
+![](img/节点流和包装流.png)
+
+
+
+**包装流的装饰器模式：**
+
+`BufferedReader`继承自`Reader`，同时它又封装了一个`Reader`对象，对`Reader`的功能进行了扩展。`BufferedWriter`、`BufferedInputStream`、`BufferedOutputStream`的结构同理。
+
+```java
+public class BufferedReader extends Reader{
+    private Reader in;
+    // ...
+}
+
+public class BufferedWriter extends Writer{
+    private Writer out;
+    // ...
+}
+```
+
+装饰器模式的类图和代理模式一样，区别在于代理模式是让别的类代为执行自己的功能，而装饰器模式是对原有功能进行了扩展。
+
+
+
+#### 1. BufferedReader与BufferedWriter
+
+##### （1）BufferedReader
+
+```java
+String path = "e:/背景/text.txt";
+BufferedReader reader = new BufferedReader(new FileReader(path));
+String line = "";
+while ((line = reader.readLine()) != null) {    // 按行读取效率高
+    System.out.println(line);
+}
+reader.close(); // 底层实现了对Reader对象的close
+```
+
+
+
+##### （2）BufferedWriter
+
+```java
+String path = "e:/背景/output.txt";
+BufferedWriter writer = new BufferedWriter(new FileWriter(path, true));
+String str = "Hello, BufferedWriter!";
+writer.write(str);
+writer.newLine();   // 换行
+writer.write(str, 0, 6);
+writer.flush();
+writer.close();
+```
+
+
+
+##### （3）文件复制
+
+```java
+String srcPath = "e:/背景/text.txt";
+String decPath = "e:/背景/text2.txt";
+
+BufferedReader reader = new BufferedReader(new FileReader(srcPath));
+BufferedWriter writer = new BufferedWriter(new FileWriter(decPath));
+
+String line = "";
+while ((line = reader.readLine()) != null) {
+    writer.write(line);
+    writer.newLine();
+}
+
+reader.close();
+writer.close();
+```
+
+
+
+#### 2. ObjectInputStream与ObjectOutputStream
+
+用于将对象保存到文件中，包括对象的数据与类型。
+
+**序列化：**保存数据的值和类型，可用接口：`Serializable`和`Externalization`。
+
+**反序列化：**恢复数据的值和类型。
+
+##### （1）ObjectInputStream
+
+```java
+String path = "e:/背景/object.txt";
+ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream(path));
+output.writeObject(new Person("昆",15,"灯台御史"));
+output.flush();
+output.close();
+```
+
+##### （2）ObjectInputStream
+
+```java
+String path = "e:/背景/object.txt";
+ObjectInputStream input = new ObjectInputStream(new FileInputStream(path));
+Person person = (Person) input.readObject();
+System.out.println(person);
+input.close();
+```
+
