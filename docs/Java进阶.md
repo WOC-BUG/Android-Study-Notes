@@ -2390,6 +2390,8 @@ properties.get(key);
 properties.getProperty(key);
 ```
 
+用法详见 第十四章 IO流 -（三）节点流和处理流 - 6. Properties
+
 
 
 ### （十七）容器的边遍历边删除
@@ -3781,12 +3783,54 @@ writer.close();
 
 **反序列化：**恢复数据的值和类型。
 
+
+
+```java
+// 实现了Serializable的类
+public class Person implements Serializable {
+    private String name = "Kun";
+    private int age = 15;
+    private String job = "灯台御史";    // 类中的对象也必须被序列化
+    public static String nation; // static不会被序列化
+    private transient String color; // transient不会被序列化
+
+    // 序列化版本号，修改类的内容后不会认为是一个新类，而是原来类的升级版
+    private static final long serialVersionUID = 1L;
+
+    public Person(String name, int age, String job, String color) {
+        this.name = name;
+        this.age = age;
+        this.job = job;
+        this.color = color;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", job='" + job + '\'' +
+                ", nation'" + nation + '\'' +
+                ", color='" + color + '\'' +
+                '}';
+    }
+}
+```
+
+
+
 ##### （1）ObjectInputStream
 
 ```java
 String path = "e:/背景/object.txt";
 ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream(path));
-output.writeObject(new Person("昆",15,"灯台御史"));
+output.writeUTF("信息：");
+Person.nation = "韩国";
+output.writeObject(new Person("昆", 15, "灯台御史", "blue"));
 output.flush();
 output.close();
 ```
@@ -3796,8 +3840,319 @@ output.close();
 ```java
 String path = "e:/背景/object.txt";
 ObjectInputStream input = new ObjectInputStream(new FileInputStream(path));
-Person person = (Person) input.readObject();
+String msg = input.readUTF();
+Object person = input.readObject();
 System.out.println(person);
 input.close();
+
+/* 输出：
+Person{name='昆', age=15, job='灯台御史', nation'null', color='null'}
+*/
+```
+
+注意，**反序列化的顺序**一定要和**序列化的顺序**保持一致。
+
+
+
+##### （3）细节说明
+
+1. 读写顺序要一致；
+2. 被序列化或反序列化的对象要实现`Serializable`接口；
+3. 序列化类中添加`SerialVersionUUID`能提高版本兼容性；
+4. `static`和`transient`成员是不会被序列化的；
+5. 序列化类中的属性都要实现序列化接口；
+6. 序列化有可继承性。
+
+
+
+#### 3. 标准输入输出流Input与Output
+
+ | 编译类型 | 运行类型 | 代表
+---|---|---|---
+**System.in**|`InputStream`类型|`BufferedInputStream`类型|键盘输入
+**System.out**|`PrintStream`类型|`PrintStream`类型|显示器输出
+
+
+
+#### 4. 转换流InputStreamReader与OutputStreamWriter
+
+**InputStreamReader：**`Reader`的子类，可以将`InputStream`包装成`Reader`，即字节流转字符流。
+
+![](img/InputStreamReader.png)
+
+**OutputStreamWriter：**`Writer`的子类，可以将`OutputStream`包装成`Writer`，即字节流转字符流。
+
+![](img/OutputStreamReader.png)
+
+它们均可以指定编码格式（如：`utf-8`、`gbk`、`gb2312`、`ISO8895-1`），适用于处理不同编码的纯文本数据。
+
+
+
+##### （1）InputStreamReader
+
+```java
+String path = "e:/背景/test_utf_8.txt";
+InputStreamReader isReader = new InputStreamReader(new FileInputStream(path), "utf-8");
+BufferedReader reader = new BufferedReader(isReader);
+String line = "";
+while ((line = reader.readLine()) != null) {
+    System.out.println(line);
+}
+reader.close();
+```
+
+
+
+##### （2）OutputStreamWriter
+
+```java
+String path = "e:/背景/test_utf_8.txt";
+OutputStreamWriter osWriter = new OutputStreamWriter(new FileOutputStream(path), "utf-8");
+BufferedWriter writer = new BufferedWriter(osWriter);
+String msg = "Hello, 转换流!";
+writer.write(msg);
+// writer.flush();
+writer.close();
+```
+
+
+
+#### 5. 打印流PrintStream与PrintWriter
+
+打印流只有输出流，没有输入流。
+
+##### （1）PrintStream
+
+```java
+PrintStream out = System.out;
+out.print("Hello，world!");
+out.write("呜呜".getBytes());	// print的底层是write实现的，所以可以直接使用write
+out.close();
+```
+
+设置输出位置：
+
+```java
+System.setOut(new PrintStream("e:/背景/out.txt"));
+System.out.println("Hello,PrintStream!");
+```
+
+
+
+##### （2）PrintWriter
+
+```java
+PrintWriter printWriter = new PrintWriter(System.out);
+printWriter.write("Hello,PrintWriter!");
+printWriter.close();
+```
+
+改变输出位置：
+
+```java
+PrintWriter printWriter = new PrintWriter(new FileWriter("e:/背景/out.txt"));
+printWriter.write("Hello,PrintWriter!");
+printWriter.close();
+```
+
+
+
+#### 6. Properties
+
+```java
+BufferedReader reader = new BufferedReader(new FileReader("e:/背景/mysql.properties"));
+String line = "";
+while ((line = reader.readLine()) != null) {
+    String[] split = line.split("=");	// 按=划分
+    System.out.println(split[0] + "的值是：" + split[1]);
+}
+reader.close();
+```
+
+
+
+**其他常用方法：**
+
+```java
+load
+list
+getProperty
+setProperty
+store
+```
+
+
+
+**例一：**
+
+读取`properties`
+
+```java
+Properties properties = new Properties();
+properties.load(new FileReader("e:/背景/mysql.properties"));
+properties.list(System.out);
+
+System.out.println("======================");
+System.out.println("姓名：" + properties.getProperty("name"));
+System.out.println("年龄：" + properties.getProperty("age"));
+
+/*
+输出：
+-- listing properties --
+nation=Korea
+name=kun
+job=灯台使
+age=15
+======================
+姓名：kun
+年龄：15
+*/
+```
+
+
+
+**例二：**
+
+修改/添加新键值对
+
+```java
+Properties properties = new Properties();
+
+// key不存在则创建新属性，否则修改
+properties.setProperty("name", "飒弥亚·伊沐洛·巴瑟兰");
+properties.setProperty("age", "17");
+properties.setProperty("袍级", "黑袍");
+
+properties.store(new FileOutputStream("e:/背景/mysql2.properties"), "comment messages");
+```
+
+
+
+
+
+### （四）习题
+
+#### 1. 例一
+
+1. 创建目录`mytemp`
+2. 目录`mytemp`下创建文件`hello.txt`
+3. 文件`hello.txt`中写入`Hello,world!`
+
+```java
+String path = "e:/背景/mytemp/";
+File dir = new File(path);
+if (dir.exists()) {
+    System.out.println("mytemp文件夹已存在");
+} else {
+    if (dir.mkdir()) {
+        System.out.println("目录创建成功");
+    } else {
+        throw new RuntimeException("目录创建失败");
+    }
+}
+
+String filePath = path + "hello.txt";
+File file = new File(filePath);
+if (file.exists()) {
+    System.out.println("文件已存在");
+} else {
+    if (file.createNewFile()) {
+        System.out.println("文件创建成功");
+    } else {
+        throw new RuntimeException("文件创建失败");
+    }
+}
+
+FileWriter fileWriter = new FileWriter(filePath);
+String str = "Hello,world!";
+fileWriter.write(str);
+fileWriter.close();
+```
+
+
+
+#### 2. 例二
+
+读取文件，并在每一行前加上编号
+
+```java
+public class Index {
+    public static void main(String[] args) throws Exception {
+        String path = "e:/背景/test.txt";
+        String srcPath = "e:/背景/test2.txt";
+        BufferedReader reader = new BufferedReader(new FileReader(path));
+        BufferedWriter writer = new BufferedWriter(new FileWriter(srcPath));
+        String line = "";
+        int i = 1;
+        while ((line = reader.readLine()) != null) {
+            System.out.println(i + " " + line);
+            writer.write(i + " " + line);
+            writer.newLine();
+            ++i;
+        }
+        reader.close();
+        writer.close();
+    }
+}
+```
+
+
+
+#### 3. 例三
+
+1. `dog.properties`中创建名字、年龄、颜色三个属性
+2. 使用`Properties`读取，并打印；
+3. 将读取到的内容保存到`Dog`对象中，并序列化保存；
+4. 反序列化输出保存的内容。
+
+```java
+public class Index {
+    public static void main(String[] args) throws Exception {
+        String scrPath = "e:/背景/dog.properties";
+        Properties properties = new Properties();
+        properties.load(new FileReader(scrPath));
+
+        String name = properties.getProperty("name");
+        int age = Integer.parseInt(properties.getProperty("age"));
+        String color = properties.getProperty("color");
+
+        Dog dog = new Dog(name, age, color);
+        System.out.println(dog);
+
+        // 序列化保存
+        String decPath = "e:/背景/dog.dat";
+        ObjectOutputStream ooStream = new ObjectOutputStream(new FileOutputStream(decPath));
+        ooStream.writeObject(dog);
+        ooStream.close();
+
+        // 反序列化输出
+        ObjectInputStream oiStream = new ObjectInputStream(new FileInputStream(decPath));
+        Object dog2 = oiStream.readObject();
+        System.out.println(dog2);
+        oiStream.close();
+
+    }
+}
+
+class Dog implements Serializable {
+    private String name;
+    private int age;
+    private String color;
+
+    public Dog(String name, int age, String color) {
+        this.name = name;
+        this.age = age;
+        this.color = color;
+    }
+
+    @Override
+    public String toString() {
+        return "Dog{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", color='" + color + '\'' +
+                '}';
+    }
+}
 ```
 
