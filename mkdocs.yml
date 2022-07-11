@@ -13,6 +13,7 @@ nav:
     - Java:
       - Java基础: Java基础.md
       - Java进阶: Java进阶.md
+      - Java高级: Java高级.md
       - Head First Java: Head First Java.md
     - kotlin:
       - kotlin学习笔记: kotlin学习笔记.md
