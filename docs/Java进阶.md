@@ -3328,6 +3328,13 @@ class MyThreadB extends Thread {
 
 ### （一）文件
 
+```java
+// 获取当前类所在的绝对路径
+String path = <类名>.class.getResource("/").getPath();
+```
+
+
+
 #### 1. 文件流
 
 **输入流：**从数据源到程序
