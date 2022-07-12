@@ -158,7 +158,7 @@
 
   例：
 
-  <img src="img/javadoc.png" style="zoom:80%;" />
+  ![](img/javadoc.png)
 
   
 
