@@ -1539,7 +1539,7 @@ public class Index{
 
 ![](img/map.png)
 
-
+（`ConcurrentHashMap` 能够处理并发问题，是线程同步的，没有线程安全问题）
 
 
 
@@ -1993,7 +1993,7 @@ while (it3.hasNext()) {
 * 底层是**数组+链表+红黑树**实现的；
 * 没有实现`sychronized`，线程不安全。
 
-
+（`ConcurrentHashMap`能够处理并发问题，是线程同步的，没有线程安全问题）
 
 #### 1. 容器内元素的数据结构
 
