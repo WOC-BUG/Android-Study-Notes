@@ -540,6 +540,6 @@ public class Server {
 
 ## 二、项目
 
-[Java控制台即时通讯系统](https://github.com/WOCBUG/Java-console-instant-messaging)
+[Java控制台即时通讯系统](https://github.com/WOC-BUG/Java-console-instant-messaging)
 
 （注意，不同项目共用类进行网络传输时，该类所在的包名必须完全一致。因为序列化的对象会加上包名信息，直接使用会认为两者是不同的类。）
