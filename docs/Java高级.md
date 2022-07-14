@@ -543,3 +543,105 @@ public class Server {
 [Java控制台即时通讯系统](https://github.com/WOC-BUG/Java-console-instant-messaging)
 
 （注意，不同项目共用类进行网络传输时，该类所在的包名必须完全一致。因为序列化的对象会加上包名信息，直接使用会认为两者是不同的类。）
+
+
+
+## 三、反射
+
+### （一）程序的三个阶段
+
+![](img/编译、类加载、运行三阶段.png)
+
+
+
+### （二）基础语法
+
+```java
+// 通过全名获取类对象
+Class cls = Class.forName("com.cuc.rg.reflection.Cat");
+
+// 创建对象
+Object o = cls.newInstance();
+System.out.println("o的运行类型" + o.getClass());
+
+// 调用方法
+Method method = cls.getMethod("play");
+method.invoke(o);
+
+// 获取共有属性
+Field age = cls.getField("age");
+System.out.println(age.get(o));
+
+// 无参构造器
+Constructor constructor = cls.getConstructor();
+System.out.println(constructor);
+
+// 有参构造器
+Constructor constructor1 = cls.getConstructor(String.class);
+System.out.println(constructor1);
+```
+
+
+
+### （三）反射性能
+
+#### 1. 对比
+
+```java
+public class Index {
+    public static void main(String[] args) {
+        m1();
+        m2();
+    }
+
+    // 普通调用方法
+    public static void m1() {
+        Cat cat = new Cat();
+        long start = System.currentTimeMillis();
+        for (int i = 0; i < 90000000; i++) {
+            cat.eat();
+        }
+        long end = System.currentTimeMillis();
+        System.out.println("m1()耗时：" + (end - start) + "毫秒");
+    }
+
+    // 反射调用方法
+    public static void m2() {
+        try {
+            Class cls = Class.forName("com.cuc.rg.reflection.Cat");
+            Object o = cls.newInstance();
+            Method eat = cls.getMethod("eat");
+
+            long start = System.currentTimeMillis();
+            for (int i = 0; i < 90000000; i++) {
+                eat.invoke(o);
+            }
+            long end = System.currentTimeMillis();
+            System.out.println("m2()耗时：" + (end - start) + "毫秒");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+/* 输出：
+m1()耗时：8毫秒
+m2()耗时：530毫秒
+*/
+```
+
+#### 2. 优化
+
+```java
+// 在反射调用方法时，取消访问检测
+// 能在一定程度上优化效率
+eat.setAccessible(true);
+
+/* 输出：
+m1()耗时：9毫秒
+m2()耗时：232毫秒
+*/
+```
+
+
+
