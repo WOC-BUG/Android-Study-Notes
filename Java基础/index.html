@@ -1,0 +1,4713 @@
+
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+        <meta name="author" content="WOC-BUG">
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="ja">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-4.6.3">
+    
+    
+  <title>Lorem ipsum dolor sit amet</title>
+
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.adb8469c.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,400i,700%7CFira+Mono&display=fallback">
+        <style>body,input{font-family:"Fira Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="white" data-md-color-accent="red">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#java" tabindex="0" class="md-skip">
+        跳转至
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="Android Study Notes" aria-label="Android Study Notes" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon">school</i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Android Study Notes
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Java基础
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/WOC-BUG/Android-Study-Notes/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    WOC-BUG/Android-Study-Notes
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href=".." class="md-tabs__link">
+          简介
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" class="md-tabs__link md-tabs__link--active">
+          Java
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../kotlin%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-tabs__link">
+          kotlin
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../Android%E5%9F%BA%E7%A1%80/" class="md-tabs__link">
+          Android
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../Flutter/" class="md-tabs__link">
+          Flutter
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../%E5%A4%A7%E8%AF%9D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="md-tabs__link">
+          Design Pattern
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../%E5%B7%A5%E4%BD%9C%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/" class="md-tabs__link">
+          实践
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="Android Study Notes" class="md-nav__button md-logo">
+      
+        <i class="md-icon">school</i>
+      
+    </a>
+    Android Study Notes
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/WOC-BUG/Android-Study-Notes/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    WOC-BUG/Android-Study-Notes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      简介
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        简介
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href=".." title="首页" class="md-nav__link">
+      首页
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Java
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Java
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Java基础
+      </label>
+    
+    <a href="./" title="Java基础" class="md-nav__link md-nav__link--active">
+      Java基础
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#java" class="md-nav__link">
+    一、Java开发细节
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    （一）注意事项
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    （二）学习方法
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 需要学习的情况
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 要点
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intellij-idea" class="md-nav__link">
+    （三）Intellij Idea
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    1. 快捷键
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    2. 模板
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#java_1" class="md-nav__link">
+    二、Java基础
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    （一）转义字符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    （二）注释
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    （三）文档注释常用标签
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#doswindows" class="md-nav__link">
+    （四）DOS命令（Windows）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jdkjrejvm" class="md-nav__link">
+    （五）JDK、JRE、JVM的关系
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#java_2" class="md-nav__link">
+    （六）Java编写过程
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#java_3" class="md-nav__link">
+    三、Java变量
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    （一）变量
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    +号的使用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    字符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boolean" class="md-nav__link">
+    Boolean
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    （二）类型转换
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    （三）基本数据类型转换习题
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    习题1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    习题2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string" class="md-nav__link">
+    （四）String
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#string_1" class="md-nav__link">
+    基本数据类型转String
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string_2" class="md-nav__link">
+    String转基本数据类型
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    （五）变量初始化顺序
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    四、运算符
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    （一）算术运算符
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    除法/
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    取模%
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    自增++
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    （二）逻辑运算符
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    &amp;&amp;和&amp;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    ||和|
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    （三）复合运算
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    +=、++等
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    （四）赋值运算符的结果
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    （五）运算符优先级
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    （六）原码、反码、补码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    （七）左移、右移、无符号右移
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    五、控制语句
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    标签
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    六、数组
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    （一）基本概念
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    （二）值传递与引用传递
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    （三）数组扩容
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    （四）二维数组
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    二维数组的内存形式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    赋值方式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string_3" class="md-nav__link">
+    String数组
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    （五）可变参数列表
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    （六）枚举类型
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    七、类&amp;对象
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_38" class="md-nav__link">
+    （一）对象
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_39" class="md-nav__link">
+    对象在内存中的存在形式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_40" class="md-nav__link">
+    对象创建的流程
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_41" class="md-nav__link">
+    注意
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_42" class="md-nav__link">
+    方法的调用机制
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_43" class="md-nav__link">
+    方法传参
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#this" class="md-nav__link">
+    （二）this
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#final" class="md-nav__link">
+    （三）final
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_44" class="md-nav__link">
+    （四）访问权限修饰符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_45" class="md-nav__link">
+    （五）向上转型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_46" class="md-nav__link">
+    （六）向下转型
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_47" class="md-nav__link">
+    八、封装、继承、多态
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_48" class="md-nav__link">
+    （一）封装
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_49" class="md-nav__link">
+    （二）继承
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_50" class="md-nav__link">
+    继承内存情况
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_51" class="md-nav__link">
+    对象访问属性/方法顺序
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_52" class="md-nav__link">
+    例题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#super" class="md-nav__link">
+    super
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#override" class="md-nav__link">
+    Override
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#polymorphic" class="md-nav__link">
+    （三）多态（Polymorphic）
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_53" class="md-nav__link">
+    静态多态
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_54" class="md-nav__link">
+    动态多态
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_55" class="md-nav__link">
+    多态的向下转型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_56" class="md-nav__link">
+    编译类型与运行类型
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instanceof" class="md-nav__link">
+    instanceof
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#java_4" class="md-nav__link">
+    （四）java的动态绑定机制【重点】
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object" class="md-nav__link">
+    九、Object
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#equals" class="md-nav__link">
+    （一）equals()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tostring" class="md-nav__link">
+    （二）toString()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finalize" class="md-nav__link">
+    （三）finalize()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_57" class="md-nav__link">
+    （四）例题
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    例1：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    例2：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    例3：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#static" class="md-nav__link">
+    十、static
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#static_1" class="md-nav__link">
+    （一）static变量
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static_2" class="md-nav__link">
+    （二）static方法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#main" class="md-nav__link">
+    （三）main方法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_58" class="md-nav__link">
+    十一、代码块/初始化块
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_59" class="md-nav__link">
+    （一）普通代码块
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_60" class="md-nav__link">
+    （二）静态代码块
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_61" class="md-nav__link">
+    （三）类加载的时机
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_62" class="md-nav__link">
+    （四）代码调用顺序
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_4" class="md-nav__link">
+    1. 普通类中的调用顺序
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_4" class="md-nav__link">
+    2. 存在继承关系的代码调用顺序
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#final_1" class="md-nav__link">
+    十二、final
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Java%E8%BF%9B%E9%98%B6/" title="Java进阶" class="md-nav__link">
+      Java进阶
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Java%E9%AB%98%E7%BA%A7/" title="Java高级" class="md-nav__link">
+      Java高级
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Head%20First%20Java/" title="Head First Java" class="md-nav__link">
+      Head First Java
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      kotlin
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        kotlin
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kotlin%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="kotlin学习笔记" class="md-nav__link">
+      kotlin学习笔记
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Android
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Android
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Android%E5%9F%BA%E7%A1%80/" title="Android基础" class="md-nav__link">
+      Android基础
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../BLE%E4%BD%8E%E5%8A%9F%E8%80%97%E8%93%9D%E7%89%99%E9%80%9A%E4%BF%A1/" title="BLE低功耗蓝牙通信" class="md-nav__link">
+      BLE低功耗蓝牙通信
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Flutter
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Flutter
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Flutter/" title="Flutter调研报告" class="md-nav__link">
+      Flutter调研报告
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Dart/" title="Dart语言基础" class="md-nav__link">
+      Dart语言基础
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Design Pattern
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Design Pattern
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E5%A4%A7%E8%AF%9D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" title="大话设计模式" class="md-nav__link">
+      大话设计模式
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      实践
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        实践
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E5%B7%A5%E4%BD%9C%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/" title="工作问题记录" class="md-nav__link">
+      工作问题记录
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#java" class="md-nav__link">
+    一、Java开发细节
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    （一）注意事项
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    （二）学习方法
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 需要学习的情况
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 要点
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intellij-idea" class="md-nav__link">
+    （三）Intellij Idea
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    1. 快捷键
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    2. 模板
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#java_1" class="md-nav__link">
+    二、Java基础
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    （一）转义字符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    （二）注释
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    （三）文档注释常用标签
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#doswindows" class="md-nav__link">
+    （四）DOS命令（Windows）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jdkjrejvm" class="md-nav__link">
+    （五）JDK、JRE、JVM的关系
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#java_2" class="md-nav__link">
+    （六）Java编写过程
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#java_3" class="md-nav__link">
+    三、Java变量
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    （一）变量
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    +号的使用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    字符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boolean" class="md-nav__link">
+    Boolean
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    （二）类型转换
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    （三）基本数据类型转换习题
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    习题1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    习题2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string" class="md-nav__link">
+    （四）String
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#string_1" class="md-nav__link">
+    基本数据类型转String
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string_2" class="md-nav__link">
+    String转基本数据类型
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    （五）变量初始化顺序
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    四、运算符
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    （一）算术运算符
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    除法/
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    取模%
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    自增++
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    （二）逻辑运算符
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    &amp;&amp;和&amp;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    ||和|
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    （三）复合运算
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    +=、++等
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    （四）赋值运算符的结果
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    （五）运算符优先级
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    （六）原码、反码、补码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    （七）左移、右移、无符号右移
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    五、控制语句
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    标签
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    六、数组
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    （一）基本概念
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    （二）值传递与引用传递
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    （三）数组扩容
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    （四）二维数组
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    二维数组的内存形式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    赋值方式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string_3" class="md-nav__link">
+    String数组
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    （五）可变参数列表
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    （六）枚举类型
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    七、类&amp;对象
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_38" class="md-nav__link">
+    （一）对象
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_39" class="md-nav__link">
+    对象在内存中的存在形式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_40" class="md-nav__link">
+    对象创建的流程
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_41" class="md-nav__link">
+    注意
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_42" class="md-nav__link">
+    方法的调用机制
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_43" class="md-nav__link">
+    方法传参
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#this" class="md-nav__link">
+    （二）this
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#final" class="md-nav__link">
+    （三）final
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_44" class="md-nav__link">
+    （四）访问权限修饰符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_45" class="md-nav__link">
+    （五）向上转型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_46" class="md-nav__link">
+    （六）向下转型
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_47" class="md-nav__link">
+    八、封装、继承、多态
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_48" class="md-nav__link">
+    （一）封装
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_49" class="md-nav__link">
+    （二）继承
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_50" class="md-nav__link">
+    继承内存情况
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_51" class="md-nav__link">
+    对象访问属性/方法顺序
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_52" class="md-nav__link">
+    例题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#super" class="md-nav__link">
+    super
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#override" class="md-nav__link">
+    Override
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#polymorphic" class="md-nav__link">
+    （三）多态（Polymorphic）
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_53" class="md-nav__link">
+    静态多态
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_54" class="md-nav__link">
+    动态多态
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_55" class="md-nav__link">
+    多态的向下转型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_56" class="md-nav__link">
+    编译类型与运行类型
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instanceof" class="md-nav__link">
+    instanceof
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#java_4" class="md-nav__link">
+    （四）java的动态绑定机制【重点】
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object" class="md-nav__link">
+    九、Object
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#equals" class="md-nav__link">
+    （一）equals()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tostring" class="md-nav__link">
+    （二）toString()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finalize" class="md-nav__link">
+    （三）finalize()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_57" class="md-nav__link">
+    （四）例题
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    例1：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    例2：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    例3：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#static" class="md-nav__link">
+    十、static
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#static_1" class="md-nav__link">
+    （一）static变量
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static_2" class="md-nav__link">
+    （二）static方法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#main" class="md-nav__link">
+    （三）main方法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_58" class="md-nav__link">
+    十一、代码块/初始化块
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_59" class="md-nav__link">
+    （一）普通代码块
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_60" class="md-nav__link">
+    （二）静态代码块
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_61" class="md-nav__link">
+    （三）类加载的时机
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_62" class="md-nav__link">
+    （四）代码调用顺序
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_4" class="md-nav__link">
+    1. 普通类中的调用顺序
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_4" class="md-nav__link">
+    2. 存在继承关系的代码调用顺序
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#final_1" class="md-nav__link">
+    十二、final
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/WOC-BUG/Android-Study-Notes/edit/master/docs/Java基础.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>Java基础</h1>
+                
+                <h2 id="java">一、Java开发细节<a class="headerlink" href="#java" title="Permanent link">&para;</a></h2>
+<h3 id="_1">（一）注意事项<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li>一个源文件中最多只能有一个<code>public</code>类，且该类名称必须和文件一致。</li>
+<li>一个源文件中可以有多个非<code>public</code>的类，这些<code>java</code>类中均可以写<code>main</code>方法，用<code>javac</code>编译后会生成多个<code>class</code>文件，可以分别运行。</li>
+</ol>
+<p><img alt="" src="../img/multi_java_class.png" /></p>
+<h3 id="_2">（二）学习方法<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h4 id="1">1. 需要学习的情况<a class="headerlink" href="#1" title="Permanent link">&para;</a></h4>
+<ol>
+<li>工作需要</li>
+<li>跳槽</li>
+<li>平时学新技术</li>
+</ol>
+<h4 id="2">2. 要点<a class="headerlink" href="#2" title="Permanent link">&para;</a></h4>
+<ol>
+<li>用<strong>传统技术考虑</strong>是否能解决工作需要，若解决不了或不完美，再找新技术对比并解决。</li>
+<li>做好调研，要知道新技术<strong>能够解决什么问题</strong>，<strong>改进</strong>在哪，能带来什么<strong>优势</strong>？相应的<strong>缺点</strong>又是什么？</li>
+<li>学习新技术时，<strong>不要去太钻研细节</strong>，要先把<strong>基本原理</strong>和<strong>语法</strong>弄懂。</li>
+<li>用学到的基本原理实现个<strong>快速入门的小项目</strong>（如：增删改查），已经可以实现基本的工作需求了。</li>
+<li>最后，再研究<strong>技术的细节、规范、如何优化</strong>等（这部分是永无止境的）</li>
+</ol>
+<h3 id="intellij-idea">（三）Intellij Idea<a class="headerlink" href="#intellij-idea" title="Permanent link">&para;</a></h3>
+<h4 id="1_1">1. 快捷键<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h4>
+<p><code>file -&gt; setting -&gt; editor -&gt; keymap</code>可查看/修改</p>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ctrl+Alt+L</strong></td>
+<td><strong>格式化</strong></td>
+</tr>
+<tr>
+<td>Ctrl+Y</td>
+<td>删除当前行</td>
+</tr>
+<tr>
+<td>Alt+Enter</td>
+<td>导入依赖包</td>
+</tr>
+<tr>
+<td><strong>Ctrl+D</strong></td>
+<td><strong>复制当前行</strong></td>
+</tr>
+<tr>
+<td><strong>Ctrl+F</strong></td>
+<td><strong>查找</strong></td>
+</tr>
+<tr>
+<td><strong>Ctrl+R</strong></td>
+<td><strong>替换</strong></td>
+</tr>
+<tr>
+<td><strong>Alt+Insert</strong></td>
+<td><strong>插入构造器等</strong></td>
+</tr>
+<tr>
+<td><strong>Ctrl+H</strong></td>
+<td><strong>查看类结构</strong></td>
+</tr>
+<tr>
+<td>Ctrl+B或鼠标左键</td>
+<td>定位类/方法/变量的定义处</td>
+</tr>
+<tr>
+<td>F7</td>
+<td>跳入（进入方法）</td>
+</tr>
+<tr>
+<td>F8</td>
+<td>跳过（执行语句，不进入方法）</td>
+</tr>
+<tr>
+<td>shift+F8</td>
+<td>跳出（跳出方法）</td>
+</tr>
+<tr>
+<td>F9</td>
+<td>执行到下一个断点</td>
+</tr>
+<tr>
+<td><strong>选中代码段，Ctrl+Alt+T</strong></td>
+<td><strong>添加<code>if-else</code>、<code>try-catch</code>、<code>while</code>等<code>Surround With</code>块</strong></td>
+</tr>
+<tr>
+<td><strong>Ctrl+J</strong></td>
+<td><strong>显示所有快捷键</strong></td>
+</tr>
+<tr>
+<td>Ctrl+G</td>
+<td>光标快速跳跃到指定行</td>
+</tr>
+</tbody>
+</table>
+<h4 id="2_1">2. 模板<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h4>
+<p><code>file -&gt; setting -&gt; editor -&gt; Live templates</code>可查看/修改</p>
+<table>
+<thead>
+<tr>
+<th>类、变量</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>main</strong></td>
+<td><strong>public static void main(String[] args)</strong></td>
+</tr>
+<tr>
+<td>geti</td>
+<td>public static <ClassName> getInstance()</td>
+</tr>
+<tr>
+<td>psf[i/s]</td>
+<td>public static final [int/String]</td>
+</tr>
+<tr>
+<td>prsf</td>
+<td>private static final</td>
+</tr>
+<tr>
+<td>lst</td>
+<td>args[args.length - 1]</td>
+</tr>
+<tr>
+<td><strong>new Object().var</strong></td>
+<td><strong>自动创建变量名</strong></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>输出</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>sout</strong></td>
+<td><strong>System.out.println();</strong></td>
+</tr>
+<tr>
+<td>soutv</td>
+<td>System.out.println("args = " + args);</td>
+</tr>
+<tr>
+<td>souf</td>
+<td>System.out.printf("");</td>
+</tr>
+<tr>
+<td>serr</td>
+<td>System.err.println();</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>循环</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>fori</strong></td>
+<td><strong>for(int i=0;i&lt;;i++)</strong></td>
+</tr>
+<tr>
+<td><strong>大写i</strong></td>
+<td><strong>增强版for循环：for(Object obj: )</strong></td>
+</tr>
+<tr>
+<td>iter</td>
+<td>for (String arg : args)</td>
+</tr>
+<tr>
+<td>itar</td>
+<td>for (int i = 0; i &lt; args.length; i++)</td>
+</tr>
+<tr>
+<td>ritar</td>
+<td>for (int i = args.length - 1; i &gt;= 0; i--) {</td>
+</tr>
+<tr>
+<td>itli</td>
+<td>for (int i = 0; i &lt; list.size(); i++)</td>
+</tr>
+<tr>
+<td>itco</td>
+<td>for (Iterator iterator = collection.iterator(); iterator.hasNext(); )</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>其他</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ifn</td>
+<td>if (args == null)</td>
+</tr>
+<tr>
+<td>inn</td>
+<td>if (args != null)</td>
+</tr>
+<tr>
+<td>mn</td>
+<td>= Math.min(, );</td>
+</tr>
+<tr>
+<td>mx</td>
+<td>= Math.max(, );</td>
+</tr>
+<tr>
+<td>toar</td>
+<td>.toArray(new Object[0])</td>
+</tr>
+<tr>
+<td>thr</td>
+<td>throw new</td>
+</tr>
+<tr>
+<td><strong>tryc</strong></td>
+<td><strong>try...catch</strong></td>
+</tr>
+<tr>
+<td>trycf</td>
+<td>try...catch...finally</td>
+</tr>
+<tr>
+<td>RL</td>
+<td>.readLock().lock();</td>
+</tr>
+<tr>
+<td>WL</td>
+<td>.writeLock.lock();</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="java_1">二、Java基础<a class="headerlink" href="#java_1" title="Permanent link">&para;</a></h2>
+<h3 id="_3">（一）转义字符<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>\t</code></td>
+<td>制表符，实现<code>tab</code>对齐功能</td>
+</tr>
+<tr>
+<td><code>\n</code></td>
+<td>换行符</td>
+</tr>
+<tr>
+<td><code>\r</code></td>
+<td>回车符，回到行首（之后再输入内容会直接替换本行原有字符）</td>
+</tr>
+<tr>
+<td><code>\\</code></td>
+<td><code>\</code></td>
+</tr>
+<tr>
+<td><code>\"</code></td>
+<td><code>"</code></td>
+</tr>
+<tr>
+<td><code>\'</code></td>
+<td><code>'</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>\r</code>和<code>\r\n</code>效果一致，都是换行
+  <img alt="" src="../img/transfer_character.png" /></li>
+</ul>
+<h3 id="_4">（二）注释<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>单行注释：</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c1">// 注释文字</span>
+</code></pre></div>
+</td></tr></table>
+<ul>
+<li>多行注释：</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="cm">/*</span>
+<span class="cm">注释</span>
+<span class="cm">文字</span>
+<span class="cm">*/</span>
+</code></pre></div>
+</td></tr></table>
+<ul>
+<li>文档注释：</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="cm">/**</span>
+<span class="cm">* @author WOC_BUG</span>
+<span class="cm">* @version 1.0</span>
+<span class="cm">*/</span>
+</code></pre></div>
+</td></tr></table>
+<p>注释内容可以用<code>javadoc</code>工具生成说明文档：</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>javadoc -d [路径] -[文档中加过的doc字段] [文件名].java
+</code></pre></div>
+</td></tr></table>
+<p>例：</p>
+<p><img alt="" src="../img/javadoc.png" /></p>
+<p><img alt="" src="../img/JavaAPI%E6%96%87%E6%A1%A3.png" /></p>
+<h3 id="_5">（三）文档注释常用标签<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>标签</strong></th>
+<th align="center"><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>@author</code></td>
+<td align="center">标识一个类的作者</td>
+</tr>
+<tr>
+<td align="left"><code>@deprecated</code></td>
+<td align="center">指名一个过期的类或成员</td>
+</tr>
+<tr>
+<td align="left"><code>{@docRoot}</code></td>
+<td align="center">指明当前文档根目录的路径</td>
+</tr>
+<tr>
+<td align="left"><code>@exception</code></td>
+<td align="center">标志一个类抛出的异常</td>
+</tr>
+<tr>
+<td align="left"><code>{@inheritDoc}</code></td>
+<td align="center">从直接父类继承的注释</td>
+</tr>
+<tr>
+<td align="left"><code>{@link}</code></td>
+<td align="center">插入一个到另一个主题的链接</td>
+</tr>
+<tr>
+<td align="left"><code>{@linkplain}</code></td>
+<td align="center">插入一个到另一个主题的链接，但是该链接显示纯文本字体</td>
+</tr>
+<tr>
+<td align="left"><code>@param</code></td>
+<td align="center">说明一个方法的参数</td>
+</tr>
+<tr>
+<td align="left"><code>@return</code></td>
+<td align="center">说明返回值类型</td>
+</tr>
+<tr>
+<td align="left"><code>@see</code></td>
+<td align="center">指定一个到另一个主题的链接</td>
+</tr>
+<tr>
+<td align="left"><code>@serial</code></td>
+<td align="center">说明一个序列化属性</td>
+</tr>
+<tr>
+<td align="left"><code>@serialData</code></td>
+<td align="center">说明通过<code>writeObject()</code>和 <code>writeExternal()</code>方法写的数据</td>
+</tr>
+<tr>
+<td align="left"><code>@serialField</code></td>
+<td align="center">说明一个<code>ObjectStreamField</code>组件</td>
+</tr>
+<tr>
+<td align="left"><code>@since</code></td>
+<td align="center">标记当引入一个特定的变化时</td>
+</tr>
+<tr>
+<td align="left"><code>@throws</code></td>
+<td align="center">和<code>@exception</code>标签一样.</td>
+</tr>
+<tr>
+<td align="left"><code>{@value}</code></td>
+<td align="center">显示常量的值，该常量必须是<code>static</code>属性。</td>
+</tr>
+<tr>
+<td align="left"><code>@version</code></td>
+<td align="center">指定类的版本</td>
+</tr>
+</tbody>
+</table>
+<h3 id="doswindows">（四）DOS命令（Windows）<a class="headerlink" href="#doswindows" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dir</code></td>
+<td>目录</td>
+</tr>
+<tr>
+<td><code>tree</code></td>
+<td>目录树</td>
+</tr>
+<tr>
+<td><code>cd</code></td>
+<td>切换目录</td>
+</tr>
+<tr>
+<td><code>cd /D c:</code></td>
+<td>从D盘切换至C盘根目录</td>
+</tr>
+<tr>
+<td><code>d:/abc/text.txt</code> 或 <code>d:\\abc\\text.txt</code></td>
+<td>绝对路径</td>
+</tr>
+<tr>
+<td><code>../../text.txt</code>或 <code>..\\..\\text.txt</code></td>
+<td>相对路径</td>
+</tr>
+<tr>
+<td><code>cls</code></td>
+<td>清屏(苍老师)</td>
+</tr>
+<tr>
+<td><code>exit</code></td>
+<td>退出</td>
+</tr>
+<tr>
+<td><code>md</code></td>
+<td>创建目录</td>
+</tr>
+<tr>
+<td><code>rm</code></td>
+<td>删除目录</td>
+</tr>
+<tr>
+<td><code>copy</code></td>
+<td>拷贝文件</td>
+</tr>
+<tr>
+<td><code>echo</code></td>
+<td>向文件输入内容</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>创建文件</td>
+</tr>
+<tr>
+<td><code>move</code></td>
+<td>剪切</td>
+</tr>
+</tbody>
+</table>
+<h3 id="jdkjrejvm">（五）JDK、JRE、JVM的关系<a class="headerlink" href="#jdkjrejvm" title="Permanent link">&para;</a></h3>
+<p><strong><code>JDK</code> = <code>JRE</code> + <code>java</code>开发工具</strong></p>
+<p><strong><code>JRE</code> = <code>JVM</code>+ <code>java</code>核心类库</strong></p>
+<h3 id="java_2">（六）Java编写过程<a class="headerlink" href="#java_2" title="Permanent link">&para;</a></h3>
+<ol>
+<li>编写<code>Java</code>源码</li>
+<li><code>javac</code>编译成<code>.class</code>字节码文件</li>
+<li><code>java</code>运行，即将<code>.class</code>文件加载到<code>jvm</code>运行</li>
+</ol>
+<hr />
+<h2 id="java_3">三、Java变量<a class="headerlink" href="#java_3" title="Permanent link">&para;</a></h2>
+<h3 id="_6">（一）变量<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>基本数据类型</th>
+<th>字节</th>
+<th>细节</th>
+<th>范围</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>byte</td>
+<td>1</td>
+<td></td>
+<td><span><span class="MathJax_Preview">-2^7</span><script type="math/tex">-2^7</script></span> ~  <span><span class="MathJax_Preview">2^7-1</span><script type="math/tex">2^7-1</script></span></td>
+<td>(byte)0</td>
+</tr>
+<tr>
+<td>short</td>
+<td>2</td>
+<td></td>
+<td><span><span class="MathJax_Preview">-2^{15}</span><script type="math/tex">-2^{15}</script></span> ~  <span><span class="MathJax_Preview">2^{15}-1</span><script type="math/tex">2^{15}-1</script></span></td>
+<td>(short)0</td>
+</tr>
+<tr>
+<td>int</td>
+<td>4</td>
+<td></td>
+<td><span><span class="MathJax_Preview">-2^{31}</span><script type="math/tex">-2^{31}</script></span> ~  <span><span class="MathJax_Preview">2^{31}-1</span><script type="math/tex">2^{31}-1</script></span></td>
+<td>0</td>
+</tr>
+<tr>
+<td>long</td>
+<td>8</td>
+<td>数据后面<strong>建议</strong>加<code>l</code>或<code>L</code></td>
+<td><span><span class="MathJax_Preview">-2^{63}</span><script type="math/tex">-2^{63}</script></span> ~  <span><span class="MathJax_Preview">2^{63}-1</span><script type="math/tex">2^{63}-1</script></span></td>
+<td>0L</td>
+</tr>
+<tr>
+<td>float</td>
+<td>4（符号位+指数位+位数位）</td>
+<td>数据后面<strong>必须</strong>加<code>f</code>或<code>F</code></td>
+<td><span><span class="MathJax_Preview">-3.403E38</span><script type="math/tex">-3.403E38</script></span> ~  <span><span class="MathJax_Preview">3.403E38</span><script type="math/tex">3.403E38</script></span></td>
+<td>0.0f</td>
+</tr>
+<tr>
+<td>double</td>
+<td>8（符号位+指数位+位数位）</td>
+<td>注意比较/运算的精度问题</td>
+<td><span><span class="MathJax_Preview">-1.798E308</span><script type="math/tex">-1.798E308</script></span> ~  <span><span class="MathJax_Preview">1.798E308</span><script type="math/tex">1.798E308</script></span></td>
+<td>0.0d</td>
+</tr>
+<tr>
+<td>char</td>
+<td>2（Unicode编码）</td>
+<td></td>
+<td><span><span class="MathJax_Preview">-2^{15}</span><script type="math/tex">-2^{15}</script></span> ~  <span><span class="MathJax_Preview">2^{15}-1</span><script type="math/tex">2^{15}-1</script></span></td>
+<td>'\u0000'即null</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>1 或 4 （有待考证）</td>
+<td></td>
+<td><span><span class="MathJax_Preview">0</span><script type="math/tex">0</script></span>、<span><span class="MathJax_Preview">1</span><script type="math/tex">1</script></span></td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<p><strong>全局变量（即属性）有默认值，而局部变量不会被自动初始化</strong></p>
+<p><strong>全局变量和局部变量可以重名，访问时遵循就近原则</strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kd">class</span> <span class="nc">Person</span><span class="p">{</span>
+    <span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;Bob&quot;</span><span class="p">;</span>
+    <span class="kt">void</span> <span class="nf">setName</span><span class="p">(){</span>
+        <span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;Alice&quot;</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// 输出：Alice</span>
+</code></pre></div>
+</td></tr></table>
+<table>
+<thead>
+<tr>
+<th>引用数据类型</th>
+<th>字节</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>类</td>
+<td></td>
+</tr>
+<tr>
+<td>接口</td>
+<td></td>
+</tr>
+<tr>
+<td>数组</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_7">+号的使用<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<ul>
+<li>+号前后都是数值类型，做运算</li>
+<li>+号前后有字符类型，做拼接</li>
+</ul>
+<p><img alt="" src="../img/%2B.png" /></p>
+<h4 id="_8">字符<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="../img/%E5%AD%97%E7%AC%A6%E5%BA%95%E5%B1%82%E5%AD%98%E5%82%A8.png" /></p>
+<p><img alt="" src="../img/%E7%BC%96%E7%A0%81.png" /></p>
+<h4 id="boolean">Boolean<a class="headerlink" href="#boolean" title="Permanent link">&para;</a></h4>
+<p><strong><code>Java</code>中不能用<code>0</code>或非<code>0</code>的数字代表<code>true</code>或<code>false</code></strong></p>
+<h3 id="_9">（二）类型转换<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p><strong>从低精度到高精度能够自动转换：</strong></p>
+<p><code>char</code> -&gt; <code>int</code> -&gt; <code>long</code>-&gt;  <code>float</code> -&gt; <code>double</code> </p>
+<p><code>byte</code> -&gt; <code>short</code> -&gt; <code>int</code> -&gt; <code>long</code>-&gt;  <code>float</code> -&gt; <code>double</code> </p>
+<p><strong>为什么<code>long</code>能自动转换为<code>float</code>?</strong></p>
+<p><code>float</code>中有8位表示指数、23位表示尾数，范围是<span><span class="MathJax_Preview">2^{127}</span><script type="math/tex">2^{127}</script></span>（<code>127</code>是因为指数不能为负数）；</p>
+<p><code>long</code>的范围是<span><span class="MathJax_Preview">2^{64}</span><script type="math/tex">2^{64}</script></span>；</p>
+<p>因此<code>float</code>范围远大于<code>long</code>。</p>
+<ol>
+<li><strong>多种数据类型混合运算时，首先会转换成容量最大的数据类型</strong></li>
+</ol>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kt">int</span> <span class="n">n1</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="kt">float</span> <span class="n">n2</span> <span class="o">=</span> <span class="n">n1</span> <span class="o">+</span> <span class="mf">1.1</span><span class="p">;</span> <span class="c1">// 错误</span>
+<span class="c1">// 因为 1.1 是 double 类型， n1 会从 int 转换为 double ，n1 + 1.1 的结果是 double，无法自动转换成 float</span>
+</code></pre></div>
+</td></tr></table>
+<ol>
+<li>
+<p><strong>（<code>byte</code>，<code>short</code>）与<code>char</code>不能相互转换</strong></p>
+</li>
+<li>
+<p><strong><code>byte</code>、<code>short</code>、<code>char</code>三者可以运算，不管它们是单独运算还是混合运算，计算过程中都会首先转为<code>int</code></strong></p>
+</li>
+</ol>
+<p>单独运算：</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kt">byte</span> <span class="n">b1</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kt">byte</span> <span class="n">b2</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="kt">byte</span> <span class="n">b3</span> <span class="o">=</span> <span class="n">b1</span> <span class="o">+</span> <span class="n">b2</span><span class="p">;</span>   <span class="c1">// 错误</span>
+<span class="c1">// b1 + b2 会转为 int</span>
+</code></pre></div>
+</td></tr></table>
+<p>混合运算：</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code> <span class="kt">byte</span> <span class="n">b1</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+ <span class="kt">short</span> <span class="n">s1</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+ <span class="kt">short</span> <span class="n">s2</span> <span class="o">=</span> <span class="n">b1</span> <span class="o">+</span> <span class="n">s1</span><span class="p">;</span>     <span class="c1">// 错误</span>
+ <span class="c1">// b1 + s1 首先会转为 int</span>
+</code></pre></div>
+</td></tr></table>
+<ol>
+<li>
+<p><strong><code>boolean</code>不参与类型的自动转换</strong></p>
+</li>
+<li>
+<p><font color='red'><strong><code>char</code>类型只能保存<code>int</code>类型的常量值，不能保存变量值</strong></font></p>
+</li>
+</ol>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kt">char</span> <span class="n">c1</span> <span class="o">=</span> <span class="mi">97</span><span class="p">;</span>    <span class="c1">// 正确</span>
+<span class="kt">int</span> <span class="n">n1</span> <span class="o">=</span> <span class="mi">97</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">c2</span> <span class="o">=</span> <span class="n">n1</span><span class="p">;</span>    <span class="c1">// 错误</span>
+<span class="c1">// int 的范围比 char 大</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="_10">（三）基本数据类型转换习题<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<h4 id="1_2">习题1<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="../img/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%BB%83%E4%B9%A0%E9%A2%98.png" /></p>
+<h4 id="2_2">习题2<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="../img/%E5%AD%97%E7%AC%A6%E7%9B%B8%E5%8A%A0.png" /></p>
+<p>字符相加得到的是其字符码值相加的和</p>
+<h3 id="string">（四）String<a class="headerlink" href="#string" title="Permanent link">&para;</a></h3>
+<h4 id="string_1">基本数据类型转String<a class="headerlink" href="#string_1" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="../img/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%ACString.png" /></p>
+<h4 id="string_2">String转基本数据类型<a class="headerlink" href="#string_2" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="../img/String%E8%BD%AC%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.png" /></p>
+<h3 id="_11">（五）变量初始化顺序<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p><strong>变量之间定义的先后顺序，决定了初始化顺序</strong></p>
+<p><strong>即使变量定义分散在方法之间，他们仍然在任何方法（包括构造器）之前被初始化。</strong></p>
+<hr />
+<h2 id="_12">四、运算符<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<h3 id="_13">（一）算术运算符<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<h4 id="_14">除法<code>/</code><a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="mi">10</span><span class="o">/</span><span class="mi">4</span><span class="p">);</span>   <span class="c1">// 2</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="mf">10.0</span><span class="o">/</span><span class="mi">4</span><span class="p">);</span> <span class="c1">// 2.5</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="mi">10</span><span class="o">/</span><span class="mf">4.0</span><span class="p">);</span> <span class="c1">// 2.5</span>
+
+<span class="kt">double</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">10</span><span class="o">/</span><span class="mi">4</span><span class="p">;</span>  <span class="c1">// 10/4得2，再转为double为2.0</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">ans</span><span class="p">);</span>    <span class="c1">// 2.0</span>
+</code></pre></div>
+</td></tr></table>
+<h4 id="_15">取模<code>%</code><a class="headerlink" href="#_15" title="Permanent link">&para;</a></h4>
+<p><span><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span> % <span><span class="MathJax_Preview">b</span><script type="math/tex">b</script></span> = <span><span class="MathJax_Preview">a - a / b * b</span><script type="math/tex">a - a / b * b</script></span></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span> <span class="mi">10</span> <span class="o">%</span> <span class="mi">3</span> <span class="p">);</span>   <span class="c1">// 1</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span> <span class="o">-</span><span class="mi">10</span> <span class="o">%</span> <span class="mi">3</span> <span class="p">);</span>  <span class="c1">// -1</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span> <span class="mi">10</span> <span class="o">%</span> <span class="o">-</span><span class="mi">3</span> <span class="p">);</span>  <span class="c1">// 1</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span> <span class="o">-</span><span class="mi">10</span> <span class="o">%</span> <span class="o">-</span><span class="mi">3</span> <span class="p">);</span> <span class="c1">// -1</span>
+<span class="c1">// 符号随被除数的正负变化</span>
+</code></pre></div>
+</td></tr></table>
+<p>当<code>a</code>是小数时：</p>
+<p><span><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span> % <span><span class="MathJax_Preview">b</span><script type="math/tex">b</script></span> = <span><span class="MathJax_Preview">a - (int) a / b * b</span><script type="math/tex">a - (int) a / b * b</script></span></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span> <span class="o">-</span><span class="mf">10.5</span> <span class="o">%</span> <span class="mi">3</span> <span class="p">);</span>    <span class="c1">// -1.5</span>
+<span class="o">-</span><span class="mf">10.5</span> <span class="o">-</span> <span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="o">-</span><span class="mf">10.5</span><span class="p">)</span><span class="o">/</span><span class="mi">3</span><span class="o">*</span><span class="mi">3</span>
+<span class="o">=</span> <span class="o">-</span><span class="mf">10.5</span> <span class="o">-</span> <span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">)</span><span class="o">/</span><span class="mi">3</span><span class="o">*</span><span class="mi">3</span>
+<span class="o">=</span> <span class="o">-</span><span class="mf">10.5</span> <span class="o">+</span> <span class="mi">9</span>
+<span class="o">=</span> <span class="o">-</span><span class="mf">1.5</span>
+</code></pre></div>
+</td></tr></table>
+<h4 id="_16">自增<code>++</code><a class="headerlink" href="#_16" title="Permanent link">&para;</a></h4>
+<p><code>i = i++</code></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">i</span> <span class="o">=</span> <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+<span class="c1">// ① tmp = i;</span>
+<span class="c1">// ② i = i + 1;</span>
+<span class="c1">// ③ return tmp;</span>
+<span class="c1">// ④ i = tmp;</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>  <span class="c1">// 1</span>
+</code></pre></div>
+</td></tr></table>
+<p><code>i = ++i</code></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">i</span> <span class="o">=</span> <span class="o">++</span><span class="n">i</span><span class="p">;</span>
+<span class="c1">// ① i = i + 1;</span>
+<span class="c1">// ② return i;</span>
+<span class="c1">// ③ i = i;</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>  <span class="c1">// 2</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="_17">（二）逻辑运算符<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<h4 id="_18"><code>&amp;&amp;</code>和<code>&amp;</code><a class="headerlink" href="#_18" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>a &amp;&amp; b</code>：若<code>a</code>为假，则不会执行/判断<code>b</code></li>
+<li><code>a &amp; b</code>：若<code>a</code>为假，依旧会执行和判断<code>b</code></li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+<span class="k">if</span><span class="p">(</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">100</span> <span class="o">&amp;&amp;</span> <span class="o">++</span><span class="n">b</span> <span class="o">&lt;</span><span class="mi">100</span><span class="p">){</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;true&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;a = &quot;</span> <span class="o">+</span> <span class="n">a</span> <span class="o">+</span> <span class="s">&quot;,b = &quot;</span> <span class="o">+</span> <span class="n">b</span><span class="p">);</span>
+
+<span class="c1">// 输出：</span>
+<span class="c1">// a = 10,b = 20</span>
+</code></pre></div>
+</td></tr></table>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+<span class="k">if</span><span class="p">(</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">100</span> <span class="o">&amp;</span> <span class="o">++</span><span class="n">b</span> <span class="o">&lt;</span><span class="mi">100</span><span class="p">){</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;true&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;a = &quot;</span> <span class="o">+</span> <span class="n">a</span> <span class="o">+</span> <span class="s">&quot;,b = &quot;</span> <span class="o">+</span> <span class="n">b</span><span class="p">);</span>
+
+<span class="c1">// 输出：</span>
+<span class="c1">// a = 10,b = 21</span>
+</code></pre></div>
+</td></tr></table>
+<h4 id="_19"><code>||</code>和<code>|</code><a class="headerlink" href="#_19" title="Permanent link">&para;</a></h4>
+<p>同理</p>
+<ul>
+<li><code>a || b</code>：若<code>a</code>为真，则不会执行/判断<code>b</code></li>
+<li><code>a | b</code>：若<code>a</code>为真，依旧会执行和判断<code>b</code></li>
+</ul>
+<h3 id="_20">（三）复合运算<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
+<h4 id="_21"><code>+=</code>、<code>++</code>等<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h4>
+<p><strong>复合运算会自动强制类型转换</strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kt">byte</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="n">a</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// 相当于 a = (byte)(a + 2)</span>
+<span class="n">a</span> <span class="o">++</span><span class="p">;</span>   <span class="c1">// 相当于 a = (byte)(a + 1)</span>
+<span class="c1">// 而直接 a = a + 2才是错的，因为2是int类型</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="_22">（四）赋值运算符的结果<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h3>
+<p><strong>注意：</strong>赋值语句的结果并不是永真，而是要判断赋值操作后的结果值的</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kt">boolean</span> <span class="n">x</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="k">if</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="kc">true</span><span class="p">){</span>   <span class="c1">// 真</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+
+<span class="k">if</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="kc">false</span><span class="p">){</span>  <span class="c1">// 假</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="_23">（五）运算符优先级<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../img/%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7.png" /></p>
+<h3 id="_24">（六）原码、反码、补码<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h3>
+<ol>
+<li><span><span class="MathJax_Preview">0</span><script type="math/tex">0</script></span>和正数的原码、反码、补码都是它本身</li>
+<li>负数的反码 = 其原码<strong>符号位不变</strong>，其它位取反 = 其补码 - 1 </li>
+<li>负数的补码 = 其反码 + 1</li>
+<li><code>java</code>中的数都是有符号的</li>
+<li><strong>运算时要用补码运算，看结果要用源码看</strong></li>
+</ol>
+<p><strong>例题1，求 <code>~-2</code>​：</strong></p>
+<ul>
+<li><span><span class="MathJax_Preview">-2</span><script type="math/tex">-2</script></span>原码：  10000000 00000000 00000000 00000010</li>
+<li><span><span class="MathJax_Preview">-2</span><script type="math/tex">-2</script></span>反码：  11111111 11111111 11111111 11111101</li>
+<li><span><span class="MathJax_Preview">-2</span><script type="math/tex">-2</script></span>补码：  11111111 11111111 11111111 11111110</li>
+<li>~<span><span class="MathJax_Preview">-2</span><script type="math/tex">-2</script></span>补码：00000000 00000000 00000000 00000001</li>
+<li>~<span><span class="MathJax_Preview">-2</span><script type="math/tex">-2</script></span>原码：00000000 00000000 00000000 00000001</li>
+</ul>
+<p>答案：        <span><span class="MathJax_Preview">1</span><script type="math/tex">1</script></span></p>
+<p><strong>例题2，求<code>~2:</code></strong></p>
+<ul>
+<li><span><span class="MathJax_Preview">2</span><script type="math/tex">2</script></span>原码：  00000000 00000000 00000000 00000010</li>
+<li><span><span class="MathJax_Preview">2</span><script type="math/tex">2</script></span>补码：  00000000 00000000 00000000 00000010</li>
+<li>~<span><span class="MathJax_Preview">2</span><script type="math/tex">2</script></span>补码：11111111 11111111 11111111 11111101</li>
+<li>~<span><span class="MathJax_Preview">2</span><script type="math/tex">2</script></span>原码：10000000 00000000 00000000 00000011</li>
+</ul>
+<p>答案：     <span><span class="MathJax_Preview">-3</span><script type="math/tex">-3</script></span></p>
+<p><strong><font color='red'>注意：</font></strong></p>
+<ul>
+<li><font color='red'>符号位也参与位运算</font></li>
+<li><font color='red'>计算反码不包括符号位</font></li>
+</ul>
+<h3 id="_25">（七）左移、右移、无符号右移<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h3>
+<p><code>&lt;&lt;</code>：符号位不变，低位补零</p>
+<p><code>&gt;&gt;</code>：符号位不变，低位溢出，并用符号位补溢出的高位</p>
+<p><code>&gt;&gt;&gt;</code>：低位溢出，高位补零</p>
+<p><strong><code>char</code>、<code>byte</code>、<code>short</code>进行移位操作时，会先转成<code>int</code>，运算后再截断多余位</strong></p>
+<p><strong>Q：</strong>为什么<code>int</code>类型的数值在<code>&gt;&gt;32</code>时结果不为<code>0</code>？</p>
+<p><strong>A：</strong><img alt="" src="../img/shift_operator.png" /></p>
+<p>即，左移、右移操作最多只能移31位，超过之后的值的结果取决于不同的编译器</p>
+<hr />
+<h2 id="_26">五、控制语句<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h2>
+<h3 id="_27">标签<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h3>
+<p>类似于<code>C</code>中的<code>goto</code>标签，但是收到限制，只能配合<code>continue</code>和<code>break</code>使用</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nl">outer</span><span class="p">:</span>  <span class="c1">// 外层循环的标签</span>
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">3</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">continue</span> <span class="n">outer</span><span class="p">;</span>
+    <span class="n">inter</span><span class="p">:</span>  <span class="c1">// 内层循环的标签</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">j</span><span class="o">==</span><span class="mi">2</span><span class="p">)</span>
+            <span class="k">break</span> <span class="n">inter</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;i=&quot;</span><span class="o">+</span><span class="n">i</span><span class="o">+</span><span class="s">&quot;,j=&quot;</span><span class="o">+</span><span class="n">j</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cm">/* </span>
+<span class="cm">输出：</span>
+<span class="cm">i=0,j=0</span>
+<span class="cm">i=0,j=1</span>
+<span class="cm">i=2,j=0</span>
+<span class="cm">i=2,j=1</span>
+<span class="cm">*/</span>
+</code></pre></div>
+</td></tr></table>
+<p><img alt="" src="../img/label.PNG" /></p>
+<hr />
+<h2 id="_28">六、数组<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h2>
+<h3 id="_29">（一）基本概念<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h3>
+<p>数组是一种数据类型，是引用<strong>类型</strong></p>
+<p><strong>定义方法：</strong></p>
+<ol>
+<li>
+<p><code>int[] ans = {1,4,5,6,10};</code></p>
+</li>
+<li>
+<p><code>int ans[] = {1,2,3,4,5};</code></p>
+</li>
+<li>
+<p><code>int[] ans = new int[5];</code></p>
+</li>
+<li>
+<p><code>int ans[]= new int[5];</code></p>
+</li>
+</ol>
+<p><strong>java中可以用变量定义数组大小</strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">100</span><span class="err">；</span>
+<span class="kt">int</span><span class="o">[]</span> <span class="n">num</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">size</span><span class="o">]</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="_30">（二）值传递与引用传递<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h3>
+<p>数组之间的赋值是引用赋值：</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="o">[]</span> <span class="n">arr1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">};</span>
+<span class="kt">int</span><span class="o">[]</span> <span class="n">arr2</span> <span class="o">=</span> <span class="n">arr1</span><span class="p">;</span>
+<span class="n">arr2</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="c1">// arr1的第0个元素也变成了10</span>
+</code></pre></div>
+</td></tr></table>
+<ul>
+<li>
+<p>基本数据类型保存的是值，即拷贝的是值</p>
+</li>
+<li>
+<p>引用数据类型保存的是堆内的地址，即拷贝的是地址</p>
+</li>
+</ul>
+<p><img alt="" src="../img/%E6%8B%B7%E8%B4%9D.png" /></p>
+<h3 id="_31">（三）数组扩容<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">};</span>
+<span class="kt">int</span><span class="o">[]</span> <span class="n">arr2</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="o">+</span><span class="mi">1</span><span class="o">]</span><span class="p">;</span>
+
+<span class="c1">// 赋值</span>
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="n">arr2</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">arr2</span><span class="o">[</span><span class="mi">3</span><span class="o">]=</span><span class="mi">4</span><span class="p">;</span>
+
+<span class="c1">// 拷贝引用</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">arr2</span><span class="p">;</span>
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/*</span>
+<span class="cm">输出：</span>
+<span class="cm">1</span>
+<span class="cm">2</span>
+<span class="cm">3</span>
+<span class="cm">4</span>
+<span class="cm">*/</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="_32">（四）二维数组<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h3>
+<h4 id="_33">二维数组的内存形式<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="../img/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84.png" /></p>
+<h4 id="_34">赋值方式<a class="headerlink" href="#_34" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p><code>int[][] arr = {{1,1,1},{8,8,9},{100}};</code></p>
+</li>
+<li>
+<p><code>int[][] arr = new int[2][3];</code></p>
+</li>
+<li>
+<p><code>int[][] arr;</code></p>
+</li>
+</ol>
+<p><code>arr = new int[2][3];</code></p>
+<ol>
+<li><code>java
+   int[][] arr = new int[2][];  // 创建一个二维数组，里面放2个一位数组，但是每个一位数组还没有开数据空间
+   for(int i=0;i&lt;arr.length;i++){
+       arr[i] = new int[i+1];   // 第二维容量可随意设置
+   }</code></li>
+</ol>
+<h4 id="string_3">String数组<a class="headerlink" href="#string_3" title="Permanent link">&para;</a></h4>
+<p>例题：</p>
+<p><img alt="" src="../img/string%E6%95%B0%E7%BB%84.png" /></p>
+<h3 id="_35">（五）可变参数列表<a class="headerlink" href="#_35" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kd">class</span> <span class="nc">Other</span><span class="p">{</span>
+    <span class="n">Other</span><span class="p">(</span><span class="n">String</span><span class="p">...</span> <span class="n">str</span><span class="p">){</span>   <span class="c1">// 类似于传入一个String数组</span>
+        <span class="k">for</span><span class="p">(</span><span class="n">String</span> <span class="n">i</span><span class="p">:</span> <span class="n">str</span><span class="p">)</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="s">&quot; &quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Index</span><span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">){</span>
+        <span class="n">Other</span> <span class="n">other</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Object</span><span class="p">();</span> <span class="c1">// 传入为空</span>
+        <span class="n">Other</span> <span class="n">other2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Object</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="s">&quot;c&quot;</span><span class="p">);</span>
+        <span class="n">Other</span> <span class="n">other3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Object</span><span class="p">(</span><span class="k">new</span> <span class="n">String</span><span class="o">[]</span><span class="p">{</span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="s">&quot;2&quot;</span><span class="p">,</span><span class="s">&quot;3&quot;</span><span class="p">});</span>   <span class="c1">// 直接传入数组</span>
+        <span class="c1">// Other other4 = new Object({&quot;A&quot;,&quot;B&quot;,&quot;C&quot;}); // 错误</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>注意：可变参数列表只能作为最后一个参数定义，且同一个形参列表中最多只能出现一个可变参数。</p>
+<h3 id="_36">（六）枚举类型<a class="headerlink" href="#_36" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kd">enum</span> <span class="n">MyEnum</span><span class="p">{</span>
+    <span class="n">UP</span><span class="p">,</span><span class="n">DOWN</span><span class="p">,</span><span class="n">LEFT</span><span class="p">,</span><span class="n">RIGHT</span><span class="p">,</span><span class="n">MIDDLE</span>
+<span class="p">}</span>
+<span class="k">for</span><span class="p">(</span><span class="n">MyEnum</span> <span class="n">myEnum</span><span class="p">:</span> <span class="n">MyEnum</span><span class="p">.</span><span class="na">values</span><span class="p">()){</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">myEnum</span><span class="o">+</span><span class="s">&quot;,&quot;</span><span class="o">+</span><span class="n">myEnum</span><span class="p">.</span><span class="na">ordinal</span><span class="p">());</span>
+<span class="p">}</span>
+
+<span class="cm">/*</span>
+<span class="cm">Output:</span>
+<span class="cm">UP,0</span>
+<span class="cm">DOWN,1</span>
+<span class="cm">LEFT,2</span>
+<span class="cm">RIGHT,3</span>
+<span class="cm">MIDDLE,4</span>
+<span class="cm">*/</span>
+</code></pre></div>
+</td></tr></table>
+<p><strong>枚举可用于switch语句：</strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">MyEnum</span> <span class="n">middle</span> <span class="o">=</span> <span class="n">MyEnum</span><span class="p">.</span><span class="na">MIDDLE</span><span class="p">;</span>
+<span class="k">switch</span><span class="p">(</span><span class="n">middle</span><span class="p">){</span>
+    <span class="k">case</span> <span class="n">LEFT</span><span class="p">:</span>  <span class="c1">// 标签必须为枚举类型的非限定名称，不能为MyEnum.LEFT</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">MyEnum</span><span class="p">.</span><span class="na">LEFT</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="n">RIGHT</span><span class="p">:</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">MyEnum</span><span class="p">.</span><span class="na">RIGHT</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="n">UP</span><span class="p">:</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">MyEnum</span><span class="p">.</span><span class="na">UP</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="n">DOWN</span><span class="p">:</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">MyEnum</span><span class="p">.</span><span class="na">DOWN</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="n">MIDDLE</span><span class="p">:</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">MyEnum</span><span class="p">.</span><span class="na">MIDDLE</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<hr />
+<h2 id="_37">七、类&amp;对象<a class="headerlink" href="#_37" title="Permanent link">&para;</a></h2>
+<h3 id="_38">（一）对象<a class="headerlink" href="#_38" title="Permanent link">&para;</a></h3>
+<h4 id="_39">对象在内存中的存在形式<a class="headerlink" href="#_39" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="../img/%E5%AF%B9%E8%B1%A1%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E7%9A%84%E5%AD%98%E5%9C%A8%E5%BD%A2%E5%BC%8F.png" /></p>
+<ul>
+<li>基本数据类型直接保存在堆中的对象中</li>
+<li>常量、字符串类型保存在方法区的常量池中，而对象中保存的是指向常量池中数据的地址</li>
+</ul>
+<h4 id="_40">对象创建的流程<a class="headerlink" href="#_40" title="Permanent link">&para;</a></h4>
+<ul>
+<li>当创建对象，或首次访问静态域、静态方法时，会首先将类信息加载到方法区中，包括属性、行为。（<strong>只加载一次</strong>）</li>
+<li>在堆中分配空间，清空空间，并初始化为默认值</li>
+<li>将对象在堆中的地址，赋给指向它的引用</li>
+<li>进行指定属性的初始化</li>
+<li>执行构造器</li>
+</ul>
+<p>（详见<code>《Think In Java》</code>95~96页  或 韩顺平<code>Java</code>视频199~200集）</p>
+<h5 id="_41">注意<a class="headerlink" href="#_41" title="Permanent link">&para;</a></h5>
+<ul>
+<li>访问静态常量不会初始化类：</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kd">class</span> <span class="nc">A</span><span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">text</span> <span class="o">=</span> <span class="s">&quot;hello world!&quot;</span><span class="p">;</span>
+    <span class="kd">static</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Test</span><span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">A</span><span class="p">.</span><span class="na">text</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// 输出：hello world!</span>
+<span class="c1">// 静态代码块没有执行，说明没有初始化类</span>
+<span class="c1">// 若改成 public final static String text = new String(&quot;hello world!&quot;); 则会初始化</span>
+</code></pre></div>
+</td></tr></table>
+<h4 id="_42">方法的调用机制<a class="headerlink" href="#_42" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="../img/%E6%96%B9%E6%B3%95%E7%9A%84%E8%B0%83%E7%94%A8%E6%9C%BA%E5%88%B6.png" /></p>
+<h4 id="_43">方法传参<a class="headerlink" href="#_43" title="Permanent link">&para;</a></h4>
+<ul>
+<li>注意方法中都是值传递，因此传入的基本数据类型不会被真的改变，改变的是其拷贝。而传入的引用的拷贝能够指向同一块堆区间，从而真正地改变数据。</li>
+</ul>
+<h3 id="this">（二）this<a class="headerlink" href="#this" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../img/this.png" /></p>
+<p>对象中隐藏着一个<code>this</code>，它的值是当前对象的地址。</p>
+<p><code>java</code>中可以通过<code>hashCode</code>来作为假地址查看，hashCode是根据对象的内部地址转换成的一个整数。</p>
+<ul>
+<li><code>this</code>作为构造器使用时，只能放在第一句</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kd">class</span> <span class="nc">T</span><span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">T</span><span class="p">(){</span>
+        <span class="k">this</span><span class="p">(</span><span class="s">&quot;jack&quot;</span><span class="p">,</span><span class="mi">23</span><span class="p">);</span>
+        <span class="c1">// ... 其他语句</span>
+    <span class="p">}</span>
+    <span class="kd">public</span> <span class="nf">T</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">,</span><span class="kt">int</span> <span class="n">age</span><span class="p">){</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="final">（三）final<a class="headerlink" href="#final" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>static</code>、<code>final</code>共同修饰的常量是<strong>编译时常量</strong>（不包括<code>new</code>创建的对象）</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kd">class</span> <span class="nc">A</span><span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">text</span> <span class="o">=</span> <span class="s">&quot;hello world!&quot;</span><span class="p">;</span>
+    <span class="kd">static</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Test</span><span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">A</span><span class="p">.</span><span class="na">text</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// 输出：hello world!</span>
+<span class="c1">// 静态代码块没有执行，说明没有初始化类，因为text在编译时就已经放在常量池中了</span>
+<span class="c1">// 若改成 public final static String text = new String(&quot;hello world!&quot;); 则会初始化</span>
+</code></pre></div>
+</td></tr></table>
+<ul>
+<li>
+<p><code>final</code>修饰的引用类型不可改变指向的对象，但可以改变对象的属性。</p>
+</li>
+<li>
+<p>没有在定义时初始化的<code>final</code>常量，必须在构造器中初始化。</p>
+</li>
+</ul>
+<h3 id="_44">（四）访问权限修饰符<a class="headerlink" href="#_44" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>修饰符</th>
+<th>本类</th>
+<th>包内</th>
+<th>子类</th>
+<th>包外</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>private</code></td>
+<td>√</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>default</code></td>
+<td>√</td>
+<td>√</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>protected</code></td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td><code>public</code></td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+</tbody>
+</table>
+<p>注意，只有<code>public</code>和<code>default</code>才能修饰类</p>
+<h3 id="_45">（五）向上转型<a class="headerlink" href="#_45" title="Permanent link">&para;</a></h3>
+<p>向上转型：父类引用指向子类对象</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kd">class</span> <span class="nc">A</span><span class="p">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">test</span><span class="p">(){</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;A.test()&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">class</span> <span class="nc">B</span> <span class="kd">extends</span> <span class="n">A</span><span class="p">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">test</span><span class="p">(){</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;B.test()&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span><span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]</span><span class="p">){</span>
+        <span class="n">A</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="n">B</span><span class="p">();</span>
+        <span class="n">a</span><span class="p">.</span><span class="na">test</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">// 输出 B.test</span>
+</code></pre></div>
+</td></tr></table>
+<ul>
+<li>向上转型调用方法必要条件：继承+方法覆盖</li>
+<li>若上例中的方法是<code>private</code>，子类B就无法覆盖A的方法，因此向上转型后也无法使用该方法</li>
+</ul>
+<h3 id="_46">（六）向下转型<a class="headerlink" href="#_46" title="Permanent link">&para;</a></h3>
+<p>接上例：</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">A</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="n">B</span><span class="p">();</span>
+<span class="n">B</span> <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="n">B</span><span class="p">)</span><span class="n">a</span><span class="p">;</span> <span class="c1">// 向下转型为强制转换</span>
+
+<span class="c1">// 错误</span>
+<span class="c1">// A a = new A();</span>
+<span class="c1">// B b = (B)a;</span>
+</code></pre></div>
+</td></tr></table>
+<p><strong>只有父类引用的子类对象才能向下转型，直接父类对象不能向下转型。</strong></p>
+<hr />
+<h2 id="_47">八、封装、继承、多态<a class="headerlink" href="#_47" title="Permanent link">&para;</a></h2>
+<h3 id="_48">（一）封装<a class="headerlink" href="#_48" title="Permanent link">&para;</a></h3>
+<p>将属性和方法封装在类中，隐藏具体的实现细节，只提供对外的接口。</p>
+<h3 id="_49">（二）继承<a class="headerlink" href="#_49" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>private</code>方法不能被覆盖，因此在向上转型时无法调用</li>
+</ul>
+<p><img alt="" src="../img/upcasting.png" /></p>
+<ul>
+<li>创建子类对象时，不管使用哪个子类构造器，都会默认调用父类的无参构造器。如果没有，则必须在子类构造器中使用<code>super</code>指定，否则编译不通过。</li>
+</ul>
+<h4 id="_50">继承内存情况<a class="headerlink" href="#_50" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="../img/%E7%BB%A7%E6%89%BF.png" /></p>
+<p>类信息保存在方法区，对象中会保存有其父类的属性</p>
+<h4 id="_51">对象访问属性/方法顺序<a class="headerlink" href="#_51" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="../img/%E8%AE%BF%E9%97%AE%E5%B1%9E%E6%80%A7%E9%A1%BA%E5%BA%8F.png" /></p>
+<p>直接访问属性和在属性前加<code>this</code>访问的效果、查找顺序都是一致的</p>
+<p>详见：<a href="https://www.bilibili.com/video/BV1fh411y7R8?p=294">韩顺平Java_继承本质详解</a></p>
+<h4 id="_52">例题<a class="headerlink" href="#_52" title="Permanent link">&para;</a></h4>
+<p><strong>代码：</strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c1">// A类</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">A</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">A</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;A()&quot;</span><span class="p">);</span>  <span class="c1">// 4</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="nf">A</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;A: &quot;</span> <span class="o">+</span> <span class="n">name</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// B类</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">B</span> <span class="kd">extends</span> <span class="n">A</span><span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">B</span><span class="p">(){</span>
+        <span class="k">this</span><span class="p">(</span><span class="s">&quot;Alice&quot;</span><span class="p">);</span>  <span class="c1">// 2</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;B()&quot;</span><span class="p">);</span>  <span class="c1">// 6</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="nf">B</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">){</span>  <span class="c1">// 3</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;B: &quot;</span><span class="o">+</span><span class="n">name</span><span class="p">);</span> <span class="c1">// 5</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// main所在类</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ExtendExercise</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">A</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">B</span><span class="p">();</span>    <span class="c1">// 1</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p><strong>执行顺序：</strong></p>
+<ol>
+<li>进入<code>B()</code>，发现有个<code>this("Alice")</code>，于是进入<code>B(String name)</code>。</li>
+<li>而<code>B(String name)</code>会有默认的<code>super</code>指向父类的无参构造器，于是进入<code>A()</code>。</li>
+<li><code>A()</code>执行结束后，继续执行<code>B(String name)</code>，随后再回到<code>B()</code>。</li>
+</ol>
+<p><strong>输出结果：</strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c1">// A()</span>
+<span class="c1">// B: Alice</span>
+<span class="c1">// B()</span>
+</code></pre></div>
+</td></tr></table>
+<h4 id="super">super<a class="headerlink" href="#super" title="Permanent link">&para;</a></h4>
+<p><code>super</code>和<code>this</code>都只能放在构造器的第一行，因此他们不能共存。</p>
+<p><img alt="" src="../img/super%26this.png" /></p>
+<h4 id="override">Override<a class="headerlink" href="#override" title="Permanent link">&para;</a></h4>
+<ul>
+<li>子类的方法签名必须和父类一致</li>
+<li>子类的返回值必须为父类返回值或其子类</li>
+<li><strong>子类方法不缩小父类方法的访问权限</strong></li>
+</ul>
+<p><strong>override与overload区别</strong></p>
+<p><img alt="" src="../img/override%26ooverload.png" /></p>
+<p><strong>代码复用</strong></p>
+<p><img alt="" src="../img/override%26ooverload.png" /></p>
+<h3 id="polymorphic">（三）多态（Polymorphic）<a class="headerlink" href="#polymorphic" title="Permanent link">&para;</a></h3>
+<p>方法或对象具有多种形态。</p>
+<p><img alt="" src="../img/%E5%A4%9A%E6%80%81.png" /></p>
+<h4 id="_53">静态多态<a class="headerlink" href="#_53" title="Permanent link">&para;</a></h4>
+<ul>
+<li>重载(Overload)：方法签名不一样（方法签名 = 方法名 + 参数列表）</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Animal</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">eat</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">eat</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<h4 id="_54">动态多态<a class="headerlink" href="#_54" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>父类引用指向子类对象</p>
+</li>
+<li>
+<p>重写（Override）</p>
+</li>
+</ul>
+<p>属性不支持重写（包括引用类型的属性），因为属性在编译时已经确定，因此无法动态查找子类属性</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c1">// Animal基类</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Animal</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">age</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="n">Food</span> <span class="n">food</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Fish</span><span class="p">();</span>   <span class="c1">// Food基类，Fish子类，里面只有一个String属性</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">eat</span><span class="p">(){</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Animal eat()&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Cat子类</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Cat</span> <span class="kd">extends</span> <span class="n">Animal</span><span class="p">{</span>
+    <span class="kt">int</span> <span class="n">age</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+    <span class="n">Food</span> <span class="n">food</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Fish</span><span class="p">();</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">eat</span><span class="p">(){</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Cat eat()&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Index</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Animal</span> <span class="n">animal</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Cat</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">animal</span><span class="p">.</span><span class="na">age</span><span class="p">);</span> <span class="c1">// 10</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">animal</span><span class="p">.</span><span class="na">food</span><span class="p">.</span><span class="na">name</span><span class="p">);</span> <span class="c1">// Food</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>如果<code>A</code>类继承<code>B</code>类，<code>B</code>继承<code>C</code>，先定义<code>C obj = new A()</code>，在调用方法时仍然遵循从子类（运行类型）找起的规则。如果子类<code>A</code>找不到可以调用的方法/属性，则继续向上找其父类<code>B</code>。</p>
+<h4 id="_55">多态的向下转型<a class="headerlink" href="#_55" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>[子类类型] [引用名] = (子类类型)父类引用</p>
+</li>
+<li>
+<p>只能强制转换父类的引用，不能强转父类对象</p>
+</li>
+<li>
+<p>且要求父类引用在编译时本来就指向该子类对象</p>
+</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c1">// 可以</span>
+<span class="n">Animail</span> <span class="n">animal</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Cat</span><span class="p">();</span>
+<span class="n">Cat</span> <span class="n">cat</span> <span class="o">=</span> <span class="p">(</span><span class="n">Cat</span><span class="p">)</span><span class="n">animal</span><span class="p">;</span>
+
+<span class="c1">// 错误</span>
+<span class="n">Animail</span> <span class="n">animal</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Cat</span><span class="p">();</span>
+<span class="n">Dog</span> <span class="n">dog</span> <span class="o">=</span> <span class="p">(</span><span class="n">Dog</span><span class="p">)</span><span class="n">animal</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table>
+<ul>
+<li>对象多态时，无法调用基类没有的方法，如果要调用，可以进行向下转型</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kd">class</span> <span class="nc">A</span><span class="p">{</span> <span class="p">}</span>
+<span class="kd">class</span> <span class="nc">B</span> <span class="kd">extends</span> <span class="n">A</span><span class="p">{</span>
+    <span class="kt">void</span> <span class="nf">fun</span><span class="p">(){</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nf">Main</span><span class="p">(){</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">){</span>
+        <span class="n">A</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="n">B</span><span class="p">();</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">a</span> <span class="k">instanceof</span> <span class="n">B</span><span class="p">){</span>
+            <span class="p">((</span><span class="n">B</span><span class="p">)</span><span class="n">a</span><span class="p">).</span><span class="na">fun</span><span class="p">();</span> <span class="c1">// 强制转为B类型</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<h4 id="_56">编译类型与运行类型<a class="headerlink" href="#_56" title="Permanent link">&para;</a></h4>
+<p>等号坐标为编译类型，等号右边为运行类型。编译类型不可变，运行类型可变。</p>
+<h5 id="instanceof">instanceof<a class="headerlink" href="#instanceof" title="Permanent link">&para;</a></h5>
+<p>判断的是对象的<strong>运行类型</strong>是否为某个类型/某类型的子类型</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c1">// Cat 继承 Animal 类</span>
+<span class="n">Animal</span> <span class="n">animal</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Cat</span><span class="p">();</span>
+
+<span class="k">if</span><span class="p">(</span><span class="n">animal</span> <span class="k">instanceof</span> <span class="n">Animal</span><span class="p">){</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;animal 是 Animal类型&quot;</span><span class="p">);</span>    <span class="c1">// 输出</span>
+<span class="p">}</span>
+<span class="k">if</span><span class="p">(</span><span class="n">animal</span> <span class="k">instanceof</span> <span class="n">Cat</span><span class="p">){</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;animal 是 Cat&quot;</span><span class="p">);</span> <span class="c1">// 输出</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="java_4">（四）java的动态绑定机制【重点】<a class="headerlink" href="#java_4" title="Permanent link">&para;</a></h3>
+<p><a href="https://www.bilibili.com/video/BV1fh411y7R8?p=315&amp;spm_id_from=pageDriver">视频教程</a></p>
+<p><img alt="" src="../img/%E5%8A%A8%E6%80%81%E7%BB%91%E5%AE%9A%E6%9C%BA%E5%88%B6.png" /></p>
+<ul>
+<li>子类的属性无法被父类引用直接访问到，因为属性是编译时就确定好的。但是，可以使用<code>get</code>方法获取属性，从而实现访问子类属性的需要。</li>
+</ul>
+<p><strong>例一：</strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kd">class</span> <span class="nc">A</span><span class="p">{</span>
+    <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">class</span> <span class="nc">B</span> <span class="kd">extends</span> <span class="n">A</span><span class="p">{</span>
+    <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">class</span> <span class="nc">Index</span><span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">){</span>
+        <span class="n">A</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="n">B</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="na">num</span><span class="p">);</span>  <span class="c1">// 输出 10</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>改进：</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kd">class</span> <span class="nc">A</span><span class="p">{</span>
+    <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="nf">getNum</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="n">num</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">class</span> <span class="nc">B</span> <span class="kd">extends</span> <span class="n">A</span><span class="p">{</span>
+    <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="nf">getNum</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="n">num</span><span class="p">;</span> <span class="c1">// 使用动态绑定的方法可以访问到当前类的属性</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">class</span> <span class="nc">Index</span><span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">){</span>
+        <span class="n">A</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="n">B</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="na">getNum</span><span class="p">());</span> <span class="c1">// 输出 20</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p><strong>例二：</strong></p>
+<p>通过多态实现的对象，在访问方法时，优先访问动态绑定的类，如果找不到再找其父类方法。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kd">class</span> <span class="nc">A</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="nf">getNum</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">num</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kt">int</span> <span class="nf">cal</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="n">getNum</span><span class="p">()</span> <span class="o">*</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">class</span> <span class="nc">B</span> <span class="kd">extends</span> <span class="n">A</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="nf">getNum</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">num</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kt">int</span> <span class="nf">cal</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="n">getNum</span><span class="p">()</span> <span class="o">+</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">class</span> <span class="nc">C</span> <span class="kd">extends</span> <span class="n">B</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="nf">getNum</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">num</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">class</span> <span class="nc">Index</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">){</span>
+        <span class="n">A</span> <span class="n">c</span> <span class="o">=</span> <span class="k">new</span> <span class="n">C</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="na">cal</span><span class="p">());</span>    <span class="c1">// 输出 40 （B.cal() =&gt; C.getNum() + 10）</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">// 如果B类也没有cal方法，则输出 300 (A.cal() =&gt; C.getNum() * 10 =&gt; 300)</span>
+<span class="c1">// 如果C类没有getNum方法、B类没有cal方法，则输出 200 (A.cal() =&gt; B.getNum() * 10 =&gt; 200)</span>
+</code></pre></div>
+</td></tr></table>
+<hr />
+<h2 id="object">九、Object<a class="headerlink" href="#object" title="Permanent link">&para;</a></h2>
+<h3 id="equals">（一）equals()<a class="headerlink" href="#equals" title="Permanent link">&para;</a></h3>
+<p><code>equals</code>和<code>==</code>区别：</p>
+<p>| 概念 | 基本数据类型 | 引用类型
+---|---|---|---
+<code>==</code> | 比较运算符 | 可以使用 | 可以使用，比较的是地址是否相等 
+<code>equals()</code> | <code>Object</code>方法 | 不可使用 | 可以使用，默认用<code>==</code>实现，若要比较内容相等需要进行重写 </p>
+<p><strong>equals()重写样例：</strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="p">(</span><span class="n">Object</span> <span class="n">obj</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="k">this</span> <span class="o">==</span> <span class="n">obj</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">obj</span> <span class="k">instanceof</span> <span class="o">[</span><span class="n">类型</span><span class="o">]</span><span class="p">){</span>    <span class="c1">// obj是否为[类型]或者其子类</span>
+        <span class="c1">// ... 具体属性比较</span>
+    <span class="p">}</span>
+    <span class="k">else</span><span class="p">{</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="tostring">（二）toString()<a class="headerlink" href="#tostring" title="Permanent link">&para;</a></h3>
+<ul>
+<li>默认返回【全类名@对象哈希值的十六进制】</li>
+</ul>
+<p><img alt="" src="../img/toString.png" /></p>
+<ul>
+<li>直接输出对象时，<code>toString</code>方法会被默认调用</li>
+</ul>
+<h3 id="finalize">（三）finalize()<a class="headerlink" href="#finalize" title="Permanent link">&para;</a></h3>
+<ul>
+<li>对象被回收时系统自动调用</li>
+<li>注意，垃圾回收的时间由系统自己决定，即使手动调用<code>System.gc()</code>也不一定会执行</li>
+</ul>
+<h3 id="_57">（四）例题<a class="headerlink" href="#_57" title="Permanent link">&para;</a></h3>
+<h4 id="1_3">例1：<a class="headerlink" href="#1_3" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="../img/super%26this2.png" /></p>
+<h4 id="2_3">例2：<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h4>
+<p><code>Student</code>继承<code>Person</code></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c1">// 父类</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="p">(){</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Person run()&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">eat</span><span class="p">(){</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Person eat()&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// 子类</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Student</span> <span class="kd">extends</span> <span class="n">Person</span><span class="p">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Student run()&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">study</span><span class="p">(){</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Student study()&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// main()所在入口</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Index</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="c1">// p不能访问study()，因为只有运行时才能动态绑定，编译时只能看到Person类型</span>
+        <span class="n">Person</span> <span class="n">p</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Student</span><span class="p">();</span>
+        <span class="n">p</span><span class="p">.</span><span class="na">run</span><span class="p">();</span>    <span class="c1">// Student</span>
+        <span class="n">p</span><span class="p">.</span><span class="na">eat</span><span class="p">();</span>    <span class="c1">// Person</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;====================&quot;</span><span class="p">);</span>
+
+        <span class="n">Student</span> <span class="n">s</span> <span class="o">=</span> <span class="p">(</span><span class="n">Student</span><span class="p">)</span> <span class="n">p</span><span class="p">;</span>
+        <span class="n">s</span><span class="p">.</span><span class="na">run</span><span class="p">();</span>    <span class="c1">// Student</span>
+        <span class="n">s</span><span class="p">.</span><span class="na">study</span><span class="p">();</span>  <span class="c1">// Student</span>
+        <span class="n">s</span><span class="p">.</span><span class="na">eat</span><span class="p">();</span>    <span class="c1">// Person</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p><strong>由父类<code>Person</code>引用指向子类<code>Student</code>对象，在编译时无法确认其子类类型，因此只能访问到父类<code>Person</code>拥有的方法<code>run()</code>和<code>eat()</code>；而运行后存在动态绑定机制，因此执行了子类的<code>run()</code>方法。</strong></p>
+<h4 id="3">例3：<a class="headerlink" href="#3" title="Permanent link">&para;</a></h4>
+<p>继承中构造方法的执行顺序</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c1">// A类</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">A</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">A</span><span class="p">()</span> <span class="p">{</span>    <span class="c1">// 6</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;A类&quot;</span><span class="p">);</span>   <span class="c1">// 7</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// B类</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">B</span> <span class="kd">extends</span> <span class="n">A</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">B</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;B类&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="nf">B</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 5</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">name</span> <span class="o">+</span> <span class="s">&quot;,B类有参构造&quot;</span><span class="p">);</span>   <span class="c1">// 8</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// C类</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">C</span> <span class="kd">extends</span> <span class="n">B</span><span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">C</span><span class="p">()</span> <span class="p">{</span>    <span class="c1">// 1</span>
+        <span class="k">this</span><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">);</span>  <span class="c1">// 2</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;C类&quot;</span><span class="p">);</span>   <span class="c1">// 10</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="nf">C</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 3</span>
+        <span class="kd">super</span><span class="p">(</span><span class="s">&quot;haha&quot;</span><span class="p">);</span>  <span class="c1">// 4</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;C类有参构造&quot;</span><span class="p">);</span>   <span class="c1">// 9</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+
+<span class="cm">/*</span>
+<span class="cm">main方法中执行 C c = new C() ,输出为：</span>
+
+<span class="cm">A类</span>
+<span class="cm">haha,B类有参构造</span>
+<span class="cm">C类有参构造</span>
+<span class="cm">C类</span>
+
+<span class="cm">*/</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="static">十、static<a class="headerlink" href="#static" title="Permanent link">&para;</a></h2>
+<p><strong>应用：单例模式</strong></p>
+<h3 id="static_1">（一）static变量<a class="headerlink" href="#static_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>同一个类的所有对象共享<code>static</code>变量</li>
+<li>类加载时生成<code>static</code>变量</li>
+<li>通过对象名和类名均可访问</li>
+</ul>
+<h3 id="static_2">（二）static方法<a class="headerlink" href="#static_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>当方法中不涉及任何实例对象时，适合使用<code>static</code>修饰，如各种工具类</li>
+<li><code>static</code>方法中只能访问静态变量或静态方法，不能出现和对象有关的关键词<code>super</code>、<code>this</code>等；非静态方法都可以访问。</li>
+</ul>
+<h3 id="main">（三）main方法<a class="headerlink" href="#main" title="Permanent link">&para;</a></h3>
+<p><code>public static void main(String[] args){}</code></p>
+<ul>
+<li>
+<p>由<code>java</code>虚拟机调用</p>
+</li>
+<li>
+<p>由于<code>java</code>虚拟机和<code>main</code>所在类不在同一个类和包，因此要声明为<code>public</code></p>
+</li>
+<li>
+<p><code>String[] args</code>为执行程序时传入的参数列表</p>
+</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Hello</span><span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">){</span>
+        <span class="k">for</span><span class="p">(</span><span class="n">String</span> <span class="n">i</span><span class="p">:</span> <span class="n">args</span><span class="p">){</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// 执行：</span>
+<span class="c1">// javac Hello.java</span>
+<span class="c1">// java Hello A B C</span>
+
+<span class="c1">// 输出:</span>
+<span class="c1">// A</span>
+<span class="c1">// B</span>
+<span class="c1">// C</span>
+</code></pre></div>
+</td></tr></table>
+<p>（<code>idea</code>中可以通过右上角<code>Edit Configuration</code>设置传入参数）</p>
+<h2 id="_58">十一、代码块/初始化块<a class="headerlink" href="#_58" title="Permanent link">&para;</a></h2>
+<h3 id="_59">（一）普通代码块<a class="headerlink" href="#_59" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="p">{</span>
+    <span class="c1">// 代码...</span>
+<span class="p">};</span>
+</code></pre></div>
+</td></tr></table>
+<p>（分号可加可不加）</p>
+<ul>
+<li>如果多个构造函数中都有重复的语句，则可以把它们抽离到初始化块中</li>
+<li><strong>初始化块的调用顺序优先于构造器</strong></li>
+<li>普通代码块在对象创建时调用，创建一次就调用一次，访问类的静态成员不会执行它</li>
+</ul>
+<h3 id="_60">（二）静态代码块<a class="headerlink" href="#_60" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kd">static</span><span class="p">{</span>
+    <span class="o">&lt;</span><span class="n">代码</span><span class="o">&gt;</span>
+<span class="p">};</span>
+</code></pre></div>
+</td></tr></table>
+<ul>
+<li><strong>静态代码块在类加载的时候执行，且只会被执行一次</strong></li>
+<li>静态代码块只能调用静态成员变量和方法</li>
+</ul>
+<h3 id="_61">（三）类加载的时机<a class="headerlink" href="#_61" title="Permanent link">&para;</a></h3>
+<ol>
+<li>创建当前类的对象时</li>
+<li>创建子类对象时，父类先被加载，其次是子类</li>
+<li>访问类的静态变量、方法时</li>
+</ol>
+<p><strong>类加载只会执行一次</strong></p>
+<h3 id="_62">（四）代码调用顺序<a class="headerlink" href="#_62" title="Permanent link">&para;</a></h3>
+<h4 id="1_4">1. 普通类中的调用顺序<a class="headerlink" href="#1_4" title="Permanent link">&para;</a></h4>
+<ol>
+<li>静态变量和静态代码块</li>
+<li>普通变量和普通代码块</li>
+<li>构造器</li>
+</ol>
+<p><strong>（静态）变量和（静态）代码块的执行顺序，与代码书写的顺序一致。在（静态）代码块中可以使用（静态）变量，但是它必须在（静态）代码块前声明。</strong></p>
+<h4 id="2_4">2. 存在继承关系的代码调用顺序<a class="headerlink" href="#2_4" title="Permanent link">&para;</a></h4>
+<ol>
+<li>父类静态变量和静态代码块</li>
+<li>子类静态变量和静态代码块</li>
+<li>父类普通变量和普通代码块</li>
+<li>父类构造器</li>
+<li>子类普通变量和普通代码块</li>
+<li>子类构造器</li>
+</ol>
+<p>之所以是这种顺序，是因为<strong>构造器的开头其实隐藏了<code>super()</code>和普通代码块的调用：</strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kd">class</span> <span class="nc">A</span><span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">A</span><span class="p">(){</span>
+        <span class="c1">// super();     1</span>
+        <span class="c1">// 调用普通代码块      2</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;ok&quot;</span><span class="p">)</span>    <span class="c1">// 3</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="final_1">十二、final<a class="headerlink" href="#final_1" title="Permanent link">&para;</a></h3>
+<p><strong>适用范围：</strong></p>
+<ol>
+<li>不希望某个类被继承</li>
+<li>不希望某个方法被子类重写（覆盖）</li>
+<li>不希望某个属性（成员变量）被修改</li>
+<li>不希望某个局部变量被修改</li>
+</ol>
+<p><strong>注意</strong></p>
+<ol>
+<li>
+<p><code>final</code>修饰的属性必须赋初值：定义时、构造器（静态属性除外）、普通/静态初始化块中。</p>
+</li>
+<li>
+<p><code>final</code>类没必要在写<code>final</code>方法</p>
+</li>
+<li>
+<p><code>final</code>不能修饰构造器</p>
+</li>
+<li>
+<p><strong><code>final</code>往往和<code>static</code>配合使用，底层编译器做出了优化处理，不会导致类加载，会更快。</strong></p>
+</li>
+</ol>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">A</span><span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">final</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="kd">static</span><span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;静态初始化块！&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// 调用A.n，没有任何输出</span>
+</code></pre></div>
+</td></tr></table>
+                
+                  
+                
+                
+                  
+                  <hr>
+                  <div class="md-source-date">
+                    <small>
+                      
+                        最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">July 16, 2022 10:57:39</span>
+                      
+                    </small>
+                  </div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href=".." title="首页" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                首页
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../Java%E8%BF%9B%E9%98%B6/" title="Java进阶" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                Java进阶
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/WOC-BUG" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://github.com/YanhuiJessica" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.c33a9706.js"></script>
+      
+        
+        
+          
+          <script src="../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../assets/javascripts/lunr/lunr.ja.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.2.3",url:{base:".."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

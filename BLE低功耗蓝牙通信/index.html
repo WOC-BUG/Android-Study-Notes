@@ -1,0 +1,1144 @@
+
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+        <meta name="author" content="WOC-BUG">
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="ja">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-4.6.3">
+    
+    
+  <title>Lorem ipsum dolor sit amet</title>
+
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.adb8469c.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,400i,700%7CFira+Mono&display=fallback">
+        <style>body,input{font-family:"Fira Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="white" data-md-color-accent="red">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#ble" tabindex="0" class="md-skip">
+        跳转至
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="Android Study Notes" aria-label="Android Study Notes" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon">school</i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Android Study Notes
+            </span>
+            <span class="md-header-nav__topic">
+              
+                BLE低功耗蓝牙通信
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/WOC-BUG/Android-Study-Notes/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    WOC-BUG/Android-Study-Notes
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href=".." class="md-tabs__link">
+          简介
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../Java%E5%9F%BA%E7%A1%80/" class="md-tabs__link">
+          Java
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../kotlin%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-tabs__link">
+          kotlin
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../Android%E5%9F%BA%E7%A1%80/" class="md-tabs__link md-tabs__link--active">
+          Android
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../Flutter/" class="md-tabs__link">
+          Flutter
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../%E5%A4%A7%E8%AF%9D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="md-tabs__link">
+          Design Pattern
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../%E5%B7%A5%E4%BD%9C%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/" class="md-tabs__link">
+          实践
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="Android Study Notes" class="md-nav__button md-logo">
+      
+        <i class="md-icon">school</i>
+      
+    </a>
+    Android Study Notes
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/WOC-BUG/Android-Study-Notes/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    WOC-BUG/Android-Study-Notes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      简介
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        简介
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href=".." title="首页" class="md-nav__link">
+      首页
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Java
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Java
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Java%E5%9F%BA%E7%A1%80/" title="Java基础" class="md-nav__link">
+      Java基础
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Java%E8%BF%9B%E9%98%B6/" title="Java进阶" class="md-nav__link">
+      Java进阶
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Java%E9%AB%98%E7%BA%A7/" title="Java高级" class="md-nav__link">
+      Java高级
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Head%20First%20Java/" title="Head First Java" class="md-nav__link">
+      Head First Java
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      kotlin
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        kotlin
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kotlin%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="kotlin学习笔记" class="md-nav__link">
+      kotlin学习笔记
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Android
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Android
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Android%E5%9F%BA%E7%A1%80/" title="Android基础" class="md-nav__link">
+      Android基础
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        BLE低功耗蓝牙通信
+      </label>
+    
+    <a href="./" title="BLE低功耗蓝牙通信" class="md-nav__link md-nav__link--active">
+      BLE低功耗蓝牙通信
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ble" class="md-nav__link">
+    BLE低功耗蓝牙
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    参数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#client" class="md-nav__link">
+    Client端
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server" class="md-nav__link">
+    Server端
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Flutter
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Flutter
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Flutter/" title="Flutter调研报告" class="md-nav__link">
+      Flutter调研报告
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Dart/" title="Dart语言基础" class="md-nav__link">
+      Dart语言基础
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Design Pattern
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Design Pattern
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E5%A4%A7%E8%AF%9D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" title="大话设计模式" class="md-nav__link">
+      大话设计模式
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      实践
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        实践
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E5%B7%A5%E4%BD%9C%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/" title="工作问题记录" class="md-nav__link">
+      工作问题记录
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ble" class="md-nav__link">
+    BLE低功耗蓝牙
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    参数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#client" class="md-nav__link">
+    Client端
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server" class="md-nav__link">
+    Server端
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/WOC-BUG/Android-Study-Notes/edit/master/docs/BLE低功耗蓝牙通信.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>BLE低功耗蓝牙通信</h1>
+                
+                <h2 id="ble">BLE低功耗蓝牙<a class="headerlink" href="#ble" title="Permanent link">&para;</a></h2>
+<p>首先要分清楚<code>BLE</code>分为主设备和从设备，从设备作为<code>Server</code>将自己广播出去，主设备作为<code>Client</code>去连接从设备</p>
+<h3 id="_1">参数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><code>BluetoothDevice</code>是蓝牙连接的设备。</p>
+</li>
+<li>
+<p><code>BluetoothGatt</code>是一个蓝牙连接的协议，它定义两个<code>BLE</code>设备通过叫做 <code>Service</code> 和 <code>Characteristic</code> 的东西进行通信，使用它可以进行对蓝牙的一系列操作，可以通过<code>bluetoothDevice.connectGatt(this,false,callback)</code>返回的<code>gatt</code>来获得。一个<code>gatt</code>中有多个<code>service</code>，一个<code>service</code>中有多个<code>characteristic</code>，如下图：</p>
+</li>
+</ol>
+<p><img alt="" src="../img/BluetootGatt.png" /></p>
+<p>注意，<strong><code>GATT</code> 连接是独占的</strong>。也就是一个 <code>BLE</code>外设同时只能被一个中心设备连接。一旦外设被连接，它就会马上停止广播，这样它就对其他设备不可见了。当设备断开，它又开始广播。</p>
+<ol>
+<li>
+<p><code>BluetoothGattService</code>是一个蓝牙服务，一个<code>gatt</code>中有多个<code>service</code>，可以从<code>bluetoothGatt.getService(Service_UUID)</code>来获得。</p>
+</li>
+<li>
+<p><code>BluetoothGattCharacteristic</code>是一个蓝牙特征值，一个<code>service</code>中有多个<code>characteristic</code>，可以从<code>service.getCharacteristic(Characteristic_UUID)</code>来获得。通过对<code>characteristic.setValue(value)</code>的操作可以写入数据。</p>
+</li>
+<li>
+<p><code>UUID</code>是对设备的一个标识，<code>service</code>、<code>characteristic</code>都有其自己的<code>UUID</code>，主从设备间的的<code>UUID</code>应经过协商后保持一致。</p>
+</li>
+</ol>
+<h3 id="client">Client端<a class="headerlink" href="#client" title="Permanent link">&para;</a></h3>
+<ol>
+<li>先拿到<code>bluetoothManager</code></li>
+</ol>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kd">val</span> <span class="nv">bluetoothManager</span> <span class="o">=</span> <span class="n">application</span><span class="p">.</span><span class="na">getSystemService</span><span class="p">(</span><span class="n">Context</span><span class="p">.</span><span class="na">BLUETOOTH_SERVICE</span><span class="p">)</span> <span class="k">as</span> <span class="n">BluetoothManager</span>   <span class="c1">// application是自带的系统组件，Activity、Service等中都有</span>
+</code></pre></div>
+</td></tr></table>
+<ol>
+<li>再拿到<code>BluetoothAdapter</code></li>
+</ol>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">btAdapter</span> <span class="o">=</span> <span class="n">bluetoothManager</span><span class="p">.</span><span class="na">getAdapter</span><span class="p">();</span> 
+<span class="c1">// 也可以通过BluetoothAdapter.getDefaultAdapter()获得</span>
+</code></pre></div>
+</td></tr></table>
+<ol>
+<li>开始扫描蓝牙设备</li>
+</ol>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">btAdapter</span><span class="p">.</span><span class="na">startLeScan</span><span class="p">(</span><span class="n">BluetoothAdapter</span><span class="p">.</span><span class="na">LeScanCallback</span><span class="p">);</span> 
+</code></pre></div>
+</td></tr></table>
+<ol>
+<li>从<code>LeScanCallback</code>中得到<code>BluetoothDevice</code></li>
+</ol>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kd">private</span> <span class="kd">class</span> <span class="nc">LeScanCallback</span><span class="p">:</span><span class="n">LeScanCallback</span><span class="p">(){</span>
+    <span class="kd">override</span> <span class="kd">fun</span> <span class="nf">onLeScan</span><span class="p">(</span><span class="n">device</span> <span class="p">:</span> <span class="n">BluetoothDevice</span><span class="p">,</span> <span class="n">rssi</span> <span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">scanRecord</span> <span class="p">:</span> <span class="n">byte</span><span class="o">[]</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 保存当前设备device</span>
+    <span class="p">}</span> 
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<ol>
+<li>用<code>BluetoothDevice</code>得到<code>BluetoothGatt</code></li>
+</ol>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">gatt</span> <span class="o">=</span> <span class="n">device</span><span class="p">.</span><span class="na">connectGatt</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="n">gattCallback</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<ol>
+<li>获取对应的<code>service</code></li>
+</ol>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">service</span> <span class="o">=</span> <span class="n">gatt</span><span class="p">.</span><span class="na">getService</span><span class="p">(</span><span class="n">Service_UUID</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<ol>
+<li>获取对应的<code>Characteristic</code></li>
+</ol>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">characteristic</span> <span class="o">=</span> <span class="n">service</span><span class="p">.</span><span class="na">getCharacteristic</span><span class="p">(</span><span class="n">Characteristic_UUID</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<ol>
+<li>此时就可以对<code>characteristic</code>写入数据了</li>
+</ol>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">characteristic</span><span class="p">.</span><span class="na">setValue</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<ol>
+<li>给<code>server</code>发送数据</li>
+</ol>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">gatt</span><span class="p">.</span><span class="na">writeCharacteristic</span><span class="p">(</span><span class="n">characteristic</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="server">Server端<a class="headerlink" href="#server" title="Permanent link">&para;</a></h3>
+<ol>
+<li>同样的，先拿到<code>bluetoothManager</code></li>
+</ol>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kd">val</span> <span class="nv">bluetoothManager</span> <span class="o">=</span> <span class="n">application</span><span class="p">.</span><span class="na">getSystemService</span><span class="p">(</span><span class="n">Context</span><span class="p">.</span><span class="na">BLUETOOTH_SERVICE</span><span class="p">)</span> <span class="k">as</span> <span class="n">BluetoothManager</span>   <span class="c1">// application是自带的系统组件，Activity、Service等中都有</span>
+</code></pre></div>
+</td></tr></table>
+<ol>
+<li>再拿到<code>BluetoothAdapter</code></li>
+</ol>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">btAdapter</span> <span class="o">=</span> <span class="n">bluetoothManager</span><span class="p">.</span><span class="na">getAdapter</span><span class="p">();</span> 
+<span class="c1">// 也可以通过BluetoothAdapter.getDefaultAdapter()获得</span>
+</code></pre></div>
+</td></tr></table>
+<ol>
+<li>新建一个<code>characteristic</code></li>
+</ol>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">characteristic</span> <span class="o">=</span> <span class="n">BluetoothGattCharacteristic</span><span class="p">(</span><span class="n">Characteristic_UUID</span><span class="p">,</span><span class="n">BluetoothGattCharacteristic</span><span class="p">.</span><span class="na">PROPERTY_WRITE</span><span class="p">,</span>
+<span class="n">BluetoothGattCharacteristic</span><span class="p">.</span><span class="na">PERMISSION_WRITE</span><span class="p">)</span>    <span class="c1">// 后面的属性是自带的，有NOTIFY、READ、WRITE，选择多个可以用or连接</span>
+<span class="n">characteristic</span><span class="p">.</span><span class="na">setValue</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>   <span class="c1">// 同理，可以在这里设置要传递的参数</span>
+</code></pre></div>
+</td></tr></table>
+<ol>
+<li>新建一个<code>service</code></li>
+</ol>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">service</span> <span class="o">=</span> <span class="n">BluetoothGattService</span><span class="p">(</span><span class="n">SERVICE_UUID</span><span class="p">,</span> <span class="n">BluetoothGattService</span><span class="p">.</span><span class="na">SERVICE_TYPE_PRIMARY</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<ol>
+<li>为<code>service</code>添加上这个<code>characteristic</code></li>
+</ol>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">service</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">characteristic</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<ol>
+<li>获取/打开周边</li>
+</ol>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">gattServerCallback</span> <span class="o">=</span> <span class="n">GattServerCallback</span><span class="p">()</span>    <span class="c1">// 回调</span>
+<span class="n">gattServer</span> <span class="o">=</span> <span class="n">bluetoothManager</span><span class="p">.</span><span class="na">openGattServer</span><span class="p">(</span><span class="n">app</span><span class="p">,</span><span class="n">gattServerCallback</span><span class="p">)</span>
+
+<span class="c1">// GattServerCallback回调</span>
+<span class="kd">private</span> <span class="kd">class</span> <span class="nc">GattServerCallback</span> <span class="p">:</span> <span class="n">BluetoothGattServerCallback</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="c1">// 连接状态发生改变</span>
+    <span class="kd">override</span> <span class="kd">fun</span> <span class="nf">onConnectionStateChange</span><span class="p">(</span><span class="n">device</span><span class="p">:</span> <span class="n">BluetoothDevice</span><span class="p">,</span> <span class="n">status</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">newState</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">super</span><span class="p">.</span><span class="na">onConnectionStateChange</span><span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="n">status</span><span class="p">,</span> <span class="n">newState</span><span class="p">)</span>
+        <span class="kd">val</span> <span class="nv">isSuccess</span> <span class="o">=</span> <span class="n">status</span> <span class="o">==</span> <span class="n">BluetoothGatt</span><span class="p">.</span><span class="na">GATT_SUCCESS</span>
+        <span class="kd">val</span> <span class="nv">isConnected</span> <span class="o">=</span> <span class="n">newState</span> <span class="o">==</span> <span class="n">BluetoothProfile</span><span class="p">.</span><span class="na">STATE_CONNECTED</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">isSuccess</span> <span class="o">&amp;&amp;</span> <span class="n">isConnected</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// ... 记录当前设备等</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 接收Client写过来的数据</span>
+    <span class="kd">override</span> <span class="kd">fun</span> <span class="nf">onCharacteristicWriteRequest</span><span class="p">(</span>
+        <span class="n">device</span><span class="p">:</span> <span class="n">BluetoothDevice</span><span class="p">,</span>
+        <span class="n">requestId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span>
+        <span class="n">characteristic</span><span class="p">:</span> <span class="n">BluetoothGattCharacteristic</span><span class="p">,</span>
+        <span class="n">preparedWrite</span><span class="p">:</span> <span class="kt">Boolean</span><span class="p">,</span>
+        <span class="n">responseNeeded</span><span class="p">:</span> <span class="kt">Boolean</span><span class="p">,</span>
+        <span class="n">offset</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span>
+        <span class="n">value</span><span class="p">:</span> <span class="n">ByteArray?</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="k">super</span><span class="p">.</span><span class="na">onCharacteristicWriteRequest</span><span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="n">requestId</span><span class="p">,</span> <span class="n">characteristic</span><span class="p">,</span> <span class="n">preparedWrite</span><span class="p">,</span> <span class="n">responseNeeded</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">characteristic</span><span class="p">.</span><span class="na">uuid</span> <span class="o">==</span> <span class="n">MESSAGE_UUID</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">gattServer</span><span class="o">?.</span><span class="na">sendResponse</span><span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="n">requestId</span><span class="p">,</span> <span class="n">BluetoothGatt</span><span class="p">.</span><span class="na">GATT_SUCCESS</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="kc">null</span><span class="p">)</span>
+            <span class="kd">val</span> <span class="nv">message</span> <span class="o">=</span> <span class="n">value</span><span class="o">?.</span><span class="na">toString</span><span class="p">(</span><span class="n">Charsets</span><span class="p">.</span><span class="na">UTF_8</span><span class="p">)</span>
+            <span class="n">Log</span><span class="p">.</span><span class="na">d</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span> <span class="s">&quot;onCharacteristicWriteRequest: Have message: \&quot;</span><span class="si">$</span><span class="n">message</span><span class="s">\&quot;&quot;</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<ol>
+<li>把<code>service</code>添加给周边</li>
+</ol>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">gattServer</span><span class="p">.</span><span class="na">addService</span><span class="p">(</span><span class="n">service</span><span class="p">)</span>
+
+<span class="c1">// 可以通过notifyCharacteristicChanged向Client传递消息</span>
+<span class="n">gattServer</span><span class="p">.</span><span class="na">notifyCharacteristicChanged</span><span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="n">characteristic</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table>
+<ol>
+<li>获取广播</li>
+</ol>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">advertiser</span> <span class="o">=</span> <span class="n">adapter</span><span class="p">.</span><span class="na">bluetoothLeAdvertiser</span>
+</code></pre></div>
+</td></tr></table>
+<ol>
+<li>开始广播</li>
+</ol>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">advertiseCallback</span> <span class="o">=</span> <span class="n">DeviceAdvertiseCallback</span><span class="p">()</span>    <span class="c1">// 广播回调</span>
+<span class="n">advertiser</span><span class="p">.</span><span class="na">startAdvertising</span><span class="p">(</span><span class="n">settings</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">advertiseCallback</span><span class="p">);</span>
+
+<span class="c1">// 广播回调实现</span>
+<span class="kd">private</span> <span class="kd">class</span> <span class="nc">DeviceAdvertiseCallback</span> <span class="p">:</span> <span class="n">AdvertiseCallback</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="c1">//失败</span>
+    <span class="kd">override</span> <span class="kd">fun</span> <span class="nf">onStartFailure</span><span class="p">(</span><span class="n">errorCode</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">super</span><span class="p">.</span><span class="na">onStartFailure</span><span class="p">(</span><span class="n">errorCode</span><span class="p">)</span>
+        <span class="c1">// Send error state to display</span>
+        <span class="n">Log</span><span class="p">.</span><span class="na">d</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span> <span class="s">&quot;Advertising failed with error: </span><span class="si">$</span><span class="n">errorCode</span><span class="s">&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 成功</span>
+    <span class="kd">override</span> <span class="kd">fun</span> <span class="nf">onStartSuccess</span><span class="p">(</span><span class="n">settingsInEffect</span><span class="p">:</span> <span class="n">AdvertiseSettings</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">super</span><span class="p">.</span><span class="na">onStartSuccess</span><span class="p">(</span><span class="n">settingsInEffect</span><span class="p">)</span>
+        <span class="n">Log</span><span class="p">.</span><span class="na">d</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span> <span class="s">&quot;Advertising successfully started&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+                
+                  
+                
+                
+                  
+                  <hr>
+                  <div class="md-source-date">
+                    <small>
+                      
+                        最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">July 16, 2022 10:57:39</span>
+                      
+                    </small>
+                  </div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../Android%E5%9F%BA%E7%A1%80/" title="Android基础" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                Android基础
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../Flutter/" title="Flutter调研报告" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                Flutter调研报告
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/WOC-BUG" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://github.com/YanhuiJessica" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.c33a9706.js"></script>
+      
+        
+        
+          
+          <script src="../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../assets/javascripts/lunr/lunr.ja.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.2.3",url:{base:".."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
